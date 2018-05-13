@@ -1,0 +1,30 @@
+{
+  "name": "furkot-geocode",
+  "version": "0.0.0",
+  "description": "Geocoding service for Furkot",
+  "author": {
+    "name": "Natalia Kowalczyk",
+    "email": "melitele@furkot.com",
+    "url": "https://melitele.me"
+  },
+  "repository": "furkot/furkot-geocode",
+  "license": "MIT",
+  "keywords": [
+    "furkot-geocode",
+    "furkot",
+    "geocoding"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jshint": "^2.9.5",
+    "mocha": "^5.1.1",
+    "should": "^13.2.1"
+  },
+  "scripts": {
+    "test": "make check"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
+}
