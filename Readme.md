@@ -16,8 +16,15 @@ $ npm install --save furkot-geocode
 
 ```js
 var furkotGeocode = require('furkot-geocode');
+var options = {}; // options activating geocoding services
 
-furkotGeocode('Rainbow');
+var geocode = furkotGeocode(options);
+
+var query = {}; // geocoding query
+
+geocode(query, function (result) {
+  // process result
+}
 ```
 
 ## License

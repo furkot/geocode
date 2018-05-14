@@ -1,1 +1,1 @@
-module.exports = require('./lib/furkot-geocode');
+module.exports = require('./lib/geocode');
