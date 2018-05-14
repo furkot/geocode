@@ -169,6 +169,10 @@ jshint@^2.9.5:
     shelljs "0.3.x"
     strip-json-comments "1.0.x"
 
+limiter-component@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/limiter-component/-/limiter-component-1.0.1.tgz#6f8bf8a8cd11103008c7fd460993baa6d59c3aef"
+
 lodash@3.7.x:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.7.0.tgz#3678bd8ab995057c07ade836ed2ef087da811d45"
