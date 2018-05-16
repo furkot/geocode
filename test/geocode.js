@@ -64,6 +64,15 @@ describe('furkot-geocode node module', function () {
     });
   });
 
+  it('only enabled services', function () {
+    var options = {
+        opencage_enable: function () {}
+    };
+    var geocode = furkotGeocode(options);
+    geocode.options.should.have.property('forward').with.length(1);
+    geocode.options.should.have.property('reverse').with.length(1);
+  });
+
   it('timeout', function (done) {
     var service = timeService(200);
     furkotGeocode({
