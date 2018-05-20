@@ -1,0 +1,824 @@
+{
+	"hits": [
+		{
+			"country": "Polska",
+			"is_country": false,
+			"city": [
+				"Gdańsk"
+			],
+			"is_highway": false,
+			"importance": 30,
+			"_tags": [
+				"tourism",
+				"tourism/attraction",
+				"country/pl",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"09-200"
+			],
+			"county": [
+				"Gdańsk"
+			],
+			"population": 0,
+			"country_code": "pl",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"województwo pomorskie"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"SS Sołdek"
+			],
+			"_geoloc": {
+				"lat": 54.3515,
+				"lng": 18.6587
+			},
+			"objectID": "95632250_125199669",
+			"_highlightResult": {
+				"country": {
+					"value": "Polska",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"city": [
+					{
+						"value": "Gdańsk",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"postcode": [
+					{
+						"value": "09-200",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Gdańsk",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "województwo pomorskie",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "SS <em>Sołdek</em>",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"city": [
+				"Los Angeles",
+				"LA"
+			],
+			"is_highway": true,
+			"importance": 26,
+			"_tags": [
+				"highway",
+				"highway/residential",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"91311",
+				"91326",
+				"91324"
+			],
+			"county": [
+				"Los Angeles County",
+				"Los Angeles"
+			],
+			"population": 4030904,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"California"
+			],
+			"admin_level": 15,
+			"suburb": [
+				"Chatsworth"
+			],
+			"locale_names": [
+				"Soldea Drive"
+			],
+			"_geoloc": {
+				"lat": 34.2628,
+				"lng": -118.566
+			},
+			"objectID": "64903523_13324052",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"city": [
+					{
+						"value": "Los Angeles",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "LA",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"postcode": [
+					{
+						"value": "91311",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "91326",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "91324",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Los Angeles County",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "Los Angeles",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "California",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"suburb": [
+					{
+						"value": "Chatsworth",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "<em>Soldea</em> Drive",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"city": [
+				"Orlando"
+			],
+			"is_highway": true,
+			"importance": 26,
+			"_tags": [
+				"highway",
+				"highway/residential",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"32801"
+			],
+			"county": [
+				"Orange County",
+				"Orange"
+			],
+			"population": 235860,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"Florida"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"Solden Place"
+			],
+			"_geoloc": {
+				"lat": 28.4295,
+				"lng": -81.4465
+			},
+			"objectID": "100965544_146194481",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"city": [
+					{
+						"value": "Orlando",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"postcode": [
+					{
+						"value": "32801",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Orange County",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "Orange",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "Florida",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "<em>Solden</em> Place",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"city": [
+				"Victorville"
+			],
+			"is_highway": true,
+			"importance": 26,
+			"_tags": [
+				"highway",
+				"highway/track",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"92392"
+			],
+			"county": [
+				"San Bernardino County",
+				"San Bernardino"
+			],
+			"population": 122225,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"California"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"Soldea Road"
+			],
+			"_geoloc": {
+				"lat": 34.5089,
+				"lng": -117.578
+			},
+			"objectID": "61313157_7519562",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"city": [
+					{
+						"value": "Victorville",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"postcode": [
+					{
+						"value": "92392",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "San Bernardino County",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "San Bernardino",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "California",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "<em>Soldea</em> Road",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"city": [
+				"Delano"
+			],
+			"is_highway": true,
+			"importance": 26,
+			"_tags": [
+				"highway",
+				"highway/residential",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"93215"
+			],
+			"county": [
+				"Kern County",
+				"Kern"
+			],
+			"population": 53819,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"California"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"Soldera Street"
+			],
+			"_geoloc": {
+				"lat": 35.7851,
+				"lng": -119.219
+			},
+			"objectID": "62734301_10408571",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"city": [
+					{
+						"value": "Delano",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"postcode": [
+					{
+						"value": "93215",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Kern County",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "Kern",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "California",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "<em>Solder</em>a Street",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"is_highway": true,
+			"importance": 26,
+			"_tags": [
+				"highway",
+				"highway/residential",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"13313",
+				"13314",
+				"13364"
+			],
+			"county": [
+				"Town of Brookfield"
+			],
+			"population": 0,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"New York"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"Solcek Trail Park"
+			],
+			"_geoloc": {
+				"lat": 42.8427,
+				"lng": -75.2454
+			},
+			"objectID": "68736436_20108030",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"postcode": [
+					{
+						"value": "13313",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "13314",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "13364",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Town of Brookfield",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "New York",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "<em>Solcek</em> Trail Park",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"city": [
+				"Sunrise Manor"
+			],
+			"is_highway": true,
+			"importance": 26,
+			"_tags": [
+				"highway",
+				"highway/residential",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"89156"
+			],
+			"county": [
+				"Clark County",
+				"Clark"
+			],
+			"population": 0,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"Nevada"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"Soldela Drive"
+			],
+			"_geoloc": {
+				"lat": 36.1996,
+				"lng": -115.027
+			},
+			"objectID": "65217921_14321989",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"city": [
+					{
+						"value": "Sunrise Manor",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"postcode": [
+					{
+						"value": "89156",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Clark County",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "Clark",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "Nevada",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "<em>Soldel</em>a Drive",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"is_highway": true,
+			"importance": 27,
+			"_tags": [
+				"highway",
+				"highway/service",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"13313",
+				"13314",
+				"13364"
+			],
+			"county": [
+				"Town of Brookfield"
+			],
+			"population": 0,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"New York"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"Solcek Trail"
+			],
+			"_geoloc": {
+				"lat": 42.8428,
+				"lng": -75.2458
+			},
+			"objectID": "68740557_20107681",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"postcode": [
+					{
+						"value": "13313",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "13314",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "13364",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Town of Brookfield",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "New York",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "<em>Solcek</em> Trail",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		},
+		{
+			"country": "Stany Zjednoczone Ameryki",
+			"is_country": false,
+			"city": [
+				"Sierra Vista"
+			],
+			"is_highway": true,
+			"importance": 26,
+			"_tags": [
+				"highway",
+				"highway/trunk",
+				"country/us",
+				"address",
+				"source/osm"
+			],
+			"postcode": [
+				"85635"
+			],
+			"county": [
+				"Cochise County",
+				"Cochise"
+			],
+			"population": 43888,
+			"country_code": "us",
+			"is_city": false,
+			"is_popular": false,
+			"administrative": [
+				"Arizona"
+			],
+			"admin_level": 15,
+			"locale_names": [
+				"Buffalo Solder Trail"
+			],
+			"_geoloc": {
+				"lat": 31.5632,
+				"lng": -110.31
+			},
+			"objectID": "104743718_162156352",
+			"_highlightResult": {
+				"country": {
+					"value": "Stany Zjednoczone Ameryki",
+					"matchLevel": "none",
+					"matchedWords": []
+				},
+				"city": [
+					{
+						"value": "Sierra Vista",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"postcode": [
+					{
+						"value": "85635",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"county": [
+					{
+						"value": "Cochise County",
+						"matchLevel": "none",
+						"matchedWords": []
+					},
+					{
+						"value": "Cochise",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"administrative": [
+					{
+						"value": "Arizona",
+						"matchLevel": "none",
+						"matchedWords": []
+					}
+				],
+				"locale_names": [
+					{
+						"value": "Buffalo <em>Solder</em> Trail",
+						"matchLevel": "full",
+						"fullyHighlighted": false,
+						"matchedWords": [
+							"soldek"
+						]
+					}
+				]
+			}
+		}
+	],
+	"nbHits": 9,
+	"processingTimeMS": 11,
+	"query": "Sołdek",
+	"params": "query=So%C5%82dek&language=pl",
+	"degradedQuery": false
+}
