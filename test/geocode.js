@@ -1,7 +1,7 @@
 var should = require('should');
 var furkotGeocode = require('../lib/geocode');
 
-function mockService(queryId, query, fn) {
+function mockService(queryId, query, result, fn) {
   fn(undefined, true, queryId, query, {
     provider: 'success'
   });
@@ -10,7 +10,7 @@ function mockService(queryId, query, fn) {
 function timeService(timeout) {
   var timeoutId, queryInProgress, callback;
   return {
-    geocode: function (queryId, query, fn) {
+    geocode: function (queryId, query, result, fn) {
       queryInProgress = query;
       callback = fn;
       timeoutId = setTimeout(function () {
