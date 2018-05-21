@@ -86,7 +86,7 @@ describe('opencage geocoding', function () {
     response = require('./fixtures/reverse');
 
     query = {
-      ll: [ 14.5272, 22.6792 ]
+      ll: [ 14.5272, -22.6792 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
