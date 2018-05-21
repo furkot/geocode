@@ -1,4 +1,12 @@
 
+1.1.0 / 2018-05-20
+==================
+
+ * geocoder from MapTiler TileHosting / OSMNames
+ * fix processing of OpenCage types other than 'road'
+ * force language passed to Algolia to English if not provided
+ * fix passing Algolia key and app id
+
 1.0.1 / 2018-05-20
 ==================
 
