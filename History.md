@@ -1,4 +1,9 @@
 
+1.2.0 / 2018-05-21
+==================
+
+ * expose method to abort outstanding requests by the client
+
 1.1.0 / 2018-05-20
 ==================
 
