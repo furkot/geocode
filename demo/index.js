@@ -50,6 +50,12 @@ service('opencage', {
   opencage_enable: function() { return true; },
   opencage_key: process.env.OPENCAGE_KEY
 });
+service('openroute', {
+  order: ['openroute'],
+  openroute_parameters: { interval : 1000 },
+  openroute_enable: function() { return true; },
+  openroute_key: process.env.OPENROUTE_KEY
+});
 service('tilehosting', {
   order: ['tilehosting'],
   tilehosting_parameters: { interval : 1000 },
