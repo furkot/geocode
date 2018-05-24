@@ -1,0 +1,343 @@
+{
+  "geocoding": {
+    "version": "0.2",
+    "attribution": "/v1/attribution",
+    "query": {
+      "text": "Rua Cafelândia, Carapicuíba, Brasil",
+      "size": 10,
+      "private": false,
+      "lang": {
+        "name": "English",
+        "iso6391": "en",
+        "iso6393": "eng",
+        "defaulted": true
+      },
+      "querySize": 20,
+      "parsed_text": {
+        "name": "Rua Cafelândia",
+        "regions": ["Rua Cafelândia", "Carapicuíba", "Brasil"],
+        "admin_parts": "Carapicuíba, Brasil"
+      }
+    },
+    "engine": {
+      "name": "Pelias",
+      "author": "Mapzen",
+      "version": "1.0"
+    },
+    "timestamp": 1527186177150
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-46.836571, -23.53719]
+      },
+      "properties": {
+        "id": "polyline:17967248",
+        "gid": "openstreetmap:street:polyline:17967248",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17967248",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.979,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "CARAPICUÃBA",
+        "county_gid": "whosonfirst:county:102061263",
+        "localadmin": "Carapicuíba",
+        "localadmin_gid": "whosonfirst:localadmin:404566297",
+        "locality": "Carapicuíba",
+        "locality_gid": "whosonfirst:locality:101956135",
+        "label": "Rua Cafelândia, Carapicuíba, Brazil"
+      },
+      "bbox": [-46.837464, -23.537373, -46.835679, -23.537007]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-49.218992, -21.477898]
+      },
+      "properties": {
+        "id": "polyline:17718849",
+        "gid": "openstreetmap:street:polyline:17718849",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17718849",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.722,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "Novo Horizonte",
+        "county_gid": "whosonfirst:county:102061841",
+        "localadmin": "Novo Horizonte",
+        "localadmin_gid": "whosonfirst:localadmin:404566881",
+        "locality": "Novo Horizonte",
+        "locality_gid": "whosonfirst:locality:101964179",
+        "label": "Rua Cafelândia, Novo Horizonte, Brazil"
+      },
+      "bbox": [-49.219941, -21.480385, -49.218041, -21.475413]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-46.89033, -23.485332]
+      },
+      "properties": {
+        "id": "polyline:17902493",
+        "gid": "openstreetmap:street:polyline:17902493",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17902493",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.722,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "Barueri",
+        "county_gid": "whosonfirst:county:102061135",
+        "localadmin": "Barueri",
+        "localadmin_gid": "whosonfirst:localadmin:404566153",
+        "locality": "Barueri",
+        "locality_gid": "whosonfirst:locality:101952565",
+        "label": "Rua Cafelândia, Barueri, Brazil"
+      },
+      "bbox": [-46.895066, -23.486699, -46.885499, -23.485175]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-46.545317, -23.70194]
+      },
+      "properties": {
+        "id": "polyline:17956019",
+        "gid": "openstreetmap:street:polyline:17956019",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17956019",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.722,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "SÃO BERNARDO DO CAMPO",
+        "county_gid": "whosonfirst:county:102062215",
+        "localadmin": "São Bernardo Do Campo",
+        "localadmin_gid": "whosonfirst:localadmin:404567211",
+        "locality": "São Bernardo do Campo",
+        "locality_gid": "whosonfirst:locality:101956183",
+        "label": "Rua Cafelândia, São Bernardo do Campo, Brazil"
+      },
+      "bbox": [-46.545937, -23.702197, -46.544697, -23.701682]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-48.884485, -23.978954]
+      },
+      "properties": {
+        "id": "polyline:17991207",
+        "gid": "openstreetmap:street:polyline:17991207",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17991207",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.722,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "Itapeva",
+        "county_gid": "whosonfirst:county:102061567",
+        "localadmin": "Itapeva",
+        "localadmin_gid": "whosonfirst:localadmin:404566563",
+        "locality": "Itapeva",
+        "locality_gid": "whosonfirst:locality:101955613",
+        "label": "Rua Cafelândia, Itapeva, Brazil"
+      },
+      "bbox": [-48.885006, -23.979414, -48.883996, -23.978461]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-35.238951, -5.853736]
+      },
+      "properties": {
+        "id": "polyline:17238410",
+        "gid": "openstreetmap:street:polyline:17238410",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17238410",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.722,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "Rio Grande Do Norte",
+        "region_gid": "whosonfirst:region:85681999",
+        "county": "Natal",
+        "county_gid": "whosonfirst:county:102058709",
+        "locality": "Natal",
+        "locality_gid": "whosonfirst:locality:101946845",
+        "label": "Rua Cafelândia, Natal, Brazil"
+      },
+      "bbox": [-35.239537, -5.854723, -35.238366, -5.852748]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-46.895173, -23.610919]
+      },
+      "properties": {
+        "id": "polyline:17969460",
+        "gid": "openstreetmap:street:polyline:17969460",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17969460",
+        "name": "Rua Cafelandia",
+        "street": "Rua Cafelandia",
+        "confidence": 0.662,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "Cotia",
+        "county_gid": "whosonfirst:county:102061315",
+        "localadmin": "Cotia",
+        "localadmin_gid": "whosonfirst:localadmin:404566349",
+        "locality": "Cotia",
+        "locality_gid": "whosonfirst:locality:101956141",
+        "label": "Rua Cafelandia, Cotia, Brazil"
+      },
+      "bbox": [-46.896081, -23.611512, -46.894265, -23.610325]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-34.927942, -8.074285]
+      },
+      "properties": {
+        "id": "polyline:17308201",
+        "gid": "openstreetmap:street:polyline:17308201",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17308201",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.722,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "Pernambuco",
+        "region_gid": "whosonfirst:region:85681973",
+        "county": "Recife",
+        "county_gid": "whosonfirst:county:102056781",
+        "localadmin": "Recife",
+        "localadmin_gid": "whosonfirst:localadmin:404560597",
+        "locality": "Recife",
+        "locality_gid": "whosonfirst:locality:101948669",
+        "neighbourhood": "São José",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85765457",
+        "label": "Rua Cafelândia, Recife, Brazil"
+      },
+      "bbox": [-34.928151, -8.075493, -34.927743, -8.073079]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-47.66115, -22.75448]
+      },
+      "properties": {
+        "id": "polyline:17857176",
+        "gid": "openstreetmap:street:polyline:17857176",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17857176",
+        "name": "Rua Cafelândia",
+        "street": "Rua Cafelândia",
+        "confidence": 0.722,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "Piracicaba",
+        "county_gid": "whosonfirst:county:102061965",
+        "localadmin": "Piracicaba",
+        "localadmin_gid": "whosonfirst:localadmin:404566975",
+        "locality": "Piracicaba",
+        "locality_gid": "whosonfirst:locality:101955869",
+        "label": "Rua Cafelândia, Piracicaba, Brazil"
+      },
+      "bbox": [-47.662678, -22.755709, -47.65963, -22.753258]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-48.972597, -21.151851]
+      },
+      "properties": {
+        "id": "polyline:17702184",
+        "gid": "openstreetmap:street:polyline:17702184",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:17702184",
+        "name": "Rua Cafelandia",
+        "street": "Rua Cafelandia",
+        "confidence": 0.662,
+        "accuracy": "centroid",
+        "country": "Brazil",
+        "country_gid": "whosonfirst:country:85633009",
+        "country_a": "BRA",
+        "region": "SÃO PAULO",
+        "region_gid": "whosonfirst:region:85682041",
+        "county": "Catanduva",
+        "county_gid": "whosonfirst:county:102061275",
+        "localadmin": "Catanduva",
+        "localadmin_gid": "whosonfirst:localadmin:404566315",
+        "locality": "Catanduva",
+        "locality_gid": "whosonfirst:locality:101955647",
+        "label": "Rua Cafelandia, Catanduva, Brazil"
+      },
+      "bbox": [-48.976639, -21.157309, -48.968747, -21.146452]
+    }
+  ],
+  "bbox": [-49.219941, -23.979414, -34.927743, -5.852748]
+}
