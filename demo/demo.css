@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.box {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.box input,
+.box button {
+  display: block;
+  font-size: 1.5rem;
+  padding: 5px;
+  margin: 3px;
+}
+
+#map {
+  min-width: 320px;
+  width: 40vw;
+  height: 40vh;
+}
+
+.resultbox label,
+.resultbox textarea {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  font-size: 1.2em;
+  line-height: 1.1;
+  transition: background-color 0.3s ease;
+}
+
+.in-progress {
+  background-color: blue;
+}
+
+.resultbox {
+  width: calc(99% / 3);
+  padding: 5px;
+  min-width: 320px;
+  display: inline-block;
+}
+
