@@ -4,6 +4,7 @@ describe('algolia geocoding', function () {
 
   var response;
   var geocode = require('../../../lib/service/algolia')({
+    interval: 1,
     name: 'algolia',
     request: function (url, req, fn) {
       fn(undefined, response);

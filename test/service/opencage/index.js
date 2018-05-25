@@ -4,6 +4,7 @@ describe('opencage geocoding', function () {
 
   var response;
   var geocode = require('../../../lib/service/opencage')({
+    interval: 1,
     name: 'opencage',
     request: function (url, req, fn) {
       fn(undefined, response);

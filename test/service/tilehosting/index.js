@@ -4,6 +4,7 @@ describe('tilehosting geocoding', function () {
 
   var response;
   var geocode = require('../../../lib/service/tilehosting')({
+    interval: 1,
     name: 'tilehosting',
     request: function (url, req, fn) {
       fn(undefined, response);

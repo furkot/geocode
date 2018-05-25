@@ -74,6 +74,7 @@ describe('furkot-geocode node module', function () {
   });
 
   it('timeout', function (done) {
+    this.slow(400);
     var service = timeService(200);
     furkotGeocode({
       forward: [
