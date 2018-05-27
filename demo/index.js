@@ -54,6 +54,12 @@ service('tilehosting', {
   tilehosting_enable: function() { return true; },
   tilehosting_key: process.env.TILEHOSTING_KEY
 });
+service('geocodio', {
+  order: ['geocodio'],
+  geocodio_parameters: { interval : 1000 },
+  geocodio_enable: function() { return true; },
+  geocodio_key: process.env.GEOCODIO_KEY
+});
 service('graphhopper', {
   order: ['graphhopper'],
   graphhopper_parameters: { interval : 1000 },
