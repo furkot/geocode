@@ -60,6 +60,12 @@ service('graphhopper', {
   graphhopper_enable: function() { return true; },
   graphhopper_key: process.env.GRAPHHOPPER_KEY
 });
+service('locationiq', {
+  order: ['locationiq'],
+  locationiq_parameters: { interval : 1000 },
+  locationiq_enable: function() { return true; },
+  locationiq_key: process.env.LOCATIONIQ_KEY
+});
 service('algolia', {
   order: ['algolia'],
   algolia_parameters: { interval : 1000 },
