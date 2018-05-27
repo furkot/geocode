@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "address_components": {
+        "number": "50",
+        "street": "Big Sky Resort",
+        "suffix": "Rd",
+        "formatted_street": "Big Sky Resort Rd",
+        "city": "Big Sky",
+        "county": "Madison County",
+        "state": "MT",
+        "zip": "59716",
+        "country": "US"
+      },
+      "formatted_address": "50 Big Sky Resort Rd, Big Sky, MT 59716",
+      "location": {
+        "lat": 45.284265,
+        "lng": -111.400596
+      },
+      "accuracy": 1,
+      "accuracy_type": "rooftop",
+      "source": "Montana State Library"
+    }
+  ]
+}
