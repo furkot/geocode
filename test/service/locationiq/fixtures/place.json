@@ -1,0 +1,28 @@
+[
+  {
+    "place_id": "101382604",
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": "125199669",
+    "boundingbox": ["54.3510557", "54.3518338", "18.6585218", "18.6588357"],
+    "lat": "54.3515282",
+    "lon": "18.6586892492584",
+    "display_name": "SS Sołdek, Długie Pobrzeże, Ołowianka, Śródmieście, Gdańsk, województwo pomorskie, 80-751, Polska",
+    "class": "tourism",
+    "type": "museum",
+    "importance": 0.1653098250698345,
+    "icon": "https://locationiq.org/static/images/mapicons/tourist_museum.p.20.png",
+    "address": {
+      "museum": "SS Sołdek",
+      "pedestrian": "Długie Pobrzeże",
+      "neighbourhood": "Ołowianka",
+      "suburb": "Śródmieście",
+      "city": "Gdańsk",
+      "county": "Gdańsk",
+      "state": "województwo pomorskie",
+      "postcode": "80-751",
+      "country": "Polska",
+      "country_code": "pl"
+    }
+  }
+]
