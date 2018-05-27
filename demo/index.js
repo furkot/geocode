@@ -54,6 +54,12 @@ service('tilehosting', {
   tilehosting_enable: function() { return true; },
   tilehosting_key: process.env.TILEHOSTING_KEY
 });
+service('graphhopper', {
+  order: ['graphhopper'],
+  graphhopper_parameters: { interval : 1000 },
+  graphhopper_enable: function() { return true; },
+  graphhopper_key: process.env.GRAPHHOPPER_KEY
+});
 service('algolia', {
   order: ['algolia'],
   algolia_parameters: { interval : 1000 },
