@@ -1,4 +1,12 @@
 
+1.3.0 / 2018-05-28
+==================
+
+ * geocoding services: geocodio, locationiq, graphhopper, openroute service
+ * demo forward and reverse geocoding
+ * speed up unit test by reducing limiter interval
+ * cut off Algolia after error
+
 1.2.1 / 2018-05-22
 ==================
 
