@@ -17,6 +17,8 @@ function onMapInit() {
     style: process.env.MAP_STYLE,
     zoomControl: true,
     zoomControlOptions: { position: 'RB' },
+    center: [-100, 40],
+    zoom: 4
   });
 
   map.on('click', function(event) {
@@ -44,11 +46,11 @@ function onMapInit() {
 
 // register services
 
-service('opencage', {
-  order: ['opencage'],
-  opencage_parameters: { interval : 1000 },
-  opencage_enable: function() { return true; },
-  opencage_key: process.env.OPENCAGE_KEY
+service('graphhopper', {
+  order: ['graphhopper'],
+  graphhopper_parameters: { interval : 1000 },
+  graphhopper_enable: function() { return true; },
+  graphhopper_key: process.env.GRAPHHOPPER_KEY
 });
 service('openroute', {
   order: ['openroute'],
@@ -56,23 +58,22 @@ service('openroute', {
   openroute_enable: function() { return true; },
   openroute_key: process.env.OPENROUTE_KEY
 });
+service('opencage', {
+  order: ['opencage'],
+  opencage_parameters: { interval : 1000 },
+  opencage_enable: function() { return true; },
+  opencage_key: process.env.OPENCAGE_KEY
+});
+service('algolia', {
+  order: ['algolia'],
+  algolia_parameters: { interval : 1000 },
+  algolia_enable: function() { return true; }
+});
 service('tilehosting', {
   order: ['tilehosting'],
   tilehosting_parameters: { interval : 1000 },
   tilehosting_enable: function() { return true; },
   tilehosting_key: process.env.TILEHOSTING_KEY
-});
-service('geocodio', {
-  order: ['geocodio'],
-  geocodio_parameters: { interval : 1000 },
-  geocodio_enable: function() { return true; },
-  geocodio_key: process.env.GEOCODIO_KEY
-});
-service('graphhopper', {
-  order: ['graphhopper'],
-  graphhopper_parameters: { interval : 1000 },
-  graphhopper_enable: function() { return true; },
-  graphhopper_key: process.env.GRAPHHOPPER_KEY
 });
 service('locationiq', {
   order: ['locationiq'],
@@ -80,12 +81,12 @@ service('locationiq', {
   locationiq_enable: function() { return true; },
   locationiq_key: process.env.LOCATIONIQ_KEY
 });
-service('algolia', {
-  order: ['algolia'],
-  algolia_parameters: { interval : 1000 },
-  algolia_enable: function() { return true; }
+service('geocodio', {
+  order: ['geocodio'],
+  geocodio_parameters: { interval : 1000 },
+  geocodio_enable: function() { return true; },
+  geocodio_key: process.env.GEOCODIO_KEY
 });
-
 
 function service(name, options) {
   var resultEl = appendTo(geocodersEl, template);
@@ -110,8 +111,8 @@ function service(name, options) {
     resultEl.classList.remove('in-progress');
     if (res && res.places) {
       resultEl.value = res.places.map(function(place) {
-        return JSON.stringify(place, null, 2);
-      }).join('\n');
+        return JSON.stringify(place, formatter, 2).replace('"[', '[').replace(']"', ']');
+      }).join(', ');
     } else {
       resultEl.value = '';
     }
@@ -128,4 +129,11 @@ function service(name, options) {
 
   window.addEventListener('ll', onLocationChange);
   window.addEventListener('place', onSearch);
+}
+
+function formatter(key, value) {
+  if (key === 'll') {
+    return '[ '+ value.join(', ') + ' ]';
+  }
+  return value;
 }
