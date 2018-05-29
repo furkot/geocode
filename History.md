@@ -1,4 +1,10 @@
 
+1.3.1 / 2018-05-29
+==================
+
+ * normalize returned addresses
+ * reorganize displaying services in demo
+
 1.3.0 / 2018-05-28
 ==================
 
