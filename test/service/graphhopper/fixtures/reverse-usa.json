@@ -1,0 +1,94 @@
+{
+	"hits": [
+		{
+			"osm_id": 349003523,
+			"osm_type": "N",
+			"country": "United States of America",
+			"osm_key": "natural",
+			"osm_value": "peak",
+			"name": "Cultus Mountain",
+			"state": "Washington",
+			"point": {
+				"lng": -122.142095,
+				"lat": 48.4251065
+			}
+		},
+		{
+			"osm_id": 490448423,
+			"osm_type": "W",
+			"extent": [
+				-122.1775426,
+				48.3987253,
+				-122.1728755,
+				48.3956535
+			],
+			"country": "United States of America",
+			"osm_key": "natural",
+			"city": "Montborne",
+			"street": "Waterfall Trail",
+			"osm_value": "bare_rock",
+			"name": "Devil's Rock Garden",
+			"state": "Washington",
+			"point": {
+				"lng": -122.17509247364865,
+				"lat": 48.39710575
+			}
+		},
+		{
+			"osm_id": 490447785,
+			"osm_type": "W",
+			"extent": [
+				-122.186193,
+				48.4023899,
+				-122.1843924,
+				48.3970456
+			],
+			"country": "United States of America",
+			"osm_key": "highway",
+			"city": "Montborne",
+			"osm_value": "track",
+			"name": "Snohomish Lane",
+			"state": "Washington",
+			"point": {
+				"lng": -122.1852829,
+				"lat": 48.3995692
+			}
+		},
+		{
+			"osm_id": 237602414,
+			"osm_type": "W",
+			"extent": [
+				-122.1935088,
+				48.4074402,
+				-122.1613071,
+				48.3849153
+			],
+			"country": "United States of America",
+			"osm_key": "leisure",
+			"city": "Montborne",
+			"osm_value": "park",
+			"name": "Fire Mountain Scout Reservation",
+			"state": "Washington",
+			"point": {
+				"lng": -122.18286687388566,
+				"lat": 48.397359550000004
+			}
+		},
+		{
+			"osm_id": 4826294317,
+			"osm_type": "N",
+			"country": "United States of America",
+			"osm_key": "natural",
+			"city": "Montborne",
+			"street": "Klahowya Road",
+			"osm_value": "cave_entrance",
+			"name": "Miners' Cave",
+			"state": "Washington",
+			"point": {
+				"lng": -122.183105,
+				"lat": 48.3962283
+			}
+		}
+	],
+	"took": 10
+}

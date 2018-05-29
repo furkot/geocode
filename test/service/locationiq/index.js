@@ -37,9 +37,9 @@ describe('locationiq geocoding', function () {
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
         ll: [ -46.8356555, -23.5370391 ],
-        type: 'residential',
-        place: 'Rua Cafelândia, Parque José Alexandre, Carapicuíba, Microrregião de Osasco, RMSP, Mesorregião Metropolitana de São Paulo, São Paulo, Southeast Region, 06321-665, Brazil',
-        address: 'Rua Cafelândia, Carapicuíba, Brazil',
+        type: 'road',
+        place: 'Rua Cafelândia',
+        address: 'Rua Cafelândia, Parque José Alexandre, Carapicuíba, Microrregião de Osasco, RMSP, Mesorregião Metropolitana de São Paulo, São Paulo, Southeast Region, 06321-665, Brazil',
         street: 'Rua Cafelândia',
         town: 'Carapicuíba',
         province: 'São Paulo',
@@ -66,9 +66,9 @@ describe('locationiq geocoding', function () {
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
         ll: [ 18.6586892492584, 54.3515282 ],
-        place: 'SS Sołdek, Długie Pobrzeże, Ołowianka, Śródmieście, Gdańsk, województwo pomorskie, 80-751, Polska',
+        place: 'SS Sołdek',
         type: 'museum',
-        address: 'Długie Pobrzeże, Gdańsk, Polska',
+        address: 'Długie Pobrzeże, Ołowianka, Śródmieście, Gdańsk, województwo pomorskie, 80-751, Polska',
         street: 'Długie Pobrzeże',
         province: 'województwo pomorskie',
         town: 'Gdańsk',
@@ -94,8 +94,9 @@ describe('locationiq geocoding', function () {
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
         ll: [ 14.5268016, -22.6791826 ],
-        place: 'Beryl\'s Restaurant, Woermann St, Central, Swakopmund, Erongo Region, Namibia',
-        address: 'Woermann St, Swakopmund, Namibia',
+        place: 'Beryl\'s Restaurant',
+        type: 'restaurant',
+        address: 'Woermann St, Central, Swakopmund, Erongo Region, Namibia',
         street: 'Woermann St',
         province: 'Erongo Region',
         town: "Swakopmund",

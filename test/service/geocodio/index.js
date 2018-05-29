@@ -42,7 +42,7 @@ describe('geocodio geocoding', function () {
         town: 'Brazil',
         county: 'Clay County',
         province: 'IN',
-        country: 'US'
+        country: 'USA'
       });
       result.should.have.property('provider', 'geocodio');
       result.should.have.property('stats', ['geocodio']);
@@ -86,7 +86,7 @@ describe('geocodio geocoding', function () {
         county: 'Madison County',
         province: 'MT',
         town: "Big Sky",
-        country: 'US'
+        country: 'USA'
       });
       result.should.have.property('provider', 'geocodio');
       result.should.have.property('stats', ['geocodio']);
