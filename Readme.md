@@ -31,12 +31,18 @@ geocode(query, function (result) {
 
 Geocoding component expects a configuration options object with following fields:
 
+- `max`
 - `order` - list of names of geocoding services in the order they will be tried
 - `XXX_key` - API key for service `XXX` (if service `XXX` requires a key)
 - `XXX_enable` - function that takes query and returns `true` when service `XXX` is expected to handle that query; if the function is absent, the service `XXX` won't be used even if listed in the `order`
 - `XXX_parameters` - object with additional parameters specific to service `XXX`
 
 ### Query parameters
+
+Common parameters:
+
+- `max` - maximum number of places to return (overrides configuration option)
+- `lang` - language code, defaults to `en`
 
 Reverse geocoding:
 
@@ -48,11 +54,10 @@ Forward geocoding:
 - `place` - string representing place name; either `addess` or `place` is expected
 - `partial` - a boolean flag set when geocoding is done as part of autocomplete
 - `bounds` - a hint to the region place resides in as array of south west and north east `[[SW longitude, SW latitude], [NE longitude, NE latitude]]`
-- `lang` - language code, defaults to `en`
 
 ### Results format
 
-If successful, geocoding service will return object with field `places` - and array of objects, each describing one place with following fields (not all fields are always set):
+If successful, geocoding service will return object with field `places` - an array of objects, each describing one place with following fields (not all fields are always set):
 
 - `place` - place name (may be absent if address doesn't correspond to a named place)
 - `type` - place type

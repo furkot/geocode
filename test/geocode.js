@@ -24,6 +24,12 @@ function timeService(timeout) {
   };
 }
 
+function maxService(queryId, query, result, fn) {
+  fn(undefined, true, queryId, query, {
+    places: new Array(10)
+  });
+}
+
 describe('furkot-geocode node module', function () {
 
   it('no input no output', function (done) {
@@ -88,6 +94,20 @@ describe('furkot-geocode node module', function () {
     })({}, function (result) {
       should.not.exists(result);
       setTimeout(done, 250);
+    });
+  });
+
+  it('maximum items', function (done) {
+    furkotGeocode({
+      forward: [
+        maxService
+      ],
+      reverse: []
+    })({
+      max: 2
+    }, function (result) {
+      result.should.have.property('places').with.length(2);
+      done();
     });
   });
 });

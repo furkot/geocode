@@ -23,7 +23,10 @@ function onMapInit() {
 
   map.on('click', function(event) {
     ll.value = event.ll[0].toFixed(6) + ', ' + event.ll[1].toFixed(6);
-    window.dispatchEvent(new CustomEvent('ll', { detail: event.ll }));
+    window.dispatchEvent(new CustomEvent('ll', { detail: {
+      ll: event.ll,
+      max: searchFormEl.max.value
+    }}));
   });
 
   searchFormEl.addEventListener('submit', function(event) {
@@ -31,7 +34,8 @@ function onMapInit() {
     if (searchFormEl.place.value) {
       var detail = {
         bounds: map.bounds(),
-        place: searchFormEl.place.value
+        place: searchFormEl.place.value,
+        max: searchFormEl.max.value
       };
       window.dispatchEvent(new CustomEvent('place', { detail: detail }));
     }
@@ -39,7 +43,10 @@ function onMapInit() {
       var ll = searchFormEl.ll.value.split(',').map(function (l) {
         return parseFloat(l.trim());
       });
-      window.dispatchEvent(new CustomEvent('ll', { detail: ll }));
+      window.dispatchEvent(new CustomEvent('ll', { detail: {
+        ll: ll,
+        max: searchFormEl.max.value
+      }}));
     }
   });
 }
@@ -94,8 +101,10 @@ function service(name, options) {
 
   function onLocationChange(event) {
     resultEl.classList.add('in-progress');
-    var ll = event.detail;
-    geocode({ ll: ll }, onResults);
+    geocode({
+      ll: event.detail.ll,
+      max: event.detail.max
+    }, onResults);
   }
 
   function onSearch(event) {
@@ -103,6 +112,7 @@ function service(name, options) {
     geocode({
       place: event.detail.place,
       bounds: event.detail.bounds,
+      max: event.detail.max,
       partial: true
     }, onResults);
   }
