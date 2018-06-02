@@ -1,4 +1,9 @@
 
+1.4.0 / 2018-06-01
+==================
+
+ * limit number of returned places per query parameter max
+
 1.3.1 / 2018-05-29
 ==================
 
