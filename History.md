@@ -1,4 +1,9 @@
 
+1.4.1 / 2018-06-04
+==================
+
+ * administrative names (street, town, county) should not be repeated as place
+
 1.4.0 / 2018-06-01
 ==================
 
