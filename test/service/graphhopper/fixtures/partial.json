@@ -1,0 +1,131 @@
+{
+	"hits": [
+		{
+			"osm_id": 531165098,
+			"osm_type": "W",
+			"extent": [
+				-117.91967,
+				33.8123942,
+				-117.9180066,
+				33.8098755
+			],
+			"country": "United States of America",
+			"osm_key": "place",
+			"city": "Anaheim",
+			"osm_value": "locality",
+			"postcode": "DISNEYLAND",
+			"name": "Main Street",
+			"state": "California",
+			"point": {
+				"lng": -117.91884953319028,
+				"lat": 33.8111284
+			}
+		},
+		{
+			"osm_id": 452350177,
+			"osm_type": "W",
+			"extent": [
+				-81.5823137,
+				28.419252,
+				-81.579309,
+				28.4161437
+			],
+			"country": "United States of America",
+			"osm_key": "place",
+			"city": "Bay Lake",
+			"osm_value": "locality",
+			"name": "Main Street, U.S.A.",
+			"state": "Florida",
+			"point": {
+				"lng": -81.58111014981344,
+				"lat": 28.41769265
+			}
+		},
+		{
+			"osm_id": 172387187,
+			"osm_type": "W",
+			"extent": [
+				-5.3531783,
+				36.1373049,
+				-5.3527514,
+				36.1348999
+			],
+			"country": "Gibraltar",
+			"osm_key": "highway",
+			"city": "Gibraltar",
+			"osm_value": "tertiary",
+			"postcode": "GX11 1AA",
+			"name": "Main Street",
+			"state": "Gibraltar",
+			"point": {
+				"lng": -5.353107,
+				"lat": 36.1360903
+			}
+		},
+		{
+			"osm_id": 436987173,
+			"osm_type": "W",
+			"extent": [
+				-122.9643843,
+				45.5216663,
+				-122.9628179,
+				45.5211612
+			],
+			"country": "United States of America",
+			"osm_key": "man_made",
+			"city": "Hillsboro",
+			"street": "East Main Street",
+			"osm_value": "bridge",
+			"postcode": "97123-4201",
+			"name": "Main Street Bridge",
+			"state": "Oregon",
+			"point": {
+				"lng": -122.96360111945452,
+				"lat": 45.52141375
+			}
+		},
+		{
+			"osm_id": 404987277,
+			"osm_type": "W",
+			"extent": [
+				2.7769875,
+				48.8724408,
+				2.7784745,
+				48.8712954
+			],
+			"country": "France",
+			"osm_key": "highway",
+			"city": "Chessy",
+			"osm_value": "living_street",
+			"postcode": "77700",
+			"name": "Main Street",
+			"state": "Ile-de-France",
+			"point": {
+				"lng": 2.7777104437086084,
+				"lat": 48.8718797
+			}
+		},
+		{
+			"osm_id": 327156539,
+			"osm_type": "W",
+			"extent": [
+				-105.265422,
+				40.2227782,
+				-105.2649032,
+				40.2223552
+			],
+			"country": "United States of America",
+			"osm_key": "highway",
+			"city": "Lyons",
+			"osm_value": "primary",
+			"postcode": "80540",
+			"name": "Main Street",
+			"state": "Colorado",
+			"point": {
+				"lng": -105.2653362,
+				"lat": 40.2227082
+			}
+		}
+	],
+	"took": 70
+}

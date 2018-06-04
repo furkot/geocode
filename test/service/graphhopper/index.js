@@ -38,7 +38,6 @@ describe('graphhopper geocoding', function () {
       result.places[0].should.deepEqual({
         ll: [ -46.8356555, -23.5370391 ],
         type: 'residential',
-        place: 'Rua Cafelândia',
         street: 'Rua Cafelândia',
         address: 'Rua Cafelândia, Carapicuíba, São Paulo, Brazil',
         town: 'Carapicuíba',
@@ -73,6 +72,81 @@ describe('graphhopper geocoding', function () {
         province: 'Pomeranian Voivodeship',
         town: 'Gdansk',
         country: 'Poland'
+      });
+      result.should.have.property('provider', 'graphhopper');
+      result.should.have.property('stats', ['graphhopper']);
+      done();
+    });
+  });
+
+  it('partial', function (done) {
+    response = require('./fixtures/partial');
+    urlPrefix = 'https://graphhopper.com/api/1/geocode?q=main%20street&autocomplete=true&locale=en&key=';
+
+    var query = {
+      place: 'main street',
+      lang: 'en',
+      partial: true
+    };
+    geocode('forward', 1, query, {}, function (err, value, id, query, result) {
+      should.not.exist(err);
+      value.should.equal(true);
+      should.exist(result);
+      result.should.have.property('places').with.length(6);
+      result.places[0].should.deepEqual({
+        ll:  [ -117.91884953319028, 33.8111284 ],
+        type: 'locality',
+        place: 'Main Street',
+        town: 'Anaheim',
+        province: 'CA',
+        country: 'USA',
+        address: 'Anaheim, CA, USA'
+      });
+      result.places[1].should.deepEqual({
+        ll:  [ -81.58111014981344, 28.41769265 ],
+        type: 'locality',
+        place: 'Main Street, U.S.A.',
+        town: 'Bay Lake',
+        province: 'FL',
+        country: 'USA',
+        address: 'Bay Lake, FL, USA'
+      });
+      result.places[2].should.deepEqual({
+        ll:  [ -5.353107, 36.1360903 ],
+        type: 'tertiary',
+        street: 'Main Street',
+        town: 'Gibraltar',
+        province: 'Gibraltar',
+        country: 'Gibraltar',
+        address: 'Main Street, Gibraltar, Gibraltar, Gibraltar'
+      });
+      result.places[3].should.deepEqual({
+        ll:  [ -122.96360111945452, 45.52141375 ],
+        type: 'bridge',
+        place: 'Main Street Bridge',
+        street: 'East Main Street',
+        town: 'Hillsboro',
+        province: 'OR',
+        country: 'USA',
+        address: 'East Main Street, Hillsboro, OR, USA'
+      });
+      result.places[4].should.deepEqual({
+        ll:  [ 2.7777104437086084, 48.8718797 ],
+        type: 'living_street',
+        street: 'Main Street',
+        town: 'Chessy',
+        province: 'Ile-de-France',
+        country: 'France',
+        address: 'Main Street, Chessy, Ile-de-France, France'
+      });
+      result.places[5].should.deepEqual({
+        ll:  [ -105.2653362, 40.2227082 ],
+        type: 'primary',
+        street: 'Main Street',
+        town: 'Lyons',
+        province: 'CO',
+        country: 'USA',
+        address: 'Main Street, Lyons, CO, USA'
       });
       result.should.have.property('provider', 'graphhopper');
       result.should.have.property('stats', ['graphhopper']);
@@ -140,7 +214,6 @@ describe('graphhopper geocoding', function () {
       });
       result.places[2].should.deepEqual({
         ll: [ -122.1852829, 48.3995692 ],
-        place: 'Snohomish Lane',
         type: 'track',
         address: 'Snohomish Lane, Montborne, WA, USA',
         street: 'Snohomish Lane',
