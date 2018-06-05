@@ -30,6 +30,17 @@ function maxService(queryId, query, result, fn) {
   });
 }
 
+function placeService(queryId, query, result, fn) {
+  fn(undefined, true, queryId, query, {
+    places: [{
+      place:'a'
+    }, {
+      street: 'a'
+    }]
+  });
+  
+}
+
 describe('furkot-geocode node module', function () {
 
   it('no input no output', function (done) {
@@ -107,6 +118,21 @@ describe('furkot-geocode node module', function () {
       max: 2
     }, function (result) {
       result.should.have.property('places').with.length(2);
+      done();
+    });
+  });
+
+  it('places', function (done) {
+    furkotGeocode({
+      forward: [
+        placeService
+      ],
+      reverse: []
+    })({
+      place: 'a'
+    }, function (result) {
+      result.should.have.property('places').with.length(1);
+      result.places[0].should.have.property('place', 'a');
       done();
     });
   });
