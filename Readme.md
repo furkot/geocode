@@ -14,7 +14,7 @@ $ npm install --save furkot-geocode
 
 ## Usage
 
-```js
+````js
 var furkotGeocode = require('furkot-geocode');
 var options = {}; // options activating geocoding services
 
@@ -25,7 +25,7 @@ var query = {}; // geocoding query
 geocode(query, function (result) {
   // process result
 }
-```
+````
 
 ### Configuration options
 
