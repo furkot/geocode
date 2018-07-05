@@ -59,6 +59,12 @@ service('graphhopper', {
   graphhopper_enable: function() { return true; },
   graphhopper_key: process.env.GRAPHHOPPER_KEY
 });
+service('hogfish', {
+  order: ['hogfish'],
+  hogfish_parameters: { interval : 1000 },
+  hogfish_enable: function() { return true; },
+  hogfish_url: process.env.HOGFISH_API_HOST
+});
 service('openroute', {
   order: ['openroute'],
   openroute_parameters: { interval : 1000 },
