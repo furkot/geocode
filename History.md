@@ -1,4 +1,9 @@
 
+1.4.3 / 2018-07-29
+==================
+
+ * fail and disable openrouteservice at any error
+
 1.4.2 / 2018-06-05
 ==================
 
