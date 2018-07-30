@@ -1,4 +1,9 @@
 
+1.4.5 / 2018-07-29
+==================
+
+ * disable only reverse or forward capabilities for a service
+
 1.4.4 / 2018-07-29
 ==================
 
