@@ -1,0 +1,27 @@
+[
+	{
+		"_id": "89086",
+		"name": "Circle K",
+		"ll": [
+			-104.866074,
+			39.594341
+		],
+		"url": "89086",
+		"address": "10553 E Briarwood Cir",
+		"city": "Englewood",
+		"state": "CO",
+		"country": "United States"
+	}, {
+		"_id": "89082",
+		"name": "Bradley Food",
+		"ll": [
+			-104.848663,
+			39.594959
+		],
+		"url": "89082",
+		"address": "12022 E Arapahoe Rd",
+		"city": "Englewood",
+		"state": "CO",
+		"country": "United States"
+	}
+]
