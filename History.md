@@ -1,4 +1,9 @@
 
+1.4.6 / 2018-08-09
+==================
+
+ * make service parameters caching less agressive
+
 1.4.5 / 2018-07-29
 ==================
 
