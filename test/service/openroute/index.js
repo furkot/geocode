@@ -63,7 +63,7 @@ describe('openroute geocoding', function () {
 
   it('place', function (done) {
     response = require('./fixtures/place');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=So%C5%82dek&api_key=';
+    urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=So%C5%82dek&lang=pl&api_key=';
 
     var query = {
       place: 'Sołdek',
