@@ -133,7 +133,6 @@ describe('openroute geocoding', function () {
       });
       result.places[3].should.deepEqual({
         ll:  [ 2.324163, 45.308017 ],
-        place: 'Arches',
         type: 'localadmin',
         county: 'Mauriac',
         province: 'Cantal',
@@ -159,6 +158,7 @@ describe('openroute geocoding', function () {
       });
       result.places[6].should.deepEqual({
         ll:  [ 6.528311, 48.119893 ],
+        place: 'Arches',
         type: 'venue',
         town: 'Arches',
         province: 'Vosges',
