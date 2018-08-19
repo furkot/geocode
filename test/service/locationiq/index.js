@@ -80,6 +80,34 @@ describe('locationiq geocoding', function () {
     });
   });
 
+  it('partial', function (done) {
+    response = require('./fixtures/partial');
+    urlPrefix = 'https://api.locationiq.org/v1/autocomplete.php?q=30%20West%2026th%20Street%2C%20New%20York&viewbox=-136.85324796095287,29.833181774137493,-58.630591710944685,59.76129059655832&normalizecity=1&format=json&key=';
+      
+    var query = {
+      address: '30 West 26th Street, New York',
+      bounds: [[-136.85324796095287,29.833181774137493],[-58.630591710944685,59.76129059655832]],
+      partial: true
+    };
+    geocode('forward', 10, query, {}, function (err, value, id, query, result) {
+      should.not.exist(err);
+      value.should.equal(true);
+      should.exist(result);
+      result.should.have.property('places').with.length(6);
+      result.places[1].should.deepEqual({
+        ll: [ -73.990465230697, 40.74418685 ],
+        address: '30 West 26th Street, New York City, NY, USA',
+        street: '30 West 26th Street',
+        town: 'New York City',
+        province: 'NY',
+        country: 'USA'
+      });
+      result.should.have.property('provider', 'locationiq');
+      result.should.have.property('stats', ['locationiq']);
+      done();
+    });
+  });
+
   it('reverse', function (done) {
     response = require('./fixtures/reverse');
     urlPrefix = 'https://us1.locationiq.org/v1/reverse.php?lon=14.5272&lat=-22.6792&addressdetails=1&format=json&key=';

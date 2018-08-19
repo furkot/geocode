@@ -1,0 +1,170 @@
+[
+	{
+		"place_id": "0",
+		"osm_id": "2483139540",
+		"osm_type": "node",
+		"licence": "\u00a9 LocationIQ.com CC BY 4.0, Data \u00a9 OpenStreetMap contributors, ODbL 1.0",
+		"lat": "40.7475684",
+		"lon": "-73.997632",
+		"boundingbox": [
+			"40.7475684",
+			"40.7475684",
+			"-73.997632",
+			"-73.997632"
+		],
+		"class": "amenity",
+		"type": "theatre",
+		"display_name": "Upright Citizens Brigade Theatre New York, 307, West 26th Street, New York City, New York, 10001, United States of America",
+		"display_place": "Upright Citizens Brigade Theatre New York",
+		"display_address": "307, West 26th Street, New York City, New York, 10001, United States of America",
+		"address": {
+			"name": "Upright Citizens Brigade Theatre New York",
+			"house_number": "307",
+			"road": "West 26th Street",
+			"city": "New York City",
+			"state": "New York",
+			"postcode": "10001",
+			"country": "United States of America"
+		}
+	},
+	{
+		"place_id": "0",
+		"osm_id": "265038872",
+		"osm_type": "way",
+		"licence": "\u00a9 LocationIQ.com CC BY 4.0, Data \u00a9 OpenStreetMap contributors, ODbL 1.0",
+		"lat": "40.74418685",
+		"lon": "-73.990465230697",
+		"boundingbox": [
+			"40.7440153",
+			"40.7443216",
+			"-73.9906674",
+			"-73.9902899"
+		],
+		"class": "building",
+		"type": "yes",
+		"display_name": "30, West 26th Street, New York City, New York, 10010, United States of America, 30",
+		"display_place": "30",
+		"display_address": "West 26th Street, New York City, New York, 10010, United States of America",
+		"address": {
+			"house_number": "30",
+			"road": "West 26th Street",
+			"city": "New York City",
+			"state": "New York",
+			"postcode": "10010",
+			"country": "United States of America",
+			"name": "30"
+		}
+	},
+	{
+		"place_id": "0",
+		"osm_id": "2377128156",
+		"osm_type": "node",
+		"licence": "\u00a9 LocationIQ.com CC BY 4.0, Data \u00a9 OpenStreetMap contributors, ODbL 1.0",
+		"lat": "40.7475657",
+		"lon": "-73.9975067",
+		"boundingbox": [
+			"40.7475657",
+			"40.7475657",
+			"-73.9975067",
+			"-73.9975067"
+		],
+		"class": "shop",
+		"type": "supermarket",
+		"display_name": "Gristedes, 307, West 26th Street, New York City, New York, 10001, United States of America",
+		"display_place": "Gristedes",
+		"display_address": "307, West 26th Street, New York City, New York, 10001, United States of America",
+		"address": {
+			"name": "Gristedes",
+			"house_number": "307",
+			"road": "West 26th Street",
+			"city": "New York City",
+			"state": "New York",
+			"postcode": "10001",
+			"country": "United States of America"
+		}
+	},
+	{
+		"place_id": "0",
+		"osm_id": "2688438317",
+		"osm_type": "node",
+		"licence": "\u00a9 LocationIQ.com CC BY 4.0, Data \u00a9 OpenStreetMap contributors, ODbL 1.0",
+		"lat": "40.7442104",
+		"lon": "-73.9903727",
+		"boundingbox": [
+			"40.7442104",
+			"40.7442104",
+			"-73.9903727",
+			"-73.9903727"
+		],
+		"class": "office",
+		"type": "company",
+		"display_name": "Samsung Accelerator, 30, West 26th Street, New York City, New York, 10010, United States of America",
+		"display_place": "Samsung Accelerator",
+		"display_address": "30, West 26th Street, New York City, New York, 10010, United States of America",
+		"address": {
+			"name": "Samsung Accelerator",
+			"house_number": "30",
+			"road": "West 26th Street",
+			"city": "New York City",
+			"state": "New York",
+			"postcode": "10010",
+			"country": "United States of America"
+		}
+	},
+	{
+		"place_id": "0",
+		"osm_id": "2621558446",
+		"osm_type": "node",
+		"licence": "\u00a9 LocationIQ.com CC BY 4.0, Data \u00a9 OpenStreetMap contributors, ODbL 1.0",
+		"lat": "40.7442736",
+		"lon": "-73.9904326",
+		"boundingbox": [
+			"40.7442736",
+			"40.7442736",
+			"-73.9904326",
+			"-73.9904326"
+		],
+		"class": "amenity",
+		"type": "restaurant",
+		"display_name": "Hill Country Barbecue Market, 30, West 26th Street, New York City, New York, 10010, United States of America",
+		"display_place": "Hill Country Barbecue Market",
+		"display_address": "30, West 26th Street, New York City, New York, 10010, United States of America",
+		"address": {
+			"name": "Hill Country Barbecue Market",
+			"house_number": "30",
+			"road": "West 26th Street",
+			"city": "New York City",
+			"state": "New York",
+			"postcode": "10010",
+			"country": "United States of America"
+		}
+	},
+	{
+		"place_id": "0",
+		"osm_id": "3958246944",
+		"osm_type": "node",
+		"licence": "\u00a9 LocationIQ.com CC BY 4.0, Data \u00a9 OpenStreetMap contributors, ODbL 1.0",
+		"lat": "40.7442363",
+		"lon": "-73.9903515",
+		"boundingbox": [
+			"40.7442363",
+			"40.7442363",
+			"-73.9903515",
+			"-73.9903515"
+		],
+		"class": "office",
+		"type": "company",
+		"display_name": "Mapzen, 30, West 26th Street, New York City, New York, 10010, United States of America",
+		"display_place": "Mapzen",
+		"display_address": "30, West 26th Street, New York City, New York, 10010, United States of America",
+		"address": {
+			"name": "Mapzen",
+			"house_number": "30",
+			"road": "West 26th Street",
+			"city": "New York City",
+			"state": "New York",
+			"postcode": "10010",
+			"country": "United States of America"
+		}
+	}
+]
