@@ -1,4 +1,15 @@
 
+1.4.8 / 2018-08-19
+==================
+
+ * fix disabling services for specific query parameters
+ * handle errors returned by LocationIQ
+ * use LocationIQ autocomplete endpoint to geocode partial strings
+ * better distinguish places and addresses returned by openrouteservice
+ * fix boundary parameter in openrouteservice
+ * add language parameter to openrouteservice
+ * synchronous service - handled by the client
+
 1.4.7 / 2018-08-10
 ==================
 
