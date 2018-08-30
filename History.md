@@ -1,4 +1,9 @@
 
+1.4.9 / 2018-08-30
+==================
+
+ * improve LocationIQ geocoding for autocomplete
+
 1.4.8 / 2018-08-19
 ==================
 
