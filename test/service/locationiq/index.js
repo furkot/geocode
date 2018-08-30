@@ -38,7 +38,6 @@ describe('locationiq geocoding', function () {
       result.places[0].should.deepEqual({
         ll: [ -46.8356555, -23.5370391 ],
         type: 'road',
-        place: 'Rua Cafelândia',
         address: 'Rua Cafelândia, Carapicuíba, São Paulo, Brazil',
         street: 'Rua Cafelândia',
         town: 'Carapicuíba',
@@ -163,7 +162,7 @@ describe('locationiq geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(4);
       result.places[0].should.deepEqual({
-        type: 'house',
+        type: 'house_number',
         ll: [ -104.999354, 39.676536 ],
         address: '2200 South Jason Street, Denver, CO, USA',
         street: '2200 South Jason Street',
@@ -172,7 +171,6 @@ describe('locationiq geocoding', function () {
         country: 'USA'
       });
       result.places[1].should.deepEqual({
-        place: 'Jason Street',
         type: 'road',
         ll: [ -104.9994264, 39.7669524 ],
         address: 'Jason Street, Denver, CO, USA',
