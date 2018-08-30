@@ -221,4 +221,32 @@ describe('openroute geocoding', function () {
       done();
     });
   });
+
+  it('address', function (done) {
+    response = require('./fixtures/address');
+    urlPrefix = 'https://api.openrouteservice.org/geocode/reverse?point.lon=-118.9844711296318&point.lat=37.63593851131688&api_key=';
+    
+    var query = {
+      ll: [ -118.9844711296318, 37.63593851131688 ]
+    };
+    geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
+      should.not.exist(err);
+      value.should.equal(true);
+      should.exist(result);
+      result.should.have.property('places').with.length(4);
+      result.places[0].should.deepEqual({
+        ll: [ -118.984484, 37.635683 ],
+        type: 'address',
+        address: '240 Holiday Vista Drive, Mammoth Lakes, CA, USA',
+        street: '240 Holiday Vista Drive',
+        town: 'Mammoth Lakes',
+        county: 'Mono County',
+        province: 'CA',
+        country: 'USA'
+      });
+      result.should.have.property('provider', 'openroute');
+      result.should.have.property('stats', ['openroute']);
+      done();
+    });
+  });
 });
