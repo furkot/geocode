@@ -1,4 +1,10 @@
 
+1.4.10 / 2018-08-30
+===================
+
+ * add house number if available to address returned by OpenRouteService
+ * reserve place field for genuine pace names, not street name, in LocationIQ service
+
 1.4.9 / 2018-08-30
 ==================
 
