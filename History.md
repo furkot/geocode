@@ -1,9 +1,14 @@
 
+1.4.11 / 2018-10-14
+===================
+
+ * switch off OpenRouteService eocoder only when it returns error without response
+
 1.4.10 / 2018-08-30
 ===================
 
  * add house number if available to address returned by OpenRouteService
- * reserve place field for genuine pace names, not street name, in LocationIQ service
+ * reserve place field for genuine place names, not street name, in LocationIQ service
 
 1.4.9 / 2018-08-30
 ==================
