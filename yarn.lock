@@ -232,9 +232,9 @@ readable-stream@1.1:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-run-waterfall@~1:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/run-waterfall/-/run-waterfall-1.1.6.tgz#3aebfeb60155539bf1ff4a30b66706ae77df9f74"
+run-waterfall-until@~1:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/run-waterfall-until/-/run-waterfall-until-1.0.0.tgz#ea3d1b51254e63bde3ef12dc0a193ec293357a92"
 
 shelljs@0.3.x:
   version "0.3.0"
