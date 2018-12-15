@@ -18,7 +18,7 @@
     "debug": "~2 || ~3",
     "fetchagent": "~1",
     "limiter-component": "~1",
-    "run-waterfall": "~1"
+    "run-waterfall-until": "~1"
   },
   "devDependencies": {
     "jshint": "~2",
