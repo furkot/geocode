@@ -13,6 +13,16 @@ describe('hogfish geocoding', function () {
 
   var geocode = hogfish({
     hogfish_url: '',
+    hogfish_parameters: {
+      types: {
+        hotel: [
+          'provider=hotels'
+        ],
+        fillingstation: [
+          'provider=mygasfeed'
+        ]
+      }
+    },
     interval: 1,
     name: 'hogfish',
     request: request
