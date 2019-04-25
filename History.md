@@ -1,4 +1,9 @@
 
+1.5.1 / 2019-04-25
+==================
+
+ * don't try again when GraphHopper returns no result
+
 1.5.0 / 2019-04-22
 ==================
 
