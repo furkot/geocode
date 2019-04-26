@@ -1,4 +1,9 @@
 
+1.5.2 / 2019-04-26
+==================
+
+ * return empty result when no service found the result
+
 1.5.1 / 2019-04-25
 ==================
 
