@@ -61,14 +61,23 @@ describe('geocoding service', function () {
     const queryId = 'abort';
     const query = {};
     s.geocode('forward', queryId, query, undefined, function (err, finished, outQueryId, outQuery, result) {
-      err.should.eql('input error');
-      finished.should.eql(false);
-      outQueryId.should.eql(queryId);
-      outQuery.should.eql(query);
-      outQuery.should.have.property('stats', [ 'test' ]);
-      result.should.have.property('stats', [ 'test' ]);
-      result.should.have.property('provider', 'test');
-      if (!i) {
+      if (i) {
+        err.should.eql('input error');
+        finished.should.eql(false);
+        outQueryId.should.eql(queryId);
+        outQuery.should.eql(query);
+        outQuery.should.have.property('stats', [ 'test' ]);
+        result.should.have.property('stats', [ 'test' ]);
+        result.should.have.property('provider', 'test');
+      }
+      else {
+        should.not.exist(err);
+        finished.should.eql(false);
+        outQueryId.should.eql(queryId);
+        outQuery.should.eql(query);
+        outQuery.should.not.have.property('stats');
+        result.should.have.property('stats', undefined);
+        result.should.have.property('provider', 'test');
         return fn();
       }
       i -= 1;
