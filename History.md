@@ -1,4 +1,10 @@
 
+1.5.3 / 2019-06-25
+==================
+
+ * discontinue service that has 3 timeouts in a row
+ * unit test for generic service code
+
 1.5.2 / 2019-04-26
 ==================
 
