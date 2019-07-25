@@ -15,14 +15,14 @@
     "geocoding"
   ],
   "dependencies": {
-    "debug": "~2 || ~3",
-    "fetchagent": "~1",
+    "debug": "~2 || ~3 || ~4",
+    "fetchagent": "~2",
     "limiter-component": "~1",
     "run-waterfall-until": "~1"
   },
   "devDependencies": {
     "jshint": "~2",
-    "mocha": "~5",
+    "mocha": "~6",
     "should": "~13"
   },
   "scripts": {
