@@ -1,4 +1,11 @@
 
+1.5.4 / 2019-07-25
+==================
+
+ * upgrade mocha, jshit, should
+ * allow for using debug ~4
+ * upgrade fetchagent to ~2
+
 1.5.3 / 2019-06-25
 ==================
 
