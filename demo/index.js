@@ -53,47 +53,68 @@ function onMapInit() {
 
 // register services
 
-service('graphhopper', {
-  order: ['graphhopper'],
-  graphhopper_parameters: { interval : 1000 },
-  graphhopper_enable: function() { return true; },
-  graphhopper_key: process.env.GRAPHHOPPER_KEY
-});
-service('openroute', {
-  order: ['pelias'],
-  pelias_parameters: { interval : 1000 },
-  pelias_enable: function() { return true; },
-  pelias_key: process.env.OPENROUTE_KEY
-});
-service('opencage', {
-  order: ['opencage'],
-  opencage_parameters: { interval : 1000 },
-  opencage_enable: function() { return true; },
-  opencage_key: process.env.OPENCAGE_KEY
-});
+if (process.env.GRAPHHOPPER_KEY) {
+  service('graphhopper', {
+    order: ['graphhopper'],
+    graphhopper_parameters: { interval : 1000 },
+    graphhopper_enable: function() { return true; },
+    graphhopper_key: process.env.GRAPHHOPPER_KEY
+  });
+}
+if (process.env.OPENROUTE_KEY) {
+  service('openroute', {
+    order: ['pelias'],
+    pelias_parameters: { interval : 1000 },
+    pelias_enable: function() { return true; },
+    pelias_key: process.env.OPENROUTE_KEY
+  });
+}
+if (process.env.OPENROUTE_URL) {
+  service('geocode.code42day.com', {
+    order: ['pelias'],
+    pelias_parameters: { interval : 1000},
+    pelias_enable: function() { return true; },
+    pelias_key: 'key',
+    pelias_url: process.env.OPENROUTE_URL
+  });
+}
+if (process.env.OPENCAGE_KEY) {
+  service('opencage', {
+    order: ['opencage'],
+    opencage_parameters: { interval : 1000 },
+    opencage_enable: function() { return true; },
+    opencage_key: process.env.OPENCAGE_KEY
+  });
+}
 service('algolia', {
   order: ['algolia'],
   algolia_parameters: { interval : 1000 },
   algolia_enable: function() { return true; }
 });
-service('tilehosting', {
-  order: ['tilehosting'],
-  tilehosting_parameters: { interval : 1000 },
-  tilehosting_enable: function() { return true; },
-  tilehosting_key: process.env.TILEHOSTING_KEY
-});
-service('locationiq', {
-  order: ['locationiq'],
-  locationiq_parameters: { interval : 1000 },
-  locationiq_enable: function() { return true; },
-  locationiq_key: process.env.LOCATIONIQ_KEY
-});
-service('geocodio', {
-  order: ['geocodio'],
-  geocodio_parameters: { interval : 1000 },
-  geocodio_enable: function() { return true; },
-  geocodio_key: process.env.GEOCODIO_KEY
-});
+if (process.env.TILEHOSTING_KEY) {
+  service('tilehosting', {
+    order: ['tilehosting'],
+    tilehosting_parameters: { interval : 1000 },
+    tilehosting_enable: function() { return true; },
+    tilehosting_key: process.env.TILEHOSTING_KEY
+  });
+}
+if (process.env.LOCATIONIQ_KEY) {
+  service('locationiq', {
+    order: ['locationiq'],
+    locationiq_parameters: { interval : 1000 },
+    locationiq_enable: function() { return true; },
+    locationiq_key: process.env.LOCATIONIQ_KEY
+  });
+}
+if (process.env.GEOCODIO_KEY) {
+  service('geocodio', {
+    order: ['geocodio'],
+    geocodio_parameters: { interval : 1000 },
+    geocodio_enable: function() { return true; },
+    geocodio_key: process.env.GEOCODIO_KEY
+  });
+}
 
 function service(name, options) {
   var resultEl = appendTo(geocodersEl, template);
