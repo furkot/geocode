@@ -15,7 +15,7 @@
     "geocoding"
   ],
   "dependencies": {
-    "debug": "~2 || ~3",
+    "debug": "~2 || ~3 || ~4",
     "fetchagent": "~2",
     "limiter-component": "~1",
     "run-waterfall-until": "~1"
