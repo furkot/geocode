@@ -92,7 +92,7 @@ describe('openroute geocoding', function () {
 
   it('partial', function (done) {
     response = require('./fixtures/partial');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=arches%20national&api_key=';
+    urlPrefix = 'https://api.openrouteservice.org/geocode/autocomplete?text=arches%20national&api_key=';
 
     var query = {
       place: 'arches national',
@@ -102,10 +102,10 @@ describe('openroute geocoding', function () {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(10);
+      result.should.have.property('places').with.length(4);
       result.places[0].should.deepEqual({
-        ll:  [ -109.620009, 38.616587 ],
-        place: 'Arches National Park Visitor Center',
+        ll:  [ -109.608784, 38.612304 ],
+        place: 'Arches National Park',
         type: 'venue',
         county: 'Grand County',
         province: 'UT',
@@ -113,83 +113,33 @@ describe('openroute geocoding', function () {
         address: 'Grand County, UT, USA'
       });
       result.places[1].should.deepEqual({
-        ll:  [ 121.069168, 14.204155 ],
-        type: 'street',
-        street: 'Arches',
-        county: 'Calamba',
-        province: 'Laguna',
-        country: 'Philippines',
-        address: 'Arches, Calamba, Laguna, Philippines'
+        ll:  [ -109.61995, 38.616497 ],
+        place: 'Arches National Park Visitor Center',
+        type: 'venue',
+        county: 'Grand County',
+        province: 'UT',
+        country: 'USA',
+        address: 'Grand County, UT, USA'
       });
       result.places[2].should.deepEqual({
-        ll:  [ -121.080957, 38.660073 ],
-        type: 'street',
-        street: 'Arches Avenue',
-        town: 'El Dorado Hills',
-        county: 'El Dorado County',
-        province: 'CA',
-        country: 'USA',
-        address: 'Arches Avenue, El Dorado Hills, CA, USA'
+        ll:  [ 125.23645, 6.815029 ],
+        place: 'Pedro A. Arches National High School',
+        type: 'venue',
+        county: 'Bansalan',
+        province: 'Davao del Sur',
+        country: 'Philippines',
+        address: 'Bansalan, Davao del Sur, Philippines'
       });
       result.places[3].should.deepEqual({
-        ll:  [ 2.324163, 45.308017 ],
-        type: 'localadmin',
-        county: 'Mauriac',
-        province: 'Cantal',
-        country: 'France',
-        address: 'Mauriac, Cantal, France'
-      });
-      result.places[4].should.deepEqual({
-        ll:  [ 6.534363, 48.120469 ],
-        type: 'locality',
-        town: 'Arches',
-        province: 'Vosges',
-        country: 'France',
-        address: 'Arches, Vosges, France'
-      });
-      result.places[5].should.deepEqual({
-        ll:  [ -3.417781, 14.901704 ],
-        place: 'Arches Africaine',
+        ll:  [ -109.548641, 38.561166 ],
+        place: 'Quality Suites Moab Near Arches National Park',
         type: 'venue',
-        county: 'Bandiagara',
-        province: 'Mopti',
-        country: 'Mali',
-        address: 'Bandiagara, Mopti, Mali'
-      });
-      result.places[6].should.deepEqual({
-        ll:  [ 6.528311, 48.119893 ],
-        place: 'Arches',
-        type: 'venue',
-        town: 'Arches',
-        province: 'Vosges',
-        country: 'France',
-        address: 'Arches, Vosges, France'
-      });
-      result.places[7].should.deepEqual({
-        ll:  [ -4.099854, 52.913393 ],
-        place: 'Arches',
-        type: 'venue',
-        province: 'Gwynedd',
-        country: 'United Kingdom',
-        address: 'Gwynedd, United Kingdom'
-      });
-      result.places[8].should.deepEqual({
-        ll:  [ 2.328083, 45.305905 ],
-        place: 'Arches',
-        type: 'venue',
-        county: 'Mauriac',
-        province: 'Cantal',
-        country: 'France',
-        address: 'Mauriac, Cantal, France'
-      });
-      result.places[9].should.deepEqual({
-        ll:  [ 5.150096, 50.474564 ],
-        type: 'street',
-        street: 'Aux Arches',
-        county: 'Namur',
-        province: 'Namur',
-        country: 'Belgium',
-        address: 'Aux Arches, Namur, Namur, Belgium'
+        street: '800 South Main Street',
+        town: 'Moab',
+        county: 'Grand County',
+        province: 'UT',
+        country: 'USA',
+        address: '800 South Main Street, Moab, UT, USA'
       });
       result.should.have.property('provider', 'openroute');
       result.should.have.property('stats', ['openroute']);
@@ -225,7 +175,7 @@ describe('openroute geocoding', function () {
   it('address', function (done) {
     response = require('./fixtures/address');
     urlPrefix = 'https://api.openrouteservice.org/geocode/reverse?point.lon=-118.9844711296318&point.lat=37.63593851131688&api_key=';
-    
+
     var query = {
       ll: [ -118.9844711296318, 37.63593851131688 ]
     };
