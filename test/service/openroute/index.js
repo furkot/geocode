@@ -92,7 +92,7 @@ describe('openroute geocoding', function () {
 
   it('partial', function (done) {
     response = require('./fixtures/partial');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=arches%20national&api_key=';
+    urlPrefix = 'https://api.openrouteservice.org/geocode/autocomplete?text=arches%20national&api_key=';
 
     var query = {
       place: 'arches national',
@@ -225,7 +225,7 @@ describe('openroute geocoding', function () {
   it('address', function (done) {
     response = require('./fixtures/address');
     urlPrefix = 'https://api.openrouteservice.org/geocode/reverse?point.lon=-118.9844711296318&point.lat=37.63593851131688&api_key=';
-    
+
     var query = {
       ll: [ -118.9844711296318, 37.63593851131688 ]
     };
