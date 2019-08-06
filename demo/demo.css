@@ -4,18 +4,26 @@
   padding: 0;
 }
 
-
 .box {
   display: inline-block;
   vertical-align: middle;
+  margin: 1em;
 }
 
-.box input,
-.box button {
+.box form > * {
+  font-size: 1.4rem;
   display: block;
-  font-size: 1.5rem;
   padding: 5px;
   margin: 3px;
+}
+
+.box form button {
+  margin-top: 0.75em;
+  float: right;
+}
+
+label input {
+  margin: 0 .5em;
 }
 
 #map {
