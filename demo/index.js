@@ -32,12 +32,20 @@ function onMapInit() {
 
   searchFormEl.addEventListener('submit', function(event) {
     event.preventDefault();
-    if (searchFormEl.place.value) {
+    const placeOrAddress = searchFormEl.place.value;
+    if (placeOrAddress) {
       const detail = {
         bounds: map.bounds(),
-        place: searchFormEl.place.value,
         max: searchFormEl.max.value
       };
+      if (searchFormEl.type.value === 'address') {
+        detail.address = placeOrAddress;
+      } else {
+        detail.place = placeOrAddress;
+      }
+      if (searchFormEl.partial.checked) {
+        detail.partial = true;
+      }
       window.dispatchEvent(new CustomEvent('place', { detail }));
     }
     else if (searchFormEl.ll.value) {
@@ -127,20 +135,12 @@ function service(name, options) {
 
   function onLocationChange(event) {
     resultEl.classList.add('in-progress');
-    geocode({
-      ll: event.detail.ll,
-      max: event.detail.max
-    }, onResults);
+    geocode(event.detail, onResults);
   }
 
   function onSearch(event) {
     resultEl.classList.add('in-progress');
-    geocode({
-      place: event.detail.place,
-      bounds: event.detail.bounds,
-      max: event.detail.max,
-      partial: true
-    }, onResults);
+    geocode(event.detail, onResults);
   }
 
   function onResults(res) {

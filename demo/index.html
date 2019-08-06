@@ -16,6 +16,11 @@
       <form class="search-form">
         <input placeholder="coordinates" id="ll" name="ll" type="text">
         <input placeholder="place" name="place">
+        <label><input type="checkbox" name="partial">Partial</label>
+        <div>
+          <label><input type="radio" name="type" value="place" checked>Place</label>
+          <label><input type="radio" name="type" value="address" >Address</label>
+        </div>
         <input placeholder="max results", name="max" type="number">
         <button>Search</button>
       </form>
