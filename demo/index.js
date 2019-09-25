@@ -60,10 +60,10 @@ service('graphhopper', {
   graphhopper_key: process.env.GRAPHHOPPER_KEY
 });
 service('openroute', {
-  order: ['openroute'],
-  openroute_parameters: { interval : 1000 },
-  openroute_enable: function() { return true; },
-  openroute_key: process.env.OPENROUTE_KEY
+  order: ['pelias'],
+  pelias_parameters: { interval : 1000 },
+  pelias_enable: function() { return true; },
+  pelias_key: process.env.OPENROUTE_KEY
 });
 service('opencage', {
   order: ['opencage'],

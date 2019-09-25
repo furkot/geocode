@@ -1,7 +1,7 @@
 var should = require('should');
-var openroute = require('../../../lib/service/openroute');
+var pelias = require('../../../lib/service/pelias');
 
-describe('openroute geocoding', function () {
+describe('pelias geocoding', function () {
 
   var response;
   var urlPrefix;
@@ -11,9 +11,9 @@ describe('openroute geocoding', function () {
       fn(undefined, response);
     }
 
-  var geocode = openroute({
+  var geocode = pelias({
     interval: 1,
-    name: 'openroute',
+    name: 'pelias',
     request: request
   }).geocode;
 
@@ -55,8 +55,8 @@ describe('openroute geocoding', function () {
         province: 'SÃO PAULO',
         country: 'Brazil'
       });
-      result.should.have.property('provider', 'openroute');
-      result.should.have.property('stats', ['openroute']);
+      result.should.have.property('provider', 'pelias');
+      result.should.have.property('stats', ['pelias']);
       done();
     });
   });
@@ -84,8 +84,8 @@ describe('openroute geocoding', function () {
         town: 'Gdańsk',
         country: 'Poland'
       });
-      result.should.have.property('provider', 'openroute');
-      result.should.have.property('stats', ['openroute']);
+      result.should.have.property('provider', 'pelias');
+      result.should.have.property('stats', ['pelias']);
       done();
     });
   });
@@ -191,8 +191,8 @@ describe('openroute geocoding', function () {
         country: 'Belgium',
         address: 'Aux Arches, Namur, Namur, Belgium'
       });
-      result.should.have.property('provider', 'openroute');
-      result.should.have.property('stats', ['openroute']);
+      result.should.have.property('provider', 'pelias');
+      result.should.have.property('stats', ['pelias']);
       done();
     });
   });
@@ -216,8 +216,8 @@ describe('openroute geocoding', function () {
         address: 'Namibia',
         country: 'Namibia'
       });
-      result.should.have.property('provider', 'openroute');
-      result.should.have.property('stats', ['openroute']);
+      result.should.have.property('provider', 'pelias');
+      result.should.have.property('stats', ['pelias']);
       done();
     });
   });
@@ -244,8 +244,8 @@ describe('openroute geocoding', function () {
         province: 'CA',
         country: 'USA'
       });
-      result.should.have.property('provider', 'openroute');
-      result.should.have.property('stats', ['openroute']);
+      result.should.have.property('provider', 'pelias');
+      result.should.have.property('stats', ['pelias']);
       done();
     });
   });
