@@ -25,7 +25,7 @@ describe('locationiq geocoding', function () {
 
   it('forward', function (done) {
     response = require('./fixtures/forward');
-    urlPrefix = 'https://api.locationiq.org/v1/search.php?q=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&addressdetails=1&normalizecity=1&format=json&key=';
+    urlPrefix = 'https://api.locationiq.com/v1/search.php?q=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&addressdetails=1&normalizecity=1&format=json&key=';
 
     var query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
@@ -52,7 +52,7 @@ describe('locationiq geocoding', function () {
 
   it('place', function (done) {
     response = require('./fixtures/place');
-    urlPrefix = 'https://api.locationiq.org/v1/search.php?q=So%C5%82dek&accept-language=pl&addressdetails=1&normalizecity=1&format=json&key=';
+    urlPrefix = 'https://api.locationiq.com/v1/search.php?q=So%C5%82dek&accept-language=pl&addressdetails=1&normalizecity=1&format=json&key=';
 
     var query = {
       place: 'Sołdek',
@@ -81,8 +81,8 @@ describe('locationiq geocoding', function () {
 
   it('partial', function (done) {
     response = require('./fixtures/partial');
-    urlPrefix = 'https://api.locationiq.org/v1/search.php?q=30%20West%2026th%20Street%2C%20New%20York&viewbox=-136.85324796095287,29.833181774137493,-58.630591710944685,59.76129059655832&bounded=1&addressdetails=1&normalizecity=1&format=json&key=';
-      
+    urlPrefix = 'https://api.locationiq.com/v1/search.php?q=30%20West%2026th%20Street%2C%20New%20York&viewbox=-136.85324796095287,29.833181774137493,-58.630591710944685,59.76129059655832&bounded=1&addressdetails=1&normalizecity=1&format=json&key=';
+
     var query = {
       address: '30 West 26th Street, New York',
       bounds: [[-136.85324796095287,29.833181774137493],[-58.630591710944685,59.76129059655832]],
@@ -121,7 +121,7 @@ describe('locationiq geocoding', function () {
 
   it('reverse', function (done) {
     response = require('./fixtures/reverse');
-    urlPrefix = 'https://api.locationiq.org/v1/reverse.php?lon=14.5272&lat=-22.6792&addressdetails=1&normalizecity=1&format=json&key=';
+    urlPrefix = 'https://api.locationiq.com/v1/reverse.php?lon=14.5272&lat=-22.6792&addressdetails=1&normalizecity=1&format=json&key=';
 
     var query = {
       ll: [ 14.5272, -22.6792 ]
@@ -149,8 +149,8 @@ describe('locationiq geocoding', function () {
 
   it('address', function (done) {
     response = require('./fixtures/address');
-    urlPrefix = 'https://api.locationiq.org/v1/search.php?q=2200%20S.%20Jason%20St%2C%20Denver%2C%20CO%2080223&viewbox=-106.24023437500165,41.84270596422118,-93.75976562500192,38.10619124884522&bounded=1&addressdetails=1&normalizecity=1&format=json&key=';
-      
+    urlPrefix = 'https://api.locationiq.com/v1/search.php?q=2200%20S.%20Jason%20St%2C%20Denver%2C%20CO%2080223&viewbox=-106.24023437500165,41.84270596422118,-93.75976562500192,38.10619124884522&bounded=1&addressdetails=1&normalizecity=1&format=json&key=';
+
     var query = {
       address: '2200 S. Jason St, Denver, CO 80223',
       bounds: [[-106.24023437500165,41.84270596422118],[-93.75976562500192,38.10619124884522]],
