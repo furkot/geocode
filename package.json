@@ -7,7 +7,7 @@
     "email": "melitele@furkot.com",
     "url": "https://melitele.me"
   },
-  "repository": "furkot/furkot-geocode",
+  "repository": "furkot/geocode",
   "license": "MIT",
   "keywords": [
     "furkot-geocode",
