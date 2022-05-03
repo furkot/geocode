@@ -1,0 +1,19 @@
+GET /geocode/v1/json?q=Rua+Cafel%C3%A2ndia%2C+Carapicu%C3%ADba%2C+Brasil&no_annotations=1&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 11:28:16 GMT
+server: Apache
+access-control-allow-origin: *
+x-ratelimit-limit: 2500
+x-ratelimit-remaining: 2499
+x-ratelimit-reset: 1651708800
+vary: Accept-Encoding
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+content-type: application/json; charset=utf-8
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+connection: close
+
+{"documentation":"https://opencagedata.com/api","licenses":[{"name":"see attribution guide","url":"https://opencagedata.com/credits"}],"rate":{"limit":2500,"remaining":2499,"reset":1651708800},"results":[{"bounds":{"northeast":{"lat":-23.5370411,"lng":-46.835665},"southwest":{"lat":-23.5373596,"lng":-46.8374493}},"components":{"ISO_3166-1_alpha-2":"BR","ISO_3166-1_alpha-3":"BRA","_category":"road","_type":"road","city":"Carapicu\u00edba","city_district":"Carapicu\u00edba","continent":"South America","country":"Brazil","country_code":"br","county":"Regi\u00e3o Metropolitana de S\u00e3o Paulo","municipality":"Regi\u00e3o Imediata de S\u00e3o Paulo","postcode":"06321-665","region":"Southeast Region","road":"Rua Cafel\u00e2ndia","road_type":"residential","state":"S\u00e3o Paulo","state_code":"SP","state_district":"Regi\u00e3o Geogr\u00e1fica Intermedi\u00e1ria de S\u00e3o Paulo","suburb":"Parque Jos\u00e9 Alexandre"},"confidence":9,"formatted":"Rua Cafel\u00e2ndia, Parque Jos\u00e9 Alexandre, Carapicu\u00edba - SP, 06321-665, Brazil","geometry":{"lat":-23.5370962,"lng":-46.8359735}},{"bounds":{"northeast":{"lat":-23.510625,"lng":-46.816471},"southwest":{"lat":-23.552827,"lng":-46.8629278}},"components":{"ISO_3166-1_alpha-2":"BR","ISO_3166-1_alpha-3":"BRA","_category":"place","_type":"city","continent":"South America","country":"Brazil","country_code":"br","county":"Carapicu\u00edba","state":"S\u00e3o Paulo","state_code":"SP","town":"Carapicu\u00edba"},"confidence":7,"formatted":"Carapicu\u00edba, Brazil","geometry":{"lat":-23.52272,"lng":-46.835}}],"status":{"code":200,"message":"OK"},"stay_informed":{"blog":"https://blog.opencagedata.com","twitter":"https://twitter.com/OpenCage"},"thanks":"For using an OpenCage API","timestamp":{"created_http":"Wed, 04 May 2022 11:28:16 GMT","created_unix":1651663696},"total_results":2}

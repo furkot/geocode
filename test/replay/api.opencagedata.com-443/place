@@ -1,0 +1,19 @@
+GET /geocode/v1/json?q=So%C5%82dek&language=pl&no_annotations=1&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 11:28:17 GMT
+server: Apache
+access-control-allow-origin: *
+x-ratelimit-limit: 2500
+x-ratelimit-remaining: 2498
+x-ratelimit-reset: 1651708800
+vary: Accept-Encoding
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+content-type: application/json; charset=utf-8
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+connection: close
+
+{"documentation":"https://opencagedata.com/api","licenses":[{"name":"see attribution guide","url":"https://opencagedata.com/credits"}],"rate":{"limit":2500,"remaining":2498,"reset":1651708800},"results":[{"bounds":{"northeast":{"lat":54.3518365,"lng":18.6587941},"southwest":{"lat":54.3510622,"lng":18.6584808}},"components":{"ISO_3166-1_alpha-2":"PL","ISO_3166-1_alpha-3":"POL","_category":"outdoors/recreation","_type":"museum","city":"Gda\u0144sk","continent":"Europe","country":"Polska","country_code":"pl","museum":"SS So\u0142dek","neighbourhood":"Wyspa Spichrz\u00f3w","political_union":"European Union","postcode":"80-838","road":"D\u0142ugie Pobrze\u017ce","state":"wojew\u00f3dztwo pomorskie","state_code":"22","suburb":"\u015ar\u00f3dmie\u015bcie"},"confidence":9,"formatted":"SS So\u0142dek, D\u0142ugie Pobrze\u017ce, 80-838 Gda\u0144sk, Polska","geometry":{"lat":54.351451,"lng":18.6586312}}],"status":{"code":200,"message":"OK"},"stay_informed":{"blog":"https://blog.opencagedata.com","twitter":"https://twitter.com/OpenCage"},"thanks":"For using an OpenCage API","timestamp":{"created_http":"Wed, 04 May 2022 11:28:17 GMT","created_unix":1651663697},"total_results":1}

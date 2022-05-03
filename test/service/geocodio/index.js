@@ -3,30 +3,13 @@ const geocodio = require('../../../lib/service/geocodio');
 
 describe('geocodio geocoding', function () {
 
-  let response;
-  let urlPrefix;
-
-  function request(url, req, fn) {
-    url.should.startWith(urlPrefix);
-    fn(undefined, response);
-  }
-
-  const geocode = geocodio({
+  const { geocode } = geocodio({
     interval: 1,
     name: 'geocodio',
-    request
-  }).geocode;
-
-
-  afterEach(function() {
-    response = undefined;
-    urlPrefix = undefined;
+    geocodio_key: process.env.GEOCODIO_KEY || 'furkot'
   });
 
-
   it('forward', function (done) {
-    response = require('./fixtures/forward');
-    urlPrefix = 'https://api.geocod.io/v1.3/geocode?q=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&api_key=';
 
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
@@ -51,8 +34,6 @@ describe('geocodio geocoding', function () {
   });
 
   it('place', function (done) {
-    response = require('./fixtures/place');
-    urlPrefix = 'https://api.geocod.io/v1.3/geocode?q=So%C5%82dek&api_key=';
 
     const query = {
       place: 'Sołdek',
@@ -67,8 +48,6 @@ describe('geocodio geocoding', function () {
   });
 
   it('reverse', function (done) {
-    response = require('./fixtures/reverse');
-    urlPrefix = 'https://api.geocod.io/v1.3/reverse?q=45.283333,-111.401389&api_key=';
 
     const query = {
       ll: [ -111.401389, 45.283333 ]
@@ -77,7 +56,7 @@ describe('geocodio geocoding', function () {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(1);
+      result.should.have.property('places').with.length(8);
       result.places[0].should.deepEqual({
         ll: [ -111.400596, 45.284265 ],
         address: '50 Big Sky Resort Rd, Big Sky, MT 59716',

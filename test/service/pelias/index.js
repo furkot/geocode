@@ -3,29 +3,13 @@ const pelias = require('../../../lib/service/pelias');
 
 describe('pelias geocoding', function () {
 
-  let response;
-  let urlPrefix;
-
-  function request(url, req, fn) {
-      url.should.startWith(urlPrefix);
-      fn(undefined, response);
-    }
-
-  const geocode = pelias({
+  const { geocode } = pelias({
     interval: 1,
     name: 'pelias',
-    request
-  }).geocode;
-
-
-  beforeEach(function() {
-    response = undefined;
-    urlPrefix = undefined;
+    pelias_key: process.env.PELIAS_KEY || 'furkot'
   });
 
   it('forward', function (done) {
-    response = require('./fixtures/forward');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&api_key=';
 
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
@@ -34,25 +18,15 @@ describe('pelias geocoding', function () {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(10);
+      result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ -46.836571, -23.53719 ],
+        ll: [ -46.836557, -23.5372 ],
         type: 'street',
-        address: 'Rua Cafelândia, Carapicuíba, SÃO PAULO, Brazil',
+        address: 'Rua Cafelândia, Carapicuíba, Sao Paulo, Brazil',
         street: 'Rua Cafelândia',
         town: 'Carapicuíba',
-        county: 'CARAPICUÃBA',
-        province: 'SÃO PAULO',
-        country: 'Brazil'
-      });
-      result.places[1].should.deepEqual({
-        ll: [ -49.218992, -21.477898 ],
-        type: 'street',
-        address: 'Rua Cafelândia, Novo Horizonte, SÃO PAULO, Brazil',
-        street: 'Rua Cafelândia',
-        town: 'Novo Horizonte',
-        county: 'Novo Horizonte',
-        province: 'SÃO PAULO',
+        county: 'Carapicuiba',
+        province: 'Sao Paulo',
         country: 'Brazil'
       });
       result.should.have.property('provider', 'pelias');
@@ -62,8 +36,6 @@ describe('pelias geocoding', function () {
   });
 
   it('place', function (done) {
-    response = require('./fixtures/place');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=So%C5%82dek&lang=pl&api_key=';
 
     const query = {
       place: 'Sołdek',
@@ -73,16 +45,16 @@ describe('pelias geocoding', function () {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(10);
+      result.should.have.property('places').with.length(2);
       result.places[0].should.deepEqual({
-        ll: [ 18.658663, 54.351444 ],
+        ll: [ 18.658675, 54.351453 ],
         place: 'SS Sołdek',
         type: 'venue',
-        address: 'Gdańsk, Pomorskie, Poland',
-        county: "M. GdaÅsk", // this is wrong
-        province: 'Pomorskie',
+        address: 'Gdańsk, pomorskie, Polska',
+        county: 'Gdańsk',
+        province: 'pomorskie',
         town: 'Gdańsk',
-        country: 'Poland'
+        country: 'Polska'
       });
       result.should.have.property('provider', 'pelias');
       result.should.have.property('stats', ['pelias']);
@@ -91,8 +63,6 @@ describe('pelias geocoding', function () {
   });
 
   it('partial', function (done) {
-    response = require('./fixtures/partial');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/autocomplete?text=arches%20national&api_key=';
 
     const query = {
       place: 'arches national',
@@ -148,8 +118,6 @@ describe('pelias geocoding', function () {
   });
 
   it('reverse', function (done) {
-    response = require('./fixtures/reverse');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/reverse?point.lon=14.5272&point.lat=-22.6792&api_key=';
 
     const query = {
       ll: [ 14.5272, -22.6792 ]
@@ -163,7 +131,9 @@ describe('pelias geocoding', function () {
         ll: [ 14.526802, -22.679183 ],
         place: 'Beryl\'s Restaurant',
         type: 'venue',
-        address: 'Namibia',
+        address: 'Swakopmund, Erongo, Namibia',
+        county: 'Swakopmund',
+        province: 'Erongo',
         country: 'Namibia'
       });
       result.should.have.property('provider', 'pelias');
@@ -173,22 +143,31 @@ describe('pelias geocoding', function () {
   });
 
   it('address', function (done) {
-    response = require('./fixtures/address');
-    urlPrefix = 'https://api.openrouteservice.org/geocode/reverse?point.lon=-118.9844711296318&point.lat=37.63593851131688&api_key=';
 
     const query = {
-      ll: [ -118.9844711296318, 37.63593851131688 ]
+      ll: [ -118.983976, 37.63619 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(4);
+      result.should.have.property('places').with.length(6);
       result.places[0].should.deepEqual({
-        ll: [ -118.984484, 37.635683 ],
+        ll: [ -118.983976, 37.63619 ],
+        type: 'venue',
+        address: '3253 Meridian, Mammoth Lakes, CA, USA',
+        place: 'The Summit',
+        street: '3253 Meridian',
+        town: 'Mammoth Lakes',
+        county: 'Mono County',
+        province: 'CA',
+        country: 'USA'
+      });
+      result.places[1].should.deepEqual({
+        ll: [ -118.983976, 37.63619 ],
         type: 'address',
-        address: '240 Holiday Vista Drive, Mammoth Lakes, CA, USA',
-        street: '240 Holiday Vista Drive',
+        address: '3253 Meridian, Mammoth Lakes, CA, USA',
+        street: '3253 Meridian',
         town: 'Mammoth Lakes',
         county: 'Mono County',
         province: 'CA',

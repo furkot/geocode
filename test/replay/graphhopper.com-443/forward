@@ -1,0 +1,19 @@
+GET /api/1/geocode?q=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx
+date: Tue, 03 May 2022 23:14:22 GMT
+content-type: application/json;charset=utf-8
+content-length: 339
+connection: close
+access-control-expose-headers: X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset,X-RateLimit-Credits
+access-control-allow-origin: *
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 499
+x-ratelimit-reset: 0
+x-ratelimit-credits: 0
+strict-transport-security: max-age=31536000; includeSubDomains;
+
+{"hits":[{"point":{"lat":-23.5370962,"lng":-46.8359735},"extent":[-46.8374493,-23.5373596,-46.835665,-23.5370411],"name":"Rua Cafelândia","country":"Brasil","countrycode":"BR","city":"Carapicuíba","state":"São Paulo","postcode":"06321-665","osm_id":185327107,"osm_type":"W","osm_key":"highway","osm_value":"residential"}],"locale":"en"}

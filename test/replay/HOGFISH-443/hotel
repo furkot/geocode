@@ -1,0 +1,14 @@
+GET /api/poi?ll=-104.879164,39.591416&radius=100&provider=hotels
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx
+date: Wed, 04 May 2022 10:51:13 GMT
+content-type: application/json; charset=utf-8
+content-length: 517
+connection: close
+server-timing: 0; dur=2.40; desc="Request", 1; dur=2.25; desc="retrieve", 2; dur=0.00; desc="convert"
+vary: Origin
+
+[{"_id":"6261b3f9b6dd6407cd63bca1","name":"Hyatt House Denver Tech Center","ll":[-104.879164,39.591416],"address":"9280 E Costilla Ave","city":"Englewood","state":"CO","country":"United States","categories":["hcom","bookingdotcom"],"service":{"hcom":{"id":"249621:41715","rating":4.4,"rate":92.65,"currency":"USD","city_id":"1458415"},"bookingdotcom":{"id":520190,"rating":82,"rate":89,"currency":"USD","url":"https://www.booking.com/hotel/us/hyatt-house-denver-tech-center.html"}},"subcategories":["pets","hotels"]}]
