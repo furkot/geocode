@@ -1,20 +1,20 @@
-var should = require('should');
-var pelias = require('../../../lib/service/pelias');
+const should = require('should');
+const pelias = require('../../../lib/service/pelias');
 
 describe('pelias geocoding', function () {
 
-  var response;
-  var urlPrefix;
+  let response;
+  let urlPrefix;
 
   function request(url, req, fn) {
       url.should.startWith(urlPrefix);
       fn(undefined, response);
     }
 
-  var geocode = pelias({
+  const geocode = pelias({
     interval: 1,
     name: 'pelias',
-    request: request
+    request
   }).geocode;
 
 
@@ -27,7 +27,7 @@ describe('pelias geocoding', function () {
     response = require('./fixtures/forward');
     urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&api_key=';
 
-    var query = {
+    const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     geocode('forward', 1, query, {}, function (err, value, id, query, result) {
@@ -65,7 +65,7 @@ describe('pelias geocoding', function () {
     response = require('./fixtures/place');
     urlPrefix = 'https://api.openrouteservice.org/geocode/search?text=So%C5%82dek&lang=pl&api_key=';
 
-    var query = {
+    const query = {
       place: 'Sołdek',
       lang: 'pl'
     };
@@ -94,7 +94,7 @@ describe('pelias geocoding', function () {
     response = require('./fixtures/partial');
     urlPrefix = 'https://api.openrouteservice.org/geocode/autocomplete?text=arches%20national&api_key=';
 
-    var query = {
+    const query = {
       place: 'arches national',
       partial: true
     };
@@ -151,7 +151,7 @@ describe('pelias geocoding', function () {
     response = require('./fixtures/reverse');
     urlPrefix = 'https://api.openrouteservice.org/geocode/reverse?point.lon=14.5272&point.lat=-22.6792&api_key=';
 
-    var query = {
+    const query = {
       ll: [ 14.5272, -22.6792 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
@@ -176,7 +176,7 @@ describe('pelias geocoding', function () {
     response = require('./fixtures/address');
     urlPrefix = 'https://api.openrouteservice.org/geocode/reverse?point.lon=-118.9844711296318&point.lat=37.63593851131688&api_key=';
 
-    var query = {
+    const query = {
       ll: [ -118.9844711296318, 37.63593851131688 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {

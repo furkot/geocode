@@ -1,18 +1,18 @@
-var should = require('should');
+const should = require('should');
 
 describe('tilehosting geocoding', function () {
 
-  var response;
-  var geocode = require('../../../lib/service/tilehosting')({
+  let response;
+  const geocode = require('../../../lib/service/tilehosting')({
     interval: 1,
     name: 'tilehosting',
-    request: function (url, req, fn) {
+    request(url, req, fn) {
       fn(undefined, response);
     }
   }).geocode;
 
   it('forward', function (done) {
-    var query;
+    let query;
 
     response = require('./fixtures/forward');
 
@@ -52,7 +52,7 @@ describe('tilehosting geocoding', function () {
   });
 
   it('place', function (done) {
-    var query;
+    let query;
 
     response = require('./fixtures/place');
 
@@ -81,7 +81,7 @@ describe('tilehosting geocoding', function () {
   });
 
   it('reverse', function (done) {
-    var query;
+    let query;
 
     response = require('./fixtures/reverse');
 

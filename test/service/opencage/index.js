@@ -1,18 +1,18 @@
-var should = require('should');
+const should = require('should');
 
 describe('opencage geocoding', function () {
 
-  var response;
-  var geocode = require('../../../lib/service/opencage')({
+  let response;
+  const geocode = require('../../../lib/service/opencage')({
     interval: 1,
     name: 'opencage',
-    request: function (url, req, fn) {
+    request(url, req, fn) {
       fn(undefined, response);
     }
   }).geocode;
 
   it('forward', function (done) {
-    var query;
+    let query;
 
     response = require('./fixtures/forward');
 
@@ -51,7 +51,7 @@ describe('opencage geocoding', function () {
   });
 
   it('place', function (done) {
-    var query;
+    let query;
 
     response = require('./fixtures/place');
 
@@ -82,7 +82,7 @@ describe('opencage geocoding', function () {
   });
 
   it('reverse', function (done) {
-    var query;
+    let query;
 
     response = require('./fixtures/reverse');
 

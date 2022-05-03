@@ -1,5 +1,5 @@
-var should = require('should');
-var furkotGeocode = require('../lib/geocode');
+const should = require('should');
+const furkotGeocode = require('../lib/geocode');
 
 function mockService(queryId, query, result, fn) {
   fn(undefined, true, queryId, query, {
@@ -8,16 +8,18 @@ function mockService(queryId, query, result, fn) {
 }
 
 function timeService(timeout) {
-  var timeoutId, queryInProgress, callback;
+  let timeoutId;
+  let queryInProgress;
+  let callback;
   return {
-    geocode: function (queryId, query, result, fn) {
+    geocode(queryId, query, result, fn) {
       queryInProgress = query;
       callback = fn;
       timeoutId = setTimeout(function () {
         fn(undefined, false, queryId, query);
       }, timeout);
     },
-    abort: function (queryId) {
+    abort(queryId) {
       clearTimeout(timeoutId);
       callback(undefined, true, queryId, queryInProgress);
     }
@@ -82,17 +84,17 @@ describe('furkot-geocode node module', function () {
   });
 
   it('only enabled services', function () {
-    var options = {
-        opencage_enable: function () {}
+    const options = {
+        opencage_enable() {}
     };
-    var geocode = furkotGeocode(options);
+    const geocode = furkotGeocode(options);
     geocode.options.should.have.property('forward').with.length(1);
     geocode.options.should.have.property('reverse').with.length(1);
   });
 
   it('timeout', function (done) {
     this.slow(400);
-    var service = timeService(200);
+    const service = timeService(200);
     furkotGeocode({
       forward: [
         service.geocode

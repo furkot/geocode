@@ -1,20 +1,20 @@
-var should = require('should');
-var graphhopper = require('../../../lib/service/graphhopper');
+const should = require('should');
+const graphhopper = require('../../../lib/service/graphhopper');
 
 describe('graphhopper geocoding', function () {
 
-  var response;
-  var urlPrefix;
+  let response;
+  let urlPrefix;
 
   function request(url, req, fn) {
       url.should.startWith(urlPrefix);
       fn(undefined, response);
     }
 
-  var geocode = graphhopper({
+  const geocode = graphhopper({
     interval: 1,
     name: 'graphhopper',
-    request: request
+    request
   }).geocode;
 
 
@@ -27,7 +27,7 @@ describe('graphhopper geocoding', function () {
     response = require('./fixtures/forward');
     urlPrefix = 'https://graphhopper.com/api/1/geocode?q=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&key=';
 
-    var query = {
+    const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     geocode('forward', 1, query, {}, function (err, value, id, query, result) {
@@ -54,7 +54,7 @@ describe('graphhopper geocoding', function () {
     response = require('./fixtures/place');
     urlPrefix = 'https://graphhopper.com/api/1/geocode?q=So%C5%82dek&locale=pl&key=';
 
-    var query = {
+    const query = {
       place: 'Sołdek',
       lang: 'pl'
     };
@@ -83,7 +83,7 @@ describe('graphhopper geocoding', function () {
     response = require('./fixtures/partial');
     urlPrefix = 'https://graphhopper.com/api/1/geocode?q=main%20street&autocomplete=true&locale=en&key=';
 
-    var query = {
+    const query = {
       place: 'main street',
       lang: 'en',
       partial: true
@@ -158,7 +158,7 @@ describe('graphhopper geocoding', function () {
     response = require('./fixtures/reverse');
     urlPrefix = 'https://graphhopper.com/api/1/geocode?reverse=true&point=-22.6792,14.5272&key=';
 
-    var query = {
+    const query = {
       ll: [ 14.5272, -22.6792 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
@@ -186,7 +186,7 @@ describe('graphhopper geocoding', function () {
     response = require('./fixtures/reverse-usa');
     urlPrefix = 'https://graphhopper.com/api/1/geocode?reverse=true&point=48.41449636239881,-122.15166091920605&key=';
 
-    var query = {
+    const query = {
       ll: [ -122.15166091920605, 48.41449636239881 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {

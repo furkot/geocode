@@ -1,17 +1,17 @@
-var should = require('should');
-var hogfish = require('../../../lib/service/hogfish');
+const should = require('should');
+const hogfish = require('../../../lib/service/hogfish');
 
 describe('hogfish geocoding', function () {
 
-  var response;
-  var urlPrefix;
+  let response;
+  let urlPrefix;
 
   function request(url, req, fn) {
       url.should.startWith(urlPrefix);
       fn(undefined, response);
     }
 
-  var geocode = hogfish({
+  const geocode = hogfish({
     hogfish_url: '',
     hogfish_parameters: {
       types: {
@@ -25,7 +25,7 @@ describe('hogfish geocoding', function () {
     },
     interval: 1,
     name: 'hogfish',
-    request: request
+    request
   }).geocode;
 
 
@@ -38,7 +38,7 @@ describe('hogfish geocoding', function () {
     response = require('./fixtures/mygasfeed');
     urlPrefix = '?ll=-104.84865254181491,39.59469541023748&radius=100&provider=mygasfeed';
 
-    var query = {
+    const query = {
       place: 'Bradley',
       type: 'fillingstation',
       ll: [ -104.84865254181491, 39.59469541023748 ]
@@ -70,7 +70,7 @@ describe('hogfish geocoding', function () {
     response = require('./fixtures/hotels');
     urlPrefix = '?ll=-104.86893004223975,39.591537212725285&radius=100&provider=hotels';
 
-    var query = {
+    const query = {
       place: 'Embassy Suites Denver - Tech Center',
       type: 'hotel',
       ll: [ -104.86893004223975, 39.591537212725285 ]
