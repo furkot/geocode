@@ -71,11 +71,6 @@ service('opencage', {
   opencage_enable: function() { return true; },
   opencage_key: process.env.OPENCAGE_KEY
 });
-service('algolia', {
-  order: ['algolia'],
-  algolia_parameters: { interval : 1000 },
-  algolia_enable: function() { return true; }
-});
 service('tilehosting', {
   order: ['tilehosting'],
   tilehosting_parameters: { interval : 1000 },
