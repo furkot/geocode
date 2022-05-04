@@ -1,0 +1,29 @@
+GET /v1/forward?query=Golden%20Gate%20Bridge&access_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 14:41:11 GMT
+content-type: application/json
+transfer-encoding: chunked
+connection: close
+user-agent: node-fetch/1.0 (+https://github.com/bitinn/node-fetch)
+accept: application/json
+accept-encoding: gzip
+cache-control: no-cache, private
+x-apilayer-transaction-id: 226c5bc5-30a1-43ee-99d6-268fcbd9e48a
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, HEAD, OPTIONS
+access-control-allow-headers: *
+x-quota-limit: 25000
+x-quota-remaining: 24999
+x-increment-usage: 1
+x-request-time: 0.314
+cf-cache-status: DYNAMIC
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=V79HeD%2BmNR4um01t2mnY3ytgxW0OS%2FIwVLPbS91Z8UOWCtNij3cuJIi79atOL2DhpX%2F3lc9n4w7eCplzzVc5aCqUqjA9E65U3MmObxyipGvhW5RLgMDS2sbv3FPiB0g6yTw0QzlyphM%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 7061feed3b145fb3-MRS
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{"data":[{"latitude":37.822118,"longitude":-122.478861,"type":"venue","name":"Golden Gate Bridge","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"California","region_code":"CA","county":"San Francisco County","locality":"San Francisco","administrative_area":null,"neighbourhood":null,"country":"United States","country_code":"USA","continent":"North America","label":"Golden Gate Bridge, San Francisco, CA, USA"},{"latitude":33.12813,"longitude":-117.311466,"type":"venue","name":"Lego Golden Gate Bridge","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"California","region_code":"CA","county":"San Diego County","locality":"Carlsbad","administrative_area":null,"neighbourhood":null,"country":"United States","country_code":"USA","continent":"North America","label":"Lego Golden Gate Bridge, Carlsbad, CA, USA"},{"latitude":37.872453,"longitude":-122.452319,"type":"venue","name":"on Golden Gate Bridge","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"California","region_code":"CA","county":"Marin County","locality":"Tiburon","administrative_area":null,"neighbourhood":null,"country":"United States","country_code":"USA","continent":"North America","label":"on Golden Gate Bridge, Tiburon, CA, USA"},{"latitude":40.46097,"longitude":-123.84143,"type":"venue","name":"Little Golden Gate Bridge","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"California","region_code":"CA","county":"Humboldt County","locality":null,"administrative_area":null,"neighbourhood":null,"country":"United States","country_code":"USA","continent":"North America","label":"Little Golden Gate Bridge, Humboldt County, CA, USA"},{"latitude":52.518431,"longitude":-1.459027,"type":"venue","name":"Golden Gate Bridge Chinese","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Warwickshire","region_code":null,"county":"Warwickshire","locality":"Nuneaton","administrative_area":null,"neighbourhood":"Attleborough","country":"United Kingdom","country_code":"GBR","continent":"Europe","label":"Golden Gate Bridge Chinese, Nuneaton, England, United Kingdom"},{"latitude":45.29854,"longitude":-111.20356,"type":"venue","name":"Gallatin Golden Gate Bridge","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Montana","region_code":"MT","county":"Gallatin County","locality":null,"administrative_area":null,"neighbourhood":null,"country":"United States","country_code":"USA","continent":"North America","label":"Gallatin Golden Gate Bridge, Gallatin County, MT, USA"},{"latitude":37.807052,"longitude":-122.475332,"type":"venue","name":"Golden Gate Bridge Toll Plaza","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"California","region_code":"CA","county":"San Francisco County","locality":"San Francisco","administrative_area":null,"neighbourhood":"Presidio","country":"United States","country_code":"USA","continent":"North America","label":"Golden Gate Bridge Toll Plaza, San Francisco, CA, USA"},{"latitude":37.806464,"longitude":-122.476165,"type":"venue","name":"Golden Gate Bridge South Parking","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"California","region_code":"CA","county":"San Francisco County","locality":"San Francisco","administrative_area":null,"neighbourhood":"Presidio","country":"United States","country_code":"USA","continent":"North America","label":"Golden Gate Bridge South Parking, San Francisco, CA, USA"},{"latitude":37.832287,"longitude":-122.479636,"type":"venue","name":"Golden Gate Bridge Vista Point","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"California","region_code":"CA","county":"Marin County","locality":null,"administrative_area":null,"neighbourhood":null,"country":"United States","country_code":"USA","continent":"North America","label":"Golden Gate Bridge Vista Point, Marin County, CA, USA"},{"latitude":26.184101,"longitude":-81.702891,"type":"venue","name":"Golden Gate Community Center","number":"4701","postal_code":"34116","street":"Golden Gate Parkway","confidence":0.8,"region":"Florida","region_code":"FL","county":"Collier County","locality":"Naples","administrative_area":null,"neighbourhood":null,"country":"United States","country_code":"USA","continent":"North America","label":"Golden Gate Community Center, Naples, FL, USA"}]}
