@@ -3,17 +3,17 @@
 
 mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
 
-var furkotGeocode = require('..');
-var maps = require('maps-facade').init({ service: 'mapbox' }, onMapInit);
+const furkotGeocode = require('..');
+const maps = require('maps-facade').init({ service: 'mapbox' }, onMapInit);
 
-var ll = document.getElementById('ll');
-var template = document.querySelector('#service');
-var geocodersEl = document.querySelector('#geocoders');
-var searchFormEl = document.querySelector('.search-form');
+const ll = document.getElementById('ll');
+const template = document.querySelector('#service');
+const geocodersEl = document.querySelector('#geocoders');
+const searchFormEl = document.querySelector('.search-form');
 
 function onMapInit() {
-  var mapEl = document.getElementById('map');
-  var map = maps.map(mapEl, {
+  const mapEl = document.getElementById('map');
+  const map = maps.map(mapEl, {
     style: process.env.MAP_STYLE,
     zoomControl: true,
     zoomControlOptions: { position: 'RB' },
@@ -25,26 +25,35 @@ function onMapInit() {
     ll.value = event.ll[0].toFixed(6) + ', ' + event.ll[1].toFixed(6);
     window.dispatchEvent(new CustomEvent('ll', { detail: {
       ll: event.ll,
-      max: searchFormEl.max.value
+      max: searchFormEl.max.value,
+      type: searchFormEl.place.value
     }}));
   });
 
   searchFormEl.addEventListener('submit', function(event) {
     event.preventDefault();
-    if (searchFormEl.place.value) {
-      var detail = {
+    const placeOrAddress = searchFormEl.place.value;
+    if (placeOrAddress) {
+      const detail = {
         bounds: map.bounds(),
-        place: searchFormEl.place.value,
         max: searchFormEl.max.value
       };
-      window.dispatchEvent(new CustomEvent('place', { detail: detail }));
+      if (searchFormEl.type.value === 'address') {
+        detail.address = placeOrAddress;
+      } else {
+        detail.place = placeOrAddress;
+      }
+      if (searchFormEl.partial.checked) {
+        detail.partial = true;
+      }
+      window.dispatchEvent(new CustomEvent('place', { detail }));
     }
     else if (searchFormEl.ll.value) {
-      var ll = searchFormEl.ll.value.split(',').map(function (l) {
+      const ll = searchFormEl.ll.value.split(',').map(function (l) {
         return parseFloat(l.trim());
       });
       window.dispatchEvent(new CustomEvent('ll', { detail: {
-        ll: ll,
+        ll,
         max: searchFormEl.max.value
       }}));
     }
@@ -53,68 +62,85 @@ function onMapInit() {
 
 // register services
 
-service('graphhopper', {
-  order: ['graphhopper'],
-  graphhopper_parameters: { interval : 1000 },
-  graphhopper_enable: function() { return true; },
-  graphhopper_key: process.env.GRAPHHOPPER_KEY
-});
-service('openroute', {
-  order: ['openroute'],
-  openroute_parameters: { interval : 1000 },
-  openroute_enable: function() { return true; },
-  openroute_key: process.env.OPENROUTE_KEY
-});
-service('opencage', {
-  order: ['opencage'],
-  opencage_parameters: { interval : 1000 },
-  opencage_enable: function() { return true; },
-  opencage_key: process.env.OPENCAGE_KEY
-});
-service('algolia', {
-  order: ['algolia'],
-  algolia_parameters: { interval : 1000 },
-  algolia_enable: function() { return true; }
-});
-service('tilehosting', {
-  order: ['tilehosting'],
-  tilehosting_parameters: { interval : 1000 },
-  tilehosting_enable: function() { return true; },
-  tilehosting_key: process.env.TILEHOSTING_KEY
-});
-service('locationiq', {
-  order: ['locationiq'],
-  locationiq_parameters: { interval : 1000 },
-  locationiq_enable: function() { return true; },
-  locationiq_key: process.env.LOCATIONIQ_KEY
-});
-service('geocodio', {
-  order: ['geocodio'],
-  geocodio_parameters: { interval : 1000 },
-  geocodio_enable: function() { return true; },
-  geocodio_key: process.env.GEOCODIO_KEY
-});
+if (process.env.GEOCODIO_KEY) {
+  service('geocodio', {
+    order: ['geocodio'],
+    geocodio_parameters: { interval : 1000 },
+    geocodio_enable() { return true; },
+    geocodio_key: process.env.GEOCODIO_KEY
+  });
+}
+if (process.env.GRAPHHOPPER_KEY) {
+  service('graphhopper', {
+    order: ['graphhopper'],
+    graphhopper_parameters: { interval : 1000 },
+    graphhopper_enable() { return true; },
+    graphhopper_key: process.env.GRAPHHOPPER_KEY
+  });
+}
+if (process.env.HOGFISH_KEY) {
+  service('hogfish', {
+    order: ['hogfish'],
+    hogfish_parameters: {
+      interval: 1000,
+      types: {
+        hotel: [
+          'provider=hotels'
+        ],
+        fillingstation: [
+          'provider=fuel'
+        ]
+      }
+    },
+    hogfish_enable() { return true; },
+    hogfish_url: process.env.HOGFISH_URL
+  });
+}
+if (process.env.LOCATIONIQ_KEY) {
+  service('locationiq', {
+    order: ['locationiq'],
+    locationiq_parameters: { interval : 1000 },
+    locationiq_enable() { return true; },
+    locationiq_key: process.env.LOCATIONIQ_KEY
+  });
+}
+if (process.env.OPENCAGE_KEY) {
+  service('opencage', {
+    order: ['opencage'],
+    opencage_parameters: { interval : 1000 },
+    opencage_enable() { return true; },
+    opencage_key: process.env.OPENCAGE_KEY
+  });
+}
+if (process.env.OPENROUTE_KEY) {
+  service('openroute', {
+    order: ['pelias'],
+    pelias_parameters: { interval : 1000 },
+    pelias_enable() { return true; },
+    pelias_key: process.env.OPENROUTE_KEY
+  });
+}
+if (process.env.TILEHOSTING_KEY) {
+  service('tilehosting', {
+    order: ['tilehosting'],
+    tilehosting_parameters: { interval : 1000 },
+    tilehosting_enable() { return true; },
+    tilehosting_key: process.env.TILEHOSTING_KEY
+  });
+}
 
 function service(name, options) {
-  var resultEl = appendTo(geocodersEl, template);
-  var geocode = furkotGeocode(options);
+  const resultEl = appendTo(geocodersEl, template);
+  const geocode = furkotGeocode(options);
 
   function onLocationChange(event) {
     resultEl.classList.add('in-progress');
-    geocode({
-      ll: event.detail.ll,
-      max: event.detail.max
-    }, onResults);
+    geocode(event.detail, onResults);
   }
 
   function onSearch(event) {
     resultEl.classList.add('in-progress');
-    geocode({
-      place: event.detail.place,
-      bounds: event.detail.bounds,
-      max: event.detail.max,
-      partial: true
-    }, onResults);
+    geocode(event.detail, onResults);
   }
 
   function onResults(res) {
@@ -130,9 +156,9 @@ function service(name, options) {
 
   function appendTo(geocodersEl, template) {
     // Clone the new row and insert it into the table
-    var resultbox = document.importNode(template.content, true);
+    const resultbox = document.importNode(template.content, true);
     resultbox.querySelector('label').innerHTML = name;
-    var resultEl = resultbox.querySelector('textarea');
+    const resultEl = resultbox.querySelector('textarea');
     geocodersEl.appendChild(resultbox);
     return resultEl;
   }

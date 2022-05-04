@@ -1,12 +1,12 @@
-var should = require('should');
-var synchronous = require('../../../lib/service/synchronous');
+const should = require('should');
+const synchronous = require('../../../lib/service/synchronous');
 
 describe('synchronous geocoding', function () {
 
-  var geocode = synchronous({
+  const geocode = synchronous({
     name: 'local',
     synchronous_parameters: {
-      response: function (query) {
+      response(query) {
         if (query.place === 'Sołdek') {
           return [{
             ll: [ 18.658663, 54.351444 ],
@@ -18,7 +18,7 @@ describe('synchronous geocoding', function () {
   }).geocode;
 
   it('place', function (done) {
-    var query = {
+    const query = {
       place: 'Sołdek',
       lang: 'pl'
     };

@@ -1,0 +1,14 @@
+GET /api/poi?ll=-104.86063,39.59278&radius=100&provider=fuel
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx
+date: Wed, 04 May 2022 10:45:53 GMT
+content-type: application/json; charset=utf-8
+content-length: 632
+connection: close
+server-timing: 0; dur=3.06; desc="Request", 1; dur=2.72; desc="retrieve", 2; dur=0.05; desc="inquire", 3; dur=0.03; desc="convert"
+vary: Origin
+
+[{"_id":"62522411e87a2c1c6fd08a3f","name":"Murphy Express","ll":[-104.86063,39.59278],"address":"11005 E Briarwood Ave","city":"Centennial","state":"CO","phone":"303-708-1139","summary":"ethanol-free MURPHY 87; GPS located from address","categories":["pure_gas","osm"],"subcategories":["ethanol-free","gasoline"],"url":"https://www.pure-gas.org/station?station_id=40499","reviews_url":"https://www.pure-gas.org/station?station_id=40499","service":{"pure_gas":{"id":"40499","name":"Murphy Express","address":"11005 E Briarwood Ave","url":"https://www.pure-gas.org/station?station_id=40499"},"osm":{"id":"0000000041fc198163200000"}}}]

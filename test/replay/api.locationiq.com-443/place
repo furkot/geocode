@@ -1,0 +1,19 @@
+GET /v1/search.php?q=So%C5%82dek&accept-language=pl&addressdetails=1&normalizecity=1&format=json&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 10:59:18 GMT
+content-type: application/json; charset=UTF-8
+transfer-encoding: chunked
+connection: close
+x-powered-by: LocationIQ
+access-control-allow-origin: *
+cf-cache-status: DYNAMIC
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=XN0lPrZ6JBEIMFUIUuzZtWPkiz8MZKXLXJWT8ZO%2B1jhlXQAPHIfzmBNQYyDAsQ8KKqY7UvigxW0%2B9%2Fk3CwwkpIlymW%2B8SoHxoX4%2FRcXCD5rhZa7bPxINpj2TLwv8SgRhlUALpQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 7060b9e6f8640dfe-MXP
+
+[{"place_id":"125867085","licence":"https:\/\/locationiq.com\/attribution","osm_type":"way","osm_id":"125199669","boundingbox":["54.3510622","54.3518365","18.6584808","18.6587941"],"lat":"54.35145095","lon":"18.658631239705393","display_name":"SS So\u0142dek, D\u0142ugie Pobrze\u017ce, Wyspa Spichrz\u00f3w, \u015ar\u00f3dmie\u015bcie, Gda\u0144sk, wojew\u00f3dztwo pomorskie, 80-838, Polska","class":"tourism","type":"museum","importance":0.5212025191455594,"icon":"https:\/\/locationiq.org\/static\/images\/mapicons\/tourist_museum.p.20.png","address":{"museum":"SS So\u0142dek","road":"D\u0142ugie Pobrze\u017ce","neighbourhood":"Wyspa Spichrz\u00f3w","suburb":"\u015ar\u00f3dmie\u015bcie","city":"Gda\u0144sk","state":"wojew\u00f3dztwo pomorskie","postcode":"80-838","country":"Polska","country_code":"pl"}}]

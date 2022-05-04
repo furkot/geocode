@@ -1,49 +1,35 @@
-var should = require('should');
+const should = require('should');
+const tilehosting = require('../../../lib/service/tilehosting');
 
 describe('tilehosting geocoding', function () {
 
-  var response;
-  var geocode = require('../../../lib/service/tilehosting')({
+  const { geocode } = tilehosting({
     interval: 1,
     name: 'tilehosting',
-    request: function (url, req, fn) {
-      fn(undefined, response);
-    }
-  }).geocode;
+    tilehosting_key: process.env.TILEHOSTING_KEY || 'furkot'
+  });
 
   it('forward', function (done) {
-    var query;
 
-    response = require('./fixtures/forward');
-
-    query = {
-      address: '211 Lincoln St, Bost'
+    const query = {
+      address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     geocode('forward', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(20);
+      result.should.have.property('places').with.length(9);
       result.places[0].should.deepEqual({
-        ll: [ -71.059547, 42.299793 ],
-        type: 'residential',
-        place: 'Lincoln Street',
-        address: 'Lincoln Street, Boston, MA, USA',
-        street: 'Lincoln Street',
-        town: 'Boston',
-        province: 'MA',
-        country: 'USA'
+        ll: [ -46.8365592, -23.5372062 ],
+        type: 'street',
+        place: 'Rua Cafelândia',
+        address: 'Carapicuíba, Região Metropolitana de São Paulo, São Paulo'
       });
       result.places[1].should.deepEqual({
-        ll: [ 18.618427, -33.892246 ],
-        type: 'residential',
-        place: 'Upper Lincoln Street',
-        address: 'Upper Lincoln Street, Boston, City of Cape Town, Western Cape, South Africa',
-        street: 'Upper Lincoln Street',
-        town: 'Boston',
-        county: 'City of Cape Town',
-        province: 'Western Cape',
-        country: 'South Africa'
+        ll: [ -46.8900124, -23.4851747 ],
+        type: 'street',
+        place: 'Rua Cafelândia',
+        address: 'Barueri, Região Metropolitana de São Paulo, São Paulo'
       });
       result.should.have.property('provider', 'tilehosting');
       result.should.have.property('stats', ['tilehosting']);
@@ -52,27 +38,20 @@ describe('tilehosting geocoding', function () {
   });
 
   it('place', function (done) {
-    var query;
 
-    response = require('./fixtures/place');
-
-    query = {
-      place: 'Golden Gate'
+    const query = {
+      place: 'Golden Gate Bridge'
     };
     geocode('forward', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(20);
+      result.should.have.property('places').with.length(17);
       result.places[0].should.deepEqual({
-        ll: [ -122.477516, 37.809631 ],
+        ll: [ -122.4773342, 37.8096796 ],
+        type: 'street',
         place: 'Golden Gate Bridge',
-        type: 'cycleway,motorway',
-        address: 'San Francisco, San Francisco City and County, CA, USA',
-        town: 'San Francisco',
-        county: 'San Francisco City and County',
-        province: 'CA',
-        country: 'USA'
+        address: 'San Francisco, San Francisco City and County, California'
       });
       result.should.have.property('provider', 'tilehosting');
       result.should.have.property('stats', ['tilehosting']);
@@ -81,26 +60,20 @@ describe('tilehosting geocoding', function () {
   });
 
   it('reverse', function (done) {
-    var query;
 
-    response = require('./fixtures/reverse');
-
-    query = {
+    const query = {
       ll: [ 14.5272, -22.6792 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(1);
+      result.should.have.property('places').with.length(3);
       result.places[0].should.deepEqual({
-        ll: [ 14.526695, -22.679302 ],
+        ll: [ 14.526695, -22.6793015 ],
+        type: 'street',
         place: 'Woermann St',
-        type: 'residential',
-        address: 'Woermann St, Erongo Region, Namibia',
-        street: 'Woermann St',
-        province: 'Erongo Region',
-        country: 'Namibia'
+        address: 'Erongo Region'
       });
       result.should.have.property('provider', 'tilehosting');
       result.should.have.property('stats', ['tilehosting']);

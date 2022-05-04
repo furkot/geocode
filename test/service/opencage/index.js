@@ -1,22 +1,17 @@
-var should = require('should');
+const should = require('should');
+const opencage = require('../../../lib/service/opencage');
 
 describe('opencage geocoding', function () {
 
-  var response;
-  var geocode = require('../../../lib/service/opencage')({
+  const { geocode } = opencage({
     interval: 1,
     name: 'opencage',
-    request: function (url, req, fn) {
-      fn(undefined, response);
-    }
-  }).geocode;
+    opencage_key: process.env.OPENCAGE_KEY || 'furkot'
+  });
 
   it('forward', function (done) {
-    var query;
 
-    response = require('./fixtures/forward');
-
-    query = {
+    const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     geocode('forward', 1, query, {}, function (err, value, id, query, result) {
@@ -25,13 +20,13 @@ describe('opencage geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(2);
       result.places[0].should.deepEqual({
-        ll: [ -46.8356555, -23.5370391 ],
+        ll: [ -46.8359735, -23.5370962 ],
         type: 'road',
         place: 'Rua Cafelândia',
-        address: 'Rua Cafelândia, Carapicuíba - SP, 06381-010, Brazil',
+        address: 'Rua Cafelândia, Parque José Alexandre, Carapicuíba - SP, 06321-665, Brazil',
         street: 'Rua Cafelândia',
         town: 'Carapicuíba',
-        county: 'Microrregião de Osasco',
+        county: 'Região Metropolitana de São Paulo',
         province: 'SP',
         country: 'Brazil'
       });
@@ -51,11 +46,8 @@ describe('opencage geocoding', function () {
   });
 
   it('place', function (done) {
-    var query;
 
-    response = require('./fixtures/place');
-
-    query = {
+    const query = {
       place: 'Sołdek',
       lang: 'pl'
     };
@@ -65,14 +57,14 @@ describe('opencage geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ 18.6586892, 54.3515282 ],
+        ll: [ 18.6586312, 54.351451 ],
         place: 'SS Sołdek',
         type: 'museum',
-        address: 'Długie Pobrzeże, 80-751 Gdańsk, Polska',
+        address: 'Długie Pobrzeże, 80-838 Gdańsk, Polska',
         street: 'Długie Pobrzeże',
-        community: 'Ołowianka',
+        community: 'Wyspa Spichrzów',
         town: 'Gdańsk',
-        county: 'Gdańsk',
+        province: '22',
         country: 'Polska'
       });
       result.should.have.property('provider', 'opencage');
@@ -82,11 +74,8 @@ describe('opencage geocoding', function () {
   });
 
   it('reverse', function (done) {
-    var query;
 
-    response = require('./fixtures/reverse');
-
-    query = {
+    const query = {
       ll: [ 14.5272, -22.6792 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
@@ -98,7 +87,7 @@ describe('opencage geocoding', function () {
         ll: [ 14.5268016, -22.6791826 ],
         place: 'Beryl\'s Restaurant',
         type: 'restaurant',
-        address: 'Woermann St, Swakopmund, Namibia',
+        address: 'Woermann St, Swakopmund 22001, Namibia',
         street: 'Woermann St',
         town: 'Swakopmund',
         country: 'Namibia'

@@ -1,0 +1,19 @@
+GET /geocode/v1/json?q=-22.6792+14.5272&no_annotations=1&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 11:28:17 GMT
+server: Apache
+access-control-allow-origin: *
+x-ratelimit-limit: 2500
+x-ratelimit-remaining: 2497
+x-ratelimit-reset: 1651708800
+vary: Accept-Encoding
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+content-type: application/json; charset=utf-8
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+connection: close
+
+{"documentation":"https://opencagedata.com/api","licenses":[{"name":"see attribution guide","url":"https://opencagedata.com/credits"}],"rate":{"limit":2500,"remaining":2497,"reset":1651708800},"results":[{"bounds":{"northeast":{"lat":-22.6791326,"lng":14.5268516},"southwest":{"lat":-22.6792326,"lng":14.5267516}},"components":{"ISO_3166-1_alpha-2":"NA","ISO_3166-1_alpha-3":"NAM","_category":"commerce","_type":"restaurant","city":"Swakopmund","continent":"Africa","country":"Namibia","country_code":"na","postcode":"22001","restaurant":"Beryl's Restaurant","road":"Woermann St","state":"Erongo Region","suburb":"Central"},"confidence":9,"formatted":"Beryl's Restaurant, Woermann St, Swakopmund 22001, Namibia","geometry":{"lat":-22.6791826,"lng":14.5268016}}],"status":{"code":200,"message":"OK"},"stay_informed":{"blog":"https://blog.opencagedata.com","twitter":"https://twitter.com/OpenCage"},"thanks":"For using an OpenCage API","timestamp":{"created_http":"Wed, 04 May 2022 11:28:17 GMT","created_unix":1651663697},"total_results":1}

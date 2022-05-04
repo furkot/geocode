@@ -1,33 +1,17 @@
-var should = require('should');
-var graphhopper = require('../../../lib/service/graphhopper');
+const should = require('should');
+const graphhopper = require('../../../lib/service/graphhopper');
 
 describe('graphhopper geocoding', function () {
 
-  var response;
-  var urlPrefix;
-
-  function request(url, req, fn) {
-      url.should.startWith(urlPrefix);
-      fn(undefined, response);
-    }
-
-  var geocode = graphhopper({
+  const { geocode } = graphhopper({
     interval: 1,
     name: 'graphhopper',
-    request: request
-  }).geocode;
-
-
-  beforeEach(function() {
-    response = undefined;
-    urlPrefix = undefined;
+    graphhopper_key: process.env.GRAPHHOPPER_KEY || 'furkot'
   });
 
   it('forward', function (done) {
-    response = require('./fixtures/forward');
-    urlPrefix = 'https://graphhopper.com/api/1/geocode?q=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&key=';
 
-    var query = {
+    const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     geocode('forward', 1, query, {}, function (err, value, id, query, result) {
@@ -36,13 +20,13 @@ describe('graphhopper geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ -46.8356555, -23.5370391 ],
+        ll: [ -46.8359735, -23.5370962 ],
         type: 'residential',
         street: 'Rua Cafelândia',
-        address: 'Rua Cafelândia, Carapicuíba, São Paulo, Brazil',
+        address: 'Rua Cafelândia, Carapicuíba, São Paulo, Brasil',
         town: 'Carapicuíba',
         province: 'São Paulo',
-        country: 'Brazil'
+        country: 'Brasil'
       });
       result.should.have.property('provider', 'graphhopper');
       result.should.have.property('stats', ['graphhopper']);
@@ -51,10 +35,8 @@ describe('graphhopper geocoding', function () {
   });
 
   it('place', function (done) {
-    response = require('./fixtures/place');
-    urlPrefix = 'https://graphhopper.com/api/1/geocode?q=So%C5%82dek&locale=pl&key=';
 
-    var query = {
+    const query = {
       place: 'Sołdek',
       lang: 'pl'
     };
@@ -62,7 +44,7 @@ describe('graphhopper geocoding', function () {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(2);
+      result.should.have.property('places').with.length(4);
       result.places[0].should.deepEqual({
         ll: [ 18.65868924925842, 54.351528200000004 ],
         place: 'SS Sołdek',
@@ -80,10 +62,8 @@ describe('graphhopper geocoding', function () {
   });
 
   it('partial', function (done) {
-    response = require('./fixtures/partial');
-    urlPrefix = 'https://graphhopper.com/api/1/geocode?q=main%20street&autocomplete=true&locale=en&key=';
 
-    var query = {
+    const query = {
       place: 'main street',
       lang: 'en',
       partial: true
@@ -92,61 +72,46 @@ describe('graphhopper geocoding', function () {
       should.not.exist(err);
       value.should.equal(true);
       should.exist(result);
-      result.should.have.property('places').with.length(6);
+      result.should.have.property('places').with.length(5);
       result.places[0].should.deepEqual({
-        ll:  [ -117.91884953319028, 33.8111284 ],
-        type: 'locality',
-        place: 'Main Street',
-        town: 'Anaheim',
-        province: 'CA',
+        ll: [ -73.1745473, 42.4750847 ],
+        type: 'peak',
         country: 'USA',
-        address: 'Anaheim, CA, USA'
+        place: 'Main Street Cemetery',
+        address: 'USA'
       });
       result.places[1].should.deepEqual({
-        ll:  [ -81.58111014981344, 28.41769265 ],
-        type: 'locality',
-        place: 'Main Street, U.S.A.',
-        town: 'Bay Lake',
-        province: 'FL',
+        ll: [ -69.2728254, 44.8350646 ],
+        type: 'dam',
         country: 'USA',
-        address: 'Bay Lake, FL, USA'
+        place: 'Main Street Dam',
+        address: 'USA'
       });
       result.places[2].should.deepEqual({
-        ll:  [ -5.353107, 36.1360903 ],
-        type: 'tertiary',
+        ll: [ -71.086670478147, 42.36274665 ],
+        type: 'construction',
+        housenumber: '325',
         street: 'Main Street',
-        town: 'Gibraltar',
-        province: 'Gibraltar',
-        country: 'Gibraltar',
-        address: 'Main Street, Gibraltar, Gibraltar, Gibraltar'
+        town: 'Cambridge',
+        province: 'MA',
+        country: 'USA',
+        place: '325 Main Street',
+        address: 'Main Street, Cambridge, MA, USA'
       });
       result.places[3].should.deepEqual({
-        ll:  [ -122.96360111945452, 45.52141375 ],
-        type: 'bridge',
-        place: 'Main Street Bridge',
-        street: 'East Main Street',
-        town: 'Hillsboro',
-        province: 'OR',
+        ll: [ -71.6192199, 42.5524712 ],
+        type: 'dam',
         country: 'USA',
-        address: 'East Main Street, Hillsboro, OR, USA'
+        place: 'West Main Street Dam',
+        address: 'USA'
       });
       result.places[4].should.deepEqual({
-        ll:  [ 2.7777104437086084, 48.8718797 ],
-        type: 'living_street',
-        street: 'Main Street',
-        town: 'Chessy',
-        province: 'Ile-de-France',
-        country: 'France',
-        address: 'Main Street, Chessy, Ile-de-France, France'
-      });
-      result.places[5].should.deepEqual({
-        ll:  [ -105.2653362, 40.2227082 ],
-        type: 'primary',
-        street: 'Main Street',
-        town: 'Lyons',
-        province: 'CO',
-        country: 'USA',
-        address: 'Main Street, Lyons, CO, USA'
+        ll: [ -10.6756677, 6.5080848 ],
+        type: 'hamlet',
+        province: 'Montserrado County',
+        country: 'Liberia',
+        place: 'Main Street',
+        address: 'Montserrado County, Liberia'
       });
       result.should.have.property('provider', 'graphhopper');
       result.should.have.property('stats', ['graphhopper']);
@@ -155,10 +120,8 @@ describe('graphhopper geocoding', function () {
   });
 
   it('reverse', function (done) {
-    response = require('./fixtures/reverse');
-    urlPrefix = 'https://graphhopper.com/api/1/geocode?reverse=true&point=-22.6792,14.5272&key=';
 
-    var query = {
+    const query = {
       ll: [ 14.5272, -22.6792 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
@@ -182,12 +145,10 @@ describe('graphhopper geocoding', function () {
     });
   });
 
-  it('reverse', function (done) {
-    response = require('./fixtures/reverse-usa');
-    urlPrefix = 'https://graphhopper.com/api/1/geocode?reverse=true&point=48.41449636239881,-122.15166091920605&key=';
+  it('reverse usa', function (done) {
 
-    var query = {
-      ll: [ -122.15166091920605, 48.41449636239881 ]
+    const query = {
+      ll: [ -111.400596, 45.284265 ]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -195,50 +156,53 @@ describe('graphhopper geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(5);
       result.places[0].should.deepEqual({
-        ll: [ -122.142095, 48.4251065 ],
-        place: 'Cultus Mountain',
-        type: 'peak',
-        address: 'WA, USA',
-        province: 'WA',
-        country: 'USA'
+        ll: [ -111.40065600201527, 45.284264 ],
+        type: 'yes',
+        street: 'Black Eagle',
+        province: 'MT',
+        country: 'USA',
+        place: 'Mountain Mall',
+        address: 'Black Eagle, MT, USA'
       });
       result.places[1].should.deepEqual({
-        ll: [ -122.17509247364865, 48.39710575 ],
-        place: 'Devil\'s Rock Garden',
-        type: 'bare_rock',
-        address: 'Waterfall Trail, Montborne, WA, USA',
-        street: 'Waterfall Trail',
-        town: 'Montborne',
-        province: 'WA',
-        country: 'USA'
+        ll: [ -111.4011158, 45.2839783 ],
+        type: 'sports_centre',
+        housenumber: '50',
+        street: 'Big Sky Resort Road',
+        town: 'Big Sky',
+        province: 'MT',
+        country: 'USA',
+        place: 'Big Sky Resort',
+        address: 'Big Sky Resort Road, Big Sky, MT, USA'
       });
       result.places[2].should.deepEqual({
-        ll: [ -122.1852829, 48.3995692 ],
-        type: 'track',
-        address: 'Snohomish Lane, Montborne, WA, USA',
-        street: 'Snohomish Lane',
-        town: 'Montborne',
-        province: 'WA',
-        country: 'USA'
+        ll: [ -111.40110501870444, 45.284622 ],
+        type: 'yes',
+        street: 'Black Eagle',
+        province: 'MT',
+        country: 'USA',
+        place: 'Basecamp',
+        address: 'Black Eagle, MT, USA'
       });
       result.places[3].should.deepEqual({
-        ll: [ -122.18286687388566, 48.397359550000004 ],
-        place: 'Fire Mountain Scout Reservation',
-        type: 'park',
-        address: 'Montborne, WA, USA',
-        town: 'Montborne',
-        province: 'WA',
-        country: 'USA'
+        ll: [ -111.4015212, 45.2842756 ],
+        type: 'bicycle_rental',
+        street: 'Mountain to Meadow',
+        town: 'Big Sky',
+        province: 'MT',
+        country: 'USA',
+        place: 'Different Spokes',
+        address: 'Mountain to Meadow, Big Sky, MT, USA'
       });
       result.places[4].should.deepEqual({
-        ll: [ -122.183105, 48.3962283 ],
-        place: 'Miners\' Cave',
-        type: 'cave_entrance',
-        address: 'Klahowya Road, Montborne, WA, USA',
-        street: 'Klahowya Road',
-        town: 'Montborne',
-        province: 'WA',
-        country: 'USA'
+        ll: [ -111.40158763890292, 45.284196300000005 ],
+        type: 'yes',
+        street: 'Mountain to Meadow',
+        town: 'Big Sky',
+        province: 'MT',
+        country: 'USA',
+        place: 'Snowcrest Lodge',
+        address: 'Mountain to Meadow, Big Sky, MT, USA'
       });
       result.should.have.property('provider', 'graphhopper');
       result.should.have.property('stats', ['graphhopper']);

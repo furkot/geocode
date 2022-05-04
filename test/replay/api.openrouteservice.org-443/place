@@ -1,0 +1,24 @@
+GET /geocode/search?text=So%C5%82dek&lang=pl&api_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx/1.21.4
+date: Tue, 03 May 2022 22:19:04 GMT
+content-type: application/json; charset=utf-8
+content-length: 2746
+connection: close
+access-control-allow-headers: X-Requested-With,content-type, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Authorization, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+access-control-allow-methods: GET, OPTIONS, OPTIONS,GET,POST
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"aba-s6fXbLYnJteK5MaMPpjtP/3EFLc"
+x-powered-by: pelias
+x-ratelimit-limit: 1000
+x-ratelimit-remaining: 994
+x-ratelimit-reset: 1651701952
+x-robots-tag: none
+access-control-expose-headers: x-ratelimit-remaining, x-ratelimit-reset, x-ratelimit-limit
+
+{"geocoding":{"version":"0.2","attribution":"https://openrouteservice.org/terms-of-service/#attribution-geocode","query":{"text":"Sołdek","size":10,"layers":["venue","street","country","macroregion","region","county","localadmin","locality","borough","neighbourhood","continent","empire","dependency","macrocounty","macrohood","microhood","disputed","postalcode","ocean","marinearea"],"private":false,"lang":{"name":"Polish","iso6391":"pl","iso6393":"pol","via":"querystring","defaulted":false},"querySize":20,"parser":"pelias","parsed_text":{"subject":"Sołdek"}},"warnings":["performance optimization: excluding 'address' layer"],"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1651616344685},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[18.658675,54.351453]},"properties":{"id":"way/125199669","gid":"openstreetmap:venue:way/125199669","layer":"venue","source":"openstreetmap","source_id":"way/125199669","name":"SS Sołdek","confidence":1,"match_type":"exact","accuracy":"point","country":"Polska","country_gid":"whosonfirst:country:85633723","country_a":"POL","region":"pomorskie","region_gid":"whosonfirst:region:85687267","region_a":"PM","county":"Gdańsk","county_gid":"whosonfirst:county:102080225","localadmin":"Gdańsk","localadmin_gid":"whosonfirst:localadmin:1125359815","locality":"Gdańsk","locality_gid":"whosonfirst:locality:101752271","continent":"Europa","continent_gid":"whosonfirst:continent:102191581","label":"SS Sołdek, Gdańsk, PM, Polska","addendum":{"osm":{"wheelchair":"no","wikidata":"Q455096","wikipedia":"pl:SS Sołdek","opening_hours":"Mo-Su 10:00-18:00"}}},"bbox":[18.6585218,54.3510557,18.6588357,54.3518338]},{"type":"Feature","geometry":{"type":"Point","coordinates":[10.517689,52.260792]},"properties":{"id":"node/2907665627","gid":"openstreetmap:venue:node/2907665627","layer":"venue","source":"openstreetmap","source_id":"node/2907665627","name":"Soldekk","housenumber":"2","street":"Steinstraße","postalcode":"38100","confidence":1,"match_type":"exact","accuracy":"point","country":"Niemcy","country_gid":"whosonfirst:country:85633111","country_a":"DEU","region":"Dolna Saksonia","region_gid":"whosonfirst:region:85682555","region_a":"NI","county":"Wolfenbüttel","county_gid":"whosonfirst:county:102063881","county_a":"WB","localadmin":"Cremlingen","localadmin_gid":"whosonfirst:localadmin:1377686093","locality":"Brunszwik","locality_gid":"whosonfirst:locality:101909589","continent":"Europa","continent_gid":"whosonfirst:continent:102191581","label":"Soldekk, Brunszwik, NI, Niemcy","addendum":{"osm":{"operator":"Discotier GmbH","website":"http://www.soldekk.de/"}}}}],"bbox":[10.517689,52.260792,18.6588357,54.3518338]}

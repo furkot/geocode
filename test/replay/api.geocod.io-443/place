@@ -1,0 +1,23 @@
+GET /v1.7/geocode?q=So%C5%82dek&api_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 422 Unprocessable Content
+content-type: application/json
+transfer-encoding: chunked
+cache-control: no-cache, private
+date: Tue, 03 May 2022 23:04:23 GMT
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST
+access-control-allow-headers: Content-Type, User-Agent
+x-billable-lookups-count: 0
+x-billable-fields-count: 0
+access-control-expose-headers: Request-Handler
+request-handler: api205
+server: Unicorns with magic wands (https://www.geocod.io)
+x-ratelimit-remaining: 998
+x-ratelimit-limit: 1000
+x-ratelimit-period: 60
+connection: close
+
+{"error":"Could not geocode address. Postal code or city required."}

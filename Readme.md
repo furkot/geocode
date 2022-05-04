@@ -14,7 +14,7 @@ $ npm install --save furkot-geocode
 
 ## Usage
 
-```js
+````js
 var furkotGeocode = require('furkot-geocode');
 var options = {}; // options activating geocoding services
 
@@ -25,13 +25,13 @@ var query = {}; // geocoding query
 geocode(query, function (result) {
   // process result
 }
-```
+````
 
 ### Configuration options
 
 Geocoding component expects a configuration options object with following fields:
 
-- `max`
+- `max` - maximum number of places to return
 - `order` - list of names of geocoding services in the order they will be tried
 - `XXX_key` - API key for service `XXX` (if service `XXX` requires a key)
 - `XXX_enable` - function that takes query and returns `true` when service `XXX` is expected to handle that query; if the function is absent, the service `XXX` won't be used even if listed in the `order`

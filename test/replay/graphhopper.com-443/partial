@@ -1,0 +1,19 @@
+GET /api/1/geocode?q=main%20street&autocomplete=true&locale=en&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx
+date: Tue, 03 May 2022 23:14:23 GMT
+content-type: application/json;charset=utf-8
+content-length: 1303
+connection: close
+access-control-expose-headers: X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset,X-RateLimit-Credits
+access-control-allow-origin: *
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 499
+x-ratelimit-reset: 0
+x-ratelimit-credits: 0
+strict-transport-security: max-age=31536000; includeSubDomains;
+
+{"hits":[{"point":{"lat":42.4750847,"lng":-73.1745473},"name":"Main Street Cemetery","country":"United States","countrycode":"US","postcode":"01226","osm_id":358275776,"osm_type":"N","osm_key":"natural","osm_value":"peak"},{"point":{"lat":44.8350646,"lng":-69.2728254},"name":"Main Street Dam","country":"United States","countrycode":"US","postcode":"04953","osm_id":358227588,"osm_type":"N","osm_key":"waterway","osm_value":"dam"},{"point":{"lat":42.36274665,"lng":-71.086670478147},"extent":[-71.0870901,42.3625153,-71.0862462,42.3629998],"name":"325 Main Street","country":"United States","countrycode":"US","city":"Cambridge","state":"MA","street":"Main Street","postcode":"02142","osm_id":823968943,"osm_type":"W","housenumber":"325","osm_key":"landuse","osm_value":"construction","house_number":"325"},{"point":{"lat":42.5524712,"lng":-71.6192199},"extent":[-71.6195474,42.5520892,-71.6189915,42.5531099],"name":"West Main Street Dam","country":"United States","countrycode":"US","postcode":"01434","osm_id":245743514,"osm_type":"W","osm_key":"waterway","osm_value":"dam"},{"point":{"lat":6.5080848,"lng":-10.6756677},"name":"Main Street","country":"Liberia","countrycode":"LR","state":"Montserrado County","osm_id":3105829289,"osm_type":"N","osm_key":"place","osm_value":"hamlet"}],"locale":"en"}

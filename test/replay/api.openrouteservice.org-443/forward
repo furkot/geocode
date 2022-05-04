@@ -1,0 +1,24 @@
+GET /geocode/search?text=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&api_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx/1.21.4
+date: Tue, 03 May 2022 22:05:53 GMT
+content-type: application/json; charset=utf-8
+content-length: 1890
+connection: close
+access-control-allow-headers: X-Requested-With,content-type, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Authorization, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+access-control-allow-methods: GET, OPTIONS, OPTIONS,GET,POST
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"762-rqV4twR5Qa/aqya/fj+GEVZtI7Y"
+x-powered-by: pelias
+x-ratelimit-limit: 1000
+x-ratelimit-remaining: 999
+x-ratelimit-reset: 1651701952
+x-robots-tag: none
+access-control-expose-headers: x-ratelimit-remaining, x-ratelimit-reset, x-ratelimit-limit
+
+{"geocoding":{"version":"0.2","attribution":"https://openrouteservice.org/terms-of-service/#attribution-geocode","query":{"text":"Rua Cafelândia, Carapicuíba, Brasil","size":10,"layers":["venue","street","country","macroregion","region","county","localadmin","locality","borough","neighbourhood","continent","empire","dependency","macrocounty","macrohood","microhood","disputed","postalcode","ocean","marinearea"],"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","via":"default","defaulted":true},"querySize":20,"parser":"libpostal","parsed_text":{"street":"rua cafelândia","city":"carapicuíba","country":"brasil"}},"warnings":["performance optimization: excluding 'address' layer"],"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1651615553014},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-46.836557,-23.5372]},"properties":{"id":"polyline:24035513","gid":"openstreetmap:street:polyline:24035513","layer":"street","source":"openstreetmap","source_id":"polyline:24035513","name":"Rua Cafelândia","street":"Rua Cafelândia","confidence":1,"match_type":"exact","accuracy":"centroid","country":"Brazil","country_gid":"whosonfirst:country:85633009","country_a":"BRA","macroregion":"Southeast","macroregion_gid":"whosonfirst:macroregion:1511777411","region":"Sao Paulo","region_gid":"whosonfirst:region:85682041","region_a":"SP","county":"Carapicuiba","county_gid":"whosonfirst:county:102061263","localadmin":"Carapicuíba","localadmin_gid":"whosonfirst:localadmin:404566297","locality":"Carapicuíba","locality_gid":"whosonfirst:locality:101956135","continent":"South America","continent_gid":"whosonfirst:continent:102191577","label":"Rua Cafelândia, Carapicuíba, SP, Brazil"},"bbox":[-46.837449,-23.53736,-46.835665,-23.537041]}],"bbox":[-46.837449,-23.53736,-46.835665,-23.537041]}

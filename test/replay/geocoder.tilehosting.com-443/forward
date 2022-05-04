@@ -1,0 +1,22 @@
+GET /q/Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil.js?key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 11:59:27 GMT
+content-type: application/json; charset=utf-8
+transfer-encoding: chunked
+connection: close
+access-control-allow-origin: *
+etag: W/"cbe-Tvn4j5VqeHidcUMQ+C7dS47e7Yo"
+cache-control: max-age=43200
+cf-cache-status: MISS
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Kvejo2yx%2FlQyyWaHPpN62mvHkf6kpJeLTkES5RwaIuaLIL5pgYa6xJKe8A3QdOJp8xSKMY0XOuXhN5fZl9qLlpmdZgaft6Viy%2FJUeszibVAhb4kAZ1uRaJdvU5wP9RbjxKImR6MIjtGsRhQ%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+vary: Accept-Encoding
+server: cloudflare
+cf-ray: 70611202e8fa0e1e-MXP
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{"count":9,"nextIndex":9,"startIndex":0,"totalResults":9,"results":[{"alternative_names":"Rua Cafelândia","boundingbox":[-46.8365592,-23.5372062,-46.8365592,-23.5372062],"display_name":"Rua Cafelândia, Carapicuíba, Região Metropolitana de São Paulo, São Paulo","lon":-46.8365592,"lat":-23.5372062,"name":"Rua Cafelândia","name_suffix":"Carapicuíba, Região Metropolitana de São Paulo, São Paulo","type":"street"},{"alternative_names":"Rua Cafelândia","boundingbox":[-46.8900124,-23.4851747,-46.8900124,-23.4851747],"display_name":"Rua Cafelândia, Barueri, Região Metropolitana de São Paulo, São Paulo","lon":-46.8900124,"lat":-23.4851747,"name":"Rua Cafelândia","name_suffix":"Barueri, Região Metropolitana de São Paulo, São Paulo","type":"street"},{"alternative_names":"Rua Cafelandia","boundingbox":[-46.895171,-23.6109183,-46.895171,-23.6109183],"display_name":"Rua Cafelandia, Cotia, Região Metropolitana de São Paulo, São Paulo","lon":-46.895171,"lat":-23.6109183,"name":"Rua Cafelandia","name_suffix":"Cotia, Região Metropolitana de São Paulo, São Paulo","type":"street"},{"alternative_names":"Rua Cafelândia","boundingbox":[-46.3546169,-23.6822684,-46.3546169,-23.6822684],"display_name":"Rua Cafelândia, Ribeirão Pires, Região Metropolitana de São Paulo, São Paulo","lon":-46.3546169,"lat":-23.6822684,"name":"Rua Cafelândia","name_suffix":"Ribeirão Pires, Região Metropolitana de São Paulo, São Paulo","type":"street"},{"alternative_names":"Rua Cafelândia","boundingbox":[-47.6611509,-22.754479,-47.6611509,-22.754479],"display_name":"Rua Cafelândia, Piracicaba, Mesorregião de Piracicaba, São Paulo","lon":-47.6611509,"lat":-22.754479,"name":"Rua Cafelândia","name_suffix":"Piracicaba, Mesorregião de Piracicaba, São Paulo","type":"street"},{"alternative_names":"Rua Cafelândia","boundingbox":[-43.9182363,-19.9115813,-43.9182363,-19.9115813],"display_name":"Rua Cafelândia, Belo Horizonte, Mesorregião Metropolitana de Belo Horizonte, Minas Gerais","lon":-43.9182363,"lat":-19.9115813,"name":"Rua Cafelândia","name_suffix":"Belo Horizonte, Mesorregião Metropolitana de Belo Horizonte, Minas Gerais","type":"street"},{"alternative_names":"Rua Cafelândia","boundingbox":[-48.8850045,-23.9794148,-48.8850045,-23.9794148],"display_name":"Rua Cafelândia, Itapeva, Mesorregião de Itapetininga, São Paulo","lon":-48.8850045,"lat":-23.9794148,"name":"Rua Cafelândia","name_suffix":"Itapeva, Mesorregião de Itapetininga, São Paulo","type":"street"},{"alternative_names":"Rua Cafelândia","boundingbox":[-54.8101236,-22.238723,-54.8101236,-22.238723],"display_name":"Rua Cafelândia, Dourados, Mesorregião Sudoeste de Mato Grosso do Sul, Mato Grosso do Sul","lon":-54.8101236,"lat":-22.238723,"name":"Rua Cafelândia","name_suffix":"Dourados, Mesorregião Sudoeste de Mato Grosso do Sul, Mato Grosso do Sul","type":"street"},{"alternative_names":"Rua Cafelândia","boundingbox":[-54.8106798,-22.2345355,-54.8106798,-22.2345355],"display_name":"Rua Cafelândia, Dourados, Mesorregião Sudoeste de Mato Grosso do Sul, Mato Grosso do Sul","lon":-54.8106798,"lat":-22.2345355,"name":"Rua Cafelândia","name_suffix":"Dourados, Mesorregião Sudoeste de Mato Grosso do Sul, Mato Grosso do Sul","type":"street"}]}

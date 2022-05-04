@@ -1,0 +1,19 @@
+GET /api/1/geocode?q=So%C5%82dek&locale=pl&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx
+date: Tue, 03 May 2022 23:14:22 GMT
+content-type: application/json;charset=utf-8
+content-length: 1327
+connection: close
+access-control-expose-headers: X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset,X-RateLimit-Credits
+access-control-allow-origin: *
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 499
+x-ratelimit-reset: 0
+x-ratelimit-credits: 0
+strict-transport-security: max-age=31536000; includeSubDomains;
+
+{"hits":[{"point":{"lat":54.351528200000004,"lng":18.65868924925842},"extent":[18.6585218,54.3510557,18.6588357,54.3518338],"name":"SS Sołdek","country":"Poland","countrycode":"PL","city":"Gdansk","state":"Pomeranian Voivodeship","street":"Długie Pobrzeże","postcode":"80-751","osm_id":125199669,"osm_type":"W","osm_key":"tourism","osm_value":"museum"},{"point":{"lat":54.351528200000004,"lng":18.65868924925842},"extent":[18.6585218,54.3510557,18.6588357,54.3518338],"name":"SS Sołdek","country":"Poland","countrycode":"PL","city":"Gdansk","state":"Pomeranian Voivodeship","street":"Długie Pobrzeże","postcode":"80-751","osm_id":125199669,"osm_type":"W","osm_key":"historic","osm_value":"ship"},{"point":{"lat":52.2607916,"lng":10.5176888},"name":"Soldekk","country":"Germany","countrycode":"DE","city":"Brunswick","state":"Lower Saxony","street":"Steinstraße","postcode":"38100","osm_id":2907665627,"osm_type":"N","housenumber":"2","osm_key":"leisure","osm_value":"beach_resort","house_number":"2"},{"point":{"lat":52.2607916,"lng":10.5176888},"name":"Soldekk","country":"Germany","countrycode":"DE","city":"Brunswick","state":"Lower Saxony","street":"Steinstraße","postcode":"38100","osm_id":2907665627,"osm_type":"N","housenumber":"2","osm_key":"amenity","osm_value":"biergarten","house_number":"2"}],"locale":"en"}

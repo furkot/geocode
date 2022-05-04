@@ -1,0 +1,19 @@
+GET /api/1/geocode?reverse=true&point=-22.6792,14.5272&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx
+date: Tue, 03 May 2022 23:14:23 GMT
+content-type: application/json;charset=utf-8
+content-length: 1441
+connection: close
+access-control-expose-headers: X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset,X-RateLimit-Credits
+access-control-allow-origin: *
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 499
+x-ratelimit-reset: 0
+x-ratelimit-credits: 0
+strict-transport-security: max-age=31536000; includeSubDomains;
+
+{"hits":[{"point":{"lat":-22.6791826,"lng":14.5268016},"name":"Beryl's Restaurant","country":"Namibia","countrycode":"NA","city":"Swakopmund","state":"Erongo Region","street":"Woermann St","postcode":"22001","osm_id":4488973891,"osm_type":"N","osm_key":"amenity","osm_value":"restaurant"},{"point":{"lat":-22.6793015,"lng":14.5266951},"extent":[14.5266951,-22.6793015,14.5277944,-22.6791681],"name":"Woermann St","country":"Namibia","countrycode":"NA","city":"Swakopmund","state":"Erongo Region","postcode":"22001","osm_id":184393212,"osm_type":"W","osm_key":"highway","osm_value":"residential"},{"point":{"lat":-22.6795394,"lng":14.5276006},"name":"Jet","country":"Namibia","countrycode":"NA","city":"Swakopmund","state":"Erongo Region","street":"Nathaniel Maxuilili St","postcode":"22001","osm_id":2234312397,"osm_type":"N","osm_key":"shop","osm_value":"clothes"},{"point":{"lat":-22.6788191,"lng":14.5267111},"name":"KFC","country":"Namibia","countrycode":"NA","city":"Swakopmund","state":"Erongo Region","street":"Hendrik Witbooi St","postcode":"22001","osm_id":4488969992,"osm_type":"N","osm_key":"amenity","osm_value":"fast_food"},{"point":{"lat":-22.6786139,"lng":14.5273115},"name":"Natural Namibia Shop !Nara Oil","country":"Namibia","countrycode":"NA","city":"Swakopmund","state":"Erongo Region","street":"Sam Nujoma Avenue","postcode":"22001","osm_id":7099505385,"osm_type":"N","osm_key":"shop","osm_value":"gift"}],"locale":"en"}

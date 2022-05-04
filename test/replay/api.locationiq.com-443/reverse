@@ -1,0 +1,19 @@
+GET /v1/reverse.php?lon=14.5272&lat=-22.6792&addressdetails=1&normalizecity=1&format=json&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 10:59:22 GMT
+content-type: application/json; charset=UTF-8
+transfer-encoding: chunked
+connection: close
+x-powered-by: LocationIQ
+access-control-allow-origin: *
+cf-cache-status: DYNAMIC
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=td%2FCPCRIZNQFGBUqezXLOa5%2B2oOP73i2%2BIK9h7eOnMAOuIamdabwsWekEOl0OUjjFiz2RLtNNATzybGLqRJW3F%2FONeX7KBRSboPEXbbjfBeVhTjTNyG3waA79VMeob2QSrhACA%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 7060ba00dc3af933-MXP
+
+{"place_id":"51016898","licence":"https:\/\/locationiq.com\/attribution","osm_type":"node","osm_id":"4488973891","lat":"-22.6791826","lon":"14.5268016","display_name":"Beryl's Restaurant, Woermann St, Central, Swakopmund, Erongo Region, 13001, Namibia","address":{"restaurant":"Beryl's Restaurant","road":"Woermann St","suburb":"Central","city":"Swakopmund","state":"Erongo Region","postcode":"13001","country":"Namibia","country_code":"na"},"boundingbox":["-22.6792326","-22.6791326","14.5267516","14.5268516"]}

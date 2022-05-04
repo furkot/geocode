@@ -1,0 +1,19 @@
+GET /v1/search.php?q=2200%20S.%20Jason%20St%2C%20Denver%2C%20CO%2080223&viewbox=-106.24023437500165,41.84270596422118,-93.75976562500192,38.10619124884522&bounded=1&addressdetails=1&normalizecity=1&format=json&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 10:59:25 GMT
+content-type: application/json; charset=UTF-8
+transfer-encoding: chunked
+connection: close
+x-powered-by: LocationIQ
+access-control-allow-origin: *
+cf-cache-status: DYNAMIC
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=uRhm7nUKDLxVxIC3EYjwFFCZLi5923hgxzLfWpYHnzFeqETwo3EUUZsmbSz4kf7LG5a0hV4CGzKnI%2FE7I1qZA%2B5A7rNg4gBBcLjtfVYVMPSVuFNYGRPGC2O%2B0mP1jpR9WLM4hw%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 7060ba0d6b9683af-MXP
+
+[{"place_id":"307135737","licence":"https:\/\/locationiq.com\/attribution","osm_type":"way","osm_id":"16989207","boundingbox":["39.676486","39.676586","-104.999404","-104.999304"],"lat":"39.676536","lon":"-104.999354","display_name":"2200, South Jason Street, Denver, Colorado, 80223, USA","class":"place","type":"house","importance":0.731,"address":{"house_number":"2200","road":"South Jason Street","city":"Denver","state":"Colorado","postcode":"80223","country":"United States of America","country_code":"us"}}]

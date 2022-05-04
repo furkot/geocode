@@ -1,0 +1,19 @@
+GET /api/1/geocode?reverse=true&point=45.284265,-111.400596&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx
+date: Tue, 03 May 2022 23:20:47 GMT
+content-type: application/json;charset=utf-8
+content-length: 1600
+connection: close
+access-control-expose-headers: X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset,X-RateLimit-Credits
+access-control-allow-origin: *
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 498
+x-ratelimit-reset: 2353
+x-ratelimit-credits: 0
+strict-transport-security: max-age=31536000; includeSubDomains;
+
+{"hits":[{"point":{"lat":45.284264,"lng":-111.40065600201527},"extent":[-111.4010575,45.2839183,-111.4002548,45.2845402],"name":"Mountain Mall","country":"United States","countrycode":"US","state":"Montana","street":"Black Eagle","postcode":"59416","osm_id":232593604,"osm_type":"W","osm_key":"building","osm_value":"yes"},{"point":{"lat":45.2839783,"lng":-111.4011158},"name":"Big Sky Resort","country":"United States","countrycode":"US","city":"Big Sky","state":"MT","street":"Big Sky Resort Road","postcode":"59716","osm_id":2626182725,"osm_type":"N","housenumber":"50","osm_key":"leisure","osm_value":"sports_centre","house_number":"50"},{"point":{"lat":45.284622,"lng":-111.40110501870444},"extent":[-111.4012343,45.2845245,-111.4009778,45.2846806],"name":"Basecamp","country":"United States","countrycode":"US","state":"Montana","street":"Black Eagle","postcode":"59416","osm_id":232654649,"osm_type":"W","osm_key":"building","osm_value":"yes"},{"point":{"lat":45.2842756,"lng":-111.4015212},"name":"Different Spokes","country":"United States","countrycode":"US","city":"Big Sky","state":"Montana","street":"Mountain to Meadow","postcode":"59416","osm_id":2410343865,"osm_type":"N","osm_key":"amenity","osm_value":"bicycle_rental"},{"point":{"lat":45.284196300000005,"lng":-111.40158763890292},"extent":[-111.401872,45.283954,-111.4012595,45.2844164],"name":"Snowcrest Lodge","country":"United States","countrycode":"US","city":"Big Sky","state":"Montana","street":"Mountain to Meadow","postcode":"59416","osm_id":232702246,"osm_type":"W","osm_key":"building","osm_value":"yes"}],"locale":"en"}
