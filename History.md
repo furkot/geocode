@@ -1,4 +1,18 @@
 
+2.0.0 / 2022-05-04
+==================
+
+ * support positionstack geocoding service
+ * add support for partial, address, and place in demo
+ * add hogfish to geocoder demo
+ * add demo services only if key is defined
+ * change tests to use replay
+ * upgrade to geocodio version 1.7
+ * remove support for Algolia Places
+ * openroute service is based on Pelias geocoder
+ * support configuring services under different names
+ * implement partial geocoding for openroute
+
 1.5.5 / 2022-04-23
 ==================
 
