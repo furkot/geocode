@@ -120,7 +120,14 @@ if (process.env.OPENROUTE_KEY) {
     pelias_key: process.env.OPENROUTE_KEY
   });
 }
-if (process.env.TILEHOSTING_KEY) {
+if (process.env.POSITIONSTACK_KEY) {
+  service('positionstack', {
+    order: ['positionstack'],
+    positionstack_parameters: { interval : 1000 },
+    positionstack_enable() { return true; },
+    positionstack_key: process.env.POSITIONSTACK_KEY
+  });
+}if (process.env.TILEHOSTING_KEY) {
   service('tilehosting', {
     order: ['tilehosting'],
     tilehosting_parameters: { interval : 1000 },

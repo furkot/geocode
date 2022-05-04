@@ -1,0 +1,29 @@
+GET /v1/reverse?query=-22.6792,14.5272&point.lat=&access_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 14:41:12 GMT
+content-type: application/json
+transfer-encoding: chunked
+connection: close
+user-agent: node-fetch/1.0 (+https://github.com/bitinn/node-fetch)
+accept: application/json
+accept-encoding: gzip
+cache-control: no-cache, private
+x-apilayer-transaction-id: 353dbcbe-10f1-4ada-b5bc-7f490d05baf0
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, HEAD, OPTIONS
+access-control-allow-headers: *
+x-quota-limit: 25000
+x-quota-remaining: 24998
+x-increment-usage: 1
+x-request-time: 0.146
+cf-cache-status: DYNAMIC
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=FNxv9z8myk%2F8866PxtykMBD8rLJ1GwQ9EuCXZ97VAx9352Jbem56A%2BJYBzTyUyeGsYl%2F0IticYj6YBPbkVCuue5ydzVGAw6%2BfJKqZLFVUwbWv8bt%2FO4s1VJHx0Jz58TC7KyVl%2FEUwQs%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 7061fef0f9c95fbf-MRS
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{"data":[{"latitude":-22.679183,"longitude":14.526802,"type":"venue","distance":0.041,"name":"Beryl\u0027s Restaurant","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"Beryl\u0027s Restaurant, ER, Namibia"},{"latitude":-22.679539,"longitude":14.527601,"type":"venue","distance":0.056,"name":"Jet","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"Jet, ER, Namibia"},{"latitude":-22.678819,"longitude":14.526711,"type":"venue","distance":0.066,"name":"KFC","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"KFC, ER, Namibia"},{"latitude":-22.678614,"longitude":14.527312,"type":"venue","distance":0.066,"name":"Natural Namibia Shop !Nara Oil","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"Natural Namibia Shop !Nara Oil, ER, Namibia"},{"latitude":-22.678477,"longitude":14.527216,"type":"venue","distance":0.081,"name":"Krisjans","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"Krisjans, ER, Namibia"},{"latitude":-22.679851,"longitude":14.527573,"type":"venue","distance":0.082,"name":"Plaza Hotel","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"Plaza Hotel, ER, Namibia"},{"latitude":-22.678502,"longitude":14.526898,"type":"venue","distance":0.084,"name":"The Fish Deli","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"The Fish Deli, ER, Namibia"},{"latitude":-22.679742,"longitude":14.526617,"type":"address","distance":0.085,"name":"29 Hendrik Witbooi St (Roon St \/ Schul St)","number":"29","postal_code":null,"street":"Hendrik Witbooi St (Roon St \/ Schul St)","confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"29 Hendrik Witbooi St (Roon St \/ Schul St), ER, Namibia"},{"latitude":-22.679742,"longitude":14.526617,"type":"venue","distance":0.085,"name":"Altstadt Restaurant","number":"29","postal_code":null,"street":"Hendrik Witbooi St (Roon St \/ Schul St)","confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"Altstadt Restaurant, ER, Namibia"},{"latitude":-22.67883,"longitude":14.528032,"type":"venue","distance":0.095,"name":"Napolitana","number":null,"postal_code":null,"street":null,"confidence":0.8,"region":"Erongo","region_code":"ER","county":"Swakopmund","locality":null,"administrative_area":null,"neighbourhood":null,"country":"Namibia","country_code":"NAM","continent":"Africa","label":"Napolitana, ER, Namibia"}]}

@@ -1,0 +1,29 @@
+GET /v1/forward?query=Rua%20Cafel%C3%A2ndia%2C%20Carapicu%C3%ADba%2C%20Brasil&access_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 04 May 2022 14:41:11 GMT
+content-type: application/json
+transfer-encoding: chunked
+connection: close
+user-agent: node-fetch/1.0 (+https://github.com/bitinn/node-fetch)
+accept: application/json
+accept-encoding: gzip
+cache-control: no-cache, private
+x-apilayer-transaction-id: 7a814b02-6622-4158-8256-ccdc4fac778f
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, HEAD, OPTIONS
+access-control-allow-headers: *
+x-quota-limit: 25000
+x-quota-remaining: 25000
+x-increment-usage: 1
+x-request-time: 0.095
+cf-cache-status: DYNAMIC
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Ya2ClURe2Kuji1vgUYvHnaX77QHS%2FtOQUV%2BJ%2FuGGbnrLRb3BWAf%2BR1akiRQ8W2DhLP96BBitjOiGHc7eBTbGUypv3pKt5PAVde8FQrwYtdS17CeTnMDjXuFfJ98R%2Fw0IYQpDHs7Ehsc%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 7061fee9b92b3759-MXP
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{"data":[{"latitude":-23.532918,"longitude":-46.830942,"type":"locality","name":"Carapicu\u00edba","number":null,"postal_code":null,"street":null,"confidence":0.6,"region":"Sao Paulo","region_code":"SP","county":"Carapicuiba","locality":"Carapicu\u00edba","administrative_area":"Carapicu\u00edba","neighbourhood":null,"country":"Brazil","country_code":"BRA","continent":"South America","label":"Carapicu\u00edba, SP, Brazil"}]}
