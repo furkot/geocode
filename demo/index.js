@@ -25,7 +25,8 @@ function onMapInit() {
     ll.value = event.ll[0].toFixed(6) + ', ' + event.ll[1].toFixed(6);
     window.dispatchEvent(new CustomEvent('ll', { detail: {
       ll: event.ll,
-      max: searchFormEl.max.value
+      max: searchFormEl.max.value,
+      type: searchFormEl.place.value
     }}));
   });
 
@@ -67,6 +68,24 @@ if (process.env.GRAPHHOPPER_KEY) {
     graphhopper_parameters: { interval : 1000 },
     graphhopper_enable() { return true; },
     graphhopper_key: process.env.GRAPHHOPPER_KEY
+  });
+}
+if (process.env.HOGFISH_KEY) {
+  service('hogfish', {
+    order: ['hogfish'],
+    hogfish_parameters: {
+      interval: 1000,
+      types: {
+        hotel: [
+          'provider=hotels'
+        ],
+        fillingstation: [
+          'provider=fuel'
+        ]
+      }
+    },
+    hogfish_enable() { return true; },
+    hogfish_url: process.env.HOGFISH_URL
   });
 }
 if (process.env.LOCATIONIQ_KEY) {
