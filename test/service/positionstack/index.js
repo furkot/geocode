@@ -59,6 +59,29 @@ describe('positionstack geocoding', function () {
     });
   });
 
+  it('partial', function (done) {
+
+    const query = {
+      place: 'Golden Gate Br'
+    };
+    geocode('forward', 1, query, {}, function (err, value, id, query, result) {
+      should.not.exist(err);
+      value.should.equal(true);
+      should.exist(result);
+      result.should.have.property('places').with.length(10);
+      result.places[0].should.deepEqual({
+        ll: [ -49.542449, -11.928923 ],
+        type: 'country',
+        country: 'Brazil',
+        place: 'Brazil',
+        address: 'Brazil'
+      });
+      result.should.have.property('provider', 'positionstack');
+      result.should.have.property('stats', ['positionstack']);
+      done();
+    });
+  });
+
   it('reverse', function (done) {
 
     const query = {

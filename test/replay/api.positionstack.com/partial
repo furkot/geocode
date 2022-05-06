@@ -1,0 +1,29 @@
+GET /v1/forward?query=Golden%20Gate%20Br&access_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Fri, 06 May 2022 15:09:24 GMT
+content-type: application/json
+transfer-encoding: chunked
+connection: close
+user-agent: node-fetch/1.0 (+https://github.com/bitinn/node-fetch)
+accept: application/json
+accept-encoding: gzip
+cache-control: no-cache, private
+x-apilayer-transaction-id: 283bb417-70bc-482a-88bb-61f648814ffd
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, HEAD, OPTIONS
+access-control-allow-headers: *
+x-quota-limit: 25000
+x-quota-remaining: 24967
+x-increment-usage: 1
+x-request-time: 0.384
+cf-cache-status: DYNAMIC
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=8lTNzkkvURP2CT%2BPwZA9Yp%2BCe4gavJweelesp4LxE9qQkWHhiu5MOSvFQvD2oEmYuHpnZNsFoLF0w2fW2NNF7GkxfRJ9kwFhcawI2WVigUbb8g3x2oZAMZdoY1QImAD5Q2MfFYWHdts%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 7072a3002dd75fcb-MRS
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{"data":[{"latitude":-11.928923,"longitude":-49.542449,"type":"country","name":"Brazil","number":null,"postal_code":null,"street":null,"confidence":0.1,"region":null,"region_code":null,"county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Brazil","country_code":"BRA","continent":"South America","label":"Brazil"},{"latitude":25.708465,"longitude":85.573398,"type":"region","name":"Bihar","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Bihar","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"India","country_code":"IND","continent":"Asia","label":"Bihar, India"},{"latitude":44.830105,"longitude":18.699478,"type":"region","name":"Brcko Distrikt","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Brcko Distrikt","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Bosnia and Herzegovina","country_code":"BIH","continent":"Europe","label":"Brcko Distrikt, Bosnia and Herzegovina"},{"latitude":14.635273,"longitude":102.875915,"type":"region","name":"Buriram","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Buriram","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Thailand","country_code":"THA","continent":"Asia","label":"Buriram, Thailand"},{"latitude":52.45814,"longitude":25.707828,"type":"region","name":"Brestskaya Voblasts\u0027","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Brestskaya Voblasts\u0027","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Belarus","country_code":"BLR","continent":"Europe","label":"Brestskaya Voblasts\u0027, Belarus"},{"latitude":-4.256292,"longitude":15.274213,"type":"region","name":"Brazzavile Department","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Brazzavile Department","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Congo","country_code":"COG","continent":"Africa","label":"Brazzavile Department, Congo"},{"latitude":53.091895,"longitude":33.728853,"type":"region","name":"Bryansk","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Bryansk","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Russia","country_code":"RUS","continent":"Europe","label":"Bryansk, Russia"},{"latitude":10.132456,"longitude":106.552844,"type":"region","name":"Ben Tre","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Ben Tre","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Vietnam","country_code":"VNM","continent":"Asia","label":"Ben Tre, Vietnam"},{"latitude":48.680288,"longitude":7.56149,"type":"region","name":"Bas-Rhin","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Bas-Rhin","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"France","country_code":"FRA","continent":"Europe","label":"Bas-Rhin, France"},{"latitude":41.568428,"longitude":-8.343987,"type":"region","name":"Braga","number":null,"postal_code":null,"street":null,"confidence":0.3,"region":"Braga","region_code":"BR","county":null,"locality":null,"administrative_area":null,"neighbourhood":null,"country":"Portugal","country_code":"PRT","continent":"Europe","label":"Braga, Portugal"}]}

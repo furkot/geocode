@@ -1,4 +1,4 @@
-GET /v1/reverse?query=-22.6792,14.5272&point.lat=&access_key=furkot
+GET /v1/reverse?query=-22.6792,14.5272&access_key=furkot
 accept: application/json
 accept-encoding: gzip,deflate
 
