@@ -6,6 +6,9 @@ describe('pelias geocoding', function () {
   const { geocode } = pelias({
     interval: 1,
     name: 'pelias',
+    pelias_parameters: {
+      enablePartial: true
+    },
     pelias_key: process.env.PELIAS_KEY || 'furkot'
   });
 
