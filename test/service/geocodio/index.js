@@ -21,11 +21,11 @@ describe('geocodio geocoding', function () {
       result.should.have.property('places').with.length(2);
       result.places[0].should.deepEqual({
         ll: [ -87.12502, 39.52365 ],
-        address: 'Brazil, IN 47834',
-        town: 'Brazil',
+        city: 'Brazil',
         county: 'Clay County',
-        province: 'IN',
-        country: 'USA'
+        state: 'IN',
+        country: 'United States',
+        type: 'city'
       });
       result.should.have.property('provider', 'geocodio');
       result.should.have.property('stats', ['geocodio']);
@@ -59,13 +59,38 @@ describe('geocodio geocoding', function () {
       result.should.have.property('places').with.length(8);
       result.places[0].should.deepEqual({
         ll: [ -111.400596, 45.284265 ],
-        address: '50 Big Sky Resort Rd, Big Sky, MT 59716',
-        housenumber: '50',
-        street: 'Big Sky Resort',
+        house: '50',
+        street: 'Big Sky Resort Rd',
         county: 'Madison County',
-        province: 'MT',
-        town: "Big Sky",
-        country: 'USA'
+        state: 'MT',
+        city: "Big Sky",
+        country: 'United States',
+        type: 'address'
+      });
+      result.should.have.property('provider', 'geocodio');
+      result.should.have.property('stats', ['geocodio']);
+      done();
+    });
+  });
+
+  it('reverse canada', function (done) {
+
+    const query = {
+      ll: [ -123.100939, 49.252869 ]
+    };
+    geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
+      should.not.exist(err);
+      value.should.equal(true);
+      should.exist(result);
+      result.should.have.property('places').with.length(5);
+      result.places[0].should.deepEqual({
+        ll: [ -123.101278, 49.252893 ],
+        house: '199',
+        street: 'E 20th Ave',
+        city: 'Vancouver',
+        state: 'BC',
+        country: 'Canada',
+        type: 'address'
       });
       result.should.have.property('provider', 'geocodio');
       result.should.have.property('stats', ['geocodio']);

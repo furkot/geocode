@@ -1,0 +1,23 @@
+GET /v1.7/reverse?q=49.252869,-123.100939&api_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+content-type: application/json
+transfer-encoding: chunked
+cache-control: no-cache, private
+date: Mon, 16 May 2022 21:53:27 GMT
+x-billable-lookups-count: 1
+x-billable-fields-count: 0
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST
+access-control-allow-headers: Content-Type, User-Agent
+access-control-expose-headers: Request-Handler
+request-handler: api188
+server: Unicorns with magic wands (https://www.geocod.io)
+x-ratelimit-remaining: 996
+x-ratelimit-limit: 1000
+x-ratelimit-period: 60
+connection: close
+
+{"results":[{"address_components":{"number":"199","predirectional":"E","street":"20th","suffix":"Ave","formatted_street":"E 20th Ave","city":"Vancouver","state":"BC","zip":"V5V","country":"CA"},"formatted_address":"199 E 20th Ave, Vancouver, BC V5V","location":{"lat":49.252893,"lng":-123.101278},"accuracy":1,"accuracy_type":"rooftop","source":"Vancouver"},{"address_components":{"number":"3585","street":"Main","suffix":"St","formatted_street":"Main St","city":"Vancouver","state":"BC","zip":"V5V","country":"CA"},"formatted_address":"3585 Main St, Vancouver, BC V5V","location":{"lat":49.252898,"lng":-123.101293},"accuracy":1,"accuracy_type":"rooftop","source":"Province"},{"address_components":{"number":"200","predirectional":"E","street":"20th","suffix":"Ave","formatted_street":"E 20th Ave","city":"Vancouver","state":"BC","zip":"V5V","country":"CA"},"formatted_address":"200 E 20th Ave, Vancouver, BC V5V","location":{"lat":49.252809,"lng":-123.100577},"accuracy":1,"accuracy_type":"rooftop","source":"Province"},{"address_components":{"number":"200","predirectional":"E","street":"20th","suffix":"Ave","formatted_street":"E 20th Ave","city":"Vancouver","state":"BC","zip":"V5V","country":"CA"},"formatted_address":"200 E 20th Ave, Vancouver, BC V5V","location":{"lat":49.252803,"lng":-123.100562},"accuracy":1,"accuracy_type":"rooftop","source":"Vancouver"},{"address_components":{"number":"3573","street":"Main","suffix":"St","formatted_street":"Main St","city":"Vancouver","state":"BC","zip":"V5V","country":"CA"},"formatted_address":"3573 Main St, Vancouver, BC V5V","location":{"lat":49.253013,"lng":-123.101272},"accuracy":1,"accuracy_type":"rooftop","source":"Vancouver"}]}
