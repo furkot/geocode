@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@furkot/address@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@furkot/address/-/address-0.0.0.tgz#4e3f517259e901c3a1422020abd95ba5908e10a4"
+  integrity sha512-7da/45ltf6SoNM5dOEu7fhHlmP8fTgG0/8iu5+ZDcLJ8eO8jJMP/hKsipMuUt3kAuDtR4P5re+1PXQXmWTPz4w==
+
 "@pirxpilot/replay@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@pirxpilot/replay/-/replay-2.2.1.tgz#bc55a534d05db40956ac40c6a7884ec2428ec9eb"
