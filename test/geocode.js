@@ -32,15 +32,49 @@ function maxService(queryId, query, result, fn) {
   });
 }
 
+function addressService(queryId, query, result, fn) {
+  fn(undefined, true, queryId, query, {
+    places: [{
+      house: '1',
+      street: 'Main St',
+      city: 'Vancouver',
+      state: 'BC',
+      country: 'Canada'
+    }, {
+      house: '1',
+      street: 'Main St',
+      city: 'Waltham',
+      state: 'MA',
+      country: 'United States'
+    }, {
+      street: 'Main St',
+      city: 'Waltham',
+      state: 'MA',
+      country: 'United States'
+    }, {
+      state: 'SC',
+      country: 'United States'
+    }, {
+      country: 'United States'
+    }]
+  });
+}
+
 function placeService(queryId, query, result, fn) {
   fn(undefined, true, queryId, query, {
     places: [{
-      place:'a'
+      place: 'a'
     }, {
       street: 'a'
+    }, {
+      place: 'c',
+      street: 'c',
+      country: 'b'
+    }, {
+      place: 'b',
+      street: 'c'
     }]
   });
-  
 }
 
 describe('furkot-geocode node module', function () {
@@ -124,6 +158,25 @@ describe('furkot-geocode node module', function () {
     });
   });
 
+  it(' combine address', function (done) {
+    furkotGeocode({
+      forward: [],
+      reverse: [
+        addressService
+      ]
+    })({
+      ll: [1, 1]
+    }, function (result) {
+      result.should.have.property('places').with.length(5);
+      result.places[0].should.have.property('address', '1 Main St, Vancouver, BC, Canada');
+      result.places[1].should.have.property('address', '1 Main St, Waltham, MA');
+      result.places[2].should.have.property('address', 'Main St, Waltham, MA');
+      result.places[3].should.have.property('address', 'SC');
+      result.places[4].should.have.property('address', 'United States');
+      done();
+    });
+  });
+
   it('places', function (done) {
     furkotGeocode({
       forward: [
@@ -131,10 +184,27 @@ describe('furkot-geocode node module', function () {
       ],
       reverse: []
     })({
-      place: 'a'
+      place: 'a b'
     }, function (result) {
-      result.should.have.property('places').with.length(1);
+      result.should.have.property('places').with.length(2);
       result.places[0].should.have.property('place', 'a');
+      result.places[1].should.have.property('place', 'b');
+      done();
+    });
+  });
+
+  it('addresses', function (done) {
+    furkotGeocode({
+      forward: [
+        placeService
+      ],
+      reverse: []
+    })({
+      address: 'a b'
+    }, function (result) {
+      result.should.have.property('places').with.length(2);
+      result.places[0].should.have.property('address', 'a');
+      result.places[1].should.have.property('address', 'c, b');
       done();
     });
   });
