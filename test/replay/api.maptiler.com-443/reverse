@@ -1,0 +1,19 @@
+GET /geocoding/14.5272,-22.6792.json?key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 18 May 2022 16:15:54 GMT
+content-type: application/json; charset=utf-8
+transfer-encoding: chunked
+connection: close
+cf-ray: 70d5e4f00db75fd7-MRS
+access-control-allow-origin: *
+cache-control: public, max-age=14400
+etag: W/"648-HtZpYUH+/+JFM+XnhdNIZVCRFLY"
+cf-cache-status: HIT
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+vary: Accept-Encoding
+server: cloudflare
+
+{"type":"FeatureCollection","query":[14.5272,-22.6792],"features":[{"id":"street.184393212","type":"Feature","place_type":["street"],"relevance":1,"properties":{"osm_id":"way184393212"},"text":"Woermann St","place_name":"Woermann St, Erongo Region","center":[14.526695,-22.6793015],"geometry":{"type":"MultiLineString","coordinates":[[[14.52669504,-22.67930153],[14.52779433,-22.67916817]],[[14.52529116,-22.67949565],[14.52669504,-22.67930153]]]},"context":[{"id":"country.195266","osm_id":"relation195266","text":"Namibia"},{"id":"state.2279555","osm_id":"relation2279555","text":"Erongo Region"}],"bbox":[14.52529116,-22.67949565,14.52779433,-22.67916817]},{"id":"country.195266","type":"Feature","place_type":["country"],"relevance":1,"properties":{"osm_id":"relation195266"},"text":"Namibia","place_name":"Namibia","bbox":[11.52803833,-28.96945005,25.26176707,-16.96348553],"center":[17.0939596,-22.9744879],"geometry":{"type":"Point","coordinates":[17.0939596,-22.9744879]},"context":[{"id":"state.2279555","osm_id":"relation2279555","text":"Erongo Region"}]},{"id":"state.2279555","type":"Feature","place_type":["state"],"relevance":1,"properties":{"osm_id":"relation2279555"},"text":"Erongo Region","place_name":"Erongo Region","bbox":[13.63286406,-23.80884454,16.55831599,-20.49104712],"center":[15.3530198,-22.1501256],"geometry":{"type":"Point","coordinates":[15.3530198,-22.1501256]}}],"attribution":"<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"}

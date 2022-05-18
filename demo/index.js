@@ -104,6 +104,14 @@ if (process.env.LOCATIONIQ_KEY) {
     locationiq_key: process.env.LOCATIONIQ_KEY
   });
 }
+if (process.env.MAPTILER_KEY) {
+  service('maptiler', {
+    order: ['maptiler'],
+    maptiler_parameters: { interval : 1000 },
+    maptiler_enable() { return true; },
+    maptiler_key: process.env.MAPTILER_KEY
+  });
+}
 if (process.env.OPENCAGE_KEY) {
   service('opencage', {
     order: ['opencage'],
@@ -126,13 +134,6 @@ if (process.env.POSITIONSTACK_KEY) {
     positionstack_parameters: { interval : 1000 },
     positionstack_enable() { return true; },
     positionstack_key: process.env.POSITIONSTACK_KEY
-  });
-}if (process.env.TILEHOSTING_KEY) {
-  service('tilehosting', {
-    order: ['tilehosting'],
-    tilehosting_parameters: { interval : 1000 },
-    tilehosting_enable() { return true; },
-    tilehosting_key: process.env.TILEHOSTING_KEY
   });
 }
 

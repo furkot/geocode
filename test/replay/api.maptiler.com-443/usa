@@ -1,0 +1,19 @@
+GET /geocoding/-122.573125,48.849833.json?key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Wed, 18 May 2022 16:15:55 GMT
+content-type: application/json; charset=utf-8
+transfer-encoding: chunked
+connection: close
+cf-ray: 70d5e4f15d7c73bf-MRS
+access-control-allow-origin: *
+cache-control: public, max-age=14400
+etag: W/"ae3-chpwQyrENSCKvtUguNTZ7F2aAno"
+cf-cache-status: HIT
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+vary: Accept-Encoding
+server: cloudflare
+
+{"type":"FeatureCollection","query":[-122.573125,48.849833],"features":[{"id":"street.5259727","type":"Feature","place_type":["street"],"relevance":1,"properties":{"osm_id":"way5259727"},"text":"Barrett Road","place_name":"Barrett Road, Ferndale, Whatcom County, Washington","center":[-122.5720456,48.8493008],"geometry":{"type":"Point","coordinates":[-122.5720456,48.8493008]},"address":"5670","context":[{"id":"city.237438","osm_id":"relation237438","text":"Ferndale"},{"id":"county.1153762","osm_id":"relation1153762","text":"Whatcom County"},{"id":"country.148838","osm_id":"relation148838","text":"United States"},{"id":"state.165479","osm_id":"relation165479","text":"Washington"}],"bbox":[-122.5720456,48.8493008,-122.5720456,48.8493008]},{"id":"city.237438","type":"Feature","place_type":["city"],"relevance":1,"properties":{"osm_id":"relation237438"},"text":"Ferndale","place_name":"Ferndale, Whatcom County, Washington","bbox":[-122.63328204,48.81709194,-122.55057504,48.88463205],"center":[-122.5967614,48.8506669],"geometry":{"type":"Point","coordinates":[-122.5967614,48.8506669]},"context":[{"id":"county.1153762","osm_id":"relation1153762","text":"Whatcom County"},{"id":"country.148838","osm_id":"relation148838","text":"United States"},{"id":"state.165479","osm_id":"relation165479","text":"Washington"}]},{"id":"county.1153762","type":"Feature","place_type":["county"],"relevance":1,"properties":{"osm_id":"relation1153762"},"text":"Whatcom County","place_name":"Whatcom County, Washington, United States","bbox":[-123.3222397,48.63525417,-120.65467605,49.00243912],"center":[-121.8575003,48.818786],"geometry":{"type":"Point","coordinates":[-121.8575003,48.818786]},"context":[{"id":"country.148838","osm_id":"relation148838","text":"United States"},{"id":"state.165479","osm_id":"relation165479","text":"Washington"}]},{"id":"country.148838","type":"Feature","place_type":["country"],"relevance":1,"properties":{"osm_id":"relation148838"},"text":"United States","place_name":"United States","bbox":[144.41291858,-14.76083588,-64.35549002,71.60482164],"center":[-99.0090672,36.81843],"geometry":{"type":"Point","coordinates":[-99.0090672,36.81843]},"context":[{"id":"state.165479","osm_id":"relation165479","text":"Washington"}]},{"id":"state.165479","type":"Feature","place_type":["state"],"relevance":1,"properties":{"osm_id":"relation165479"},"text":"Washington","place_name":"Washington","bbox":[-124.83609163,45.54372254,-116.91742984,49.00243912],"center":[-120.6959452,47.2746376],"geometry":{"type":"Point","coordinates":[-120.6959452,47.2746376]}}],"attribution":"<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"}
