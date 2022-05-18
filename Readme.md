@@ -59,16 +59,31 @@ Forward geocoding:
 
 If successful, geocoding service will return object with field `places` - an array of objects, each describing one place with following fields (not all fields are always set):
 
-- `place` - place name (may be absent if address doesn't correspond to a named place)
+- `place` - place name (absent if address doesn't correspond to a named place)
 - `type` - place type
 - `address` - formated address
 - `house` - building number
-- `street` - street name
+- `street` - street name (without house number)
 - `community` - neighborhood or village
-- `town` - town or city
+- `city` - town or city
 - `county` - administrative area more general than town
-- `province` - state or province (usually abbreviated)
+- `state` - state or province (abbreviated)
 - `country` - country (short form but not abbreviated)
+
+Place types:
+
+- `venue` - points of interest, businesses, things with walls; unless a place has a more specific type like `hotel` or `airport` or other OSM [map feature]
+- `address` - places with a street address
+- `street` - streets, roads, highways
+- `country` - places that issue passports, nations, nation-states
+- `state` - states and provinces
+- `administrative` - official governmental area like region or county
+- `city`
+- `town`
+- `village`
+- `hamlet`
+- `suburb`
+- `neighbourhood`
 
 ## License
 
@@ -82,3 +97,5 @@ MIT © [Natalia Kowalczyk](https://melitele.me)
 
 [deps-image]: https://img.shields.io/david/furkot/geocode.svg
 [deps-url]: https://david-dm.org/furkot/geocode
+
+[map feature]: https://wiki.openstreetmap.org/wiki/Map_features
