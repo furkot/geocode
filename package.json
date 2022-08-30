@@ -24,7 +24,7 @@
     "@pirxpilot/replay": "^2.2.1",
     "isomorphic-fetch": "^3.0.0",
     "jshint": "~2",
-    "mocha": "~6",
+    "mocha": "~10",
     "should": "~13"
   },
   "scripts": {
