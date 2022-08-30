@@ -1,5 +1,5 @@
 {
-  "name": "furkot-geocode",
+  "name": "@furkot/geocode",
   "version": "2.0.2",
   "description": "Geocoding service for Furkot",
   "author": {

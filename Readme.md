@@ -1,21 +1,21 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![Dependency Status][deps-image]][deps-url]
 
-# furkot-geocode
+# @furkot/geocode
 
 Geocoding service for Furkot
 
 ## Install
 
 ```sh
-$ npm install --save furkot-geocode
+$ npm install --save @furkot/geocode
 ```
 
 ## Usage
 
 ````js
-var furkotGeocode = require('furkot-geocode');
+var furkotGeocode = require('@furkot/geocode');
 var options = {}; // options activating geocoding services
 
 var geocode = furkotGeocode(options);
@@ -74,11 +74,11 @@ If successful, geocoding service will return object with field `places` - an arr
 
 MIT © [Natalia Kowalczyk](https://melitele.me)
 
-[npm-image]: https://img.shields.io/npm/v/furkot-geocode.svg
-[npm-url]: https://npmjs.org/package/furkot-geocode
+[npm-image]: https://img.shields.io/npm/v/@furkot/geocode
+[npm-url]: https://npmjs.org/package/@furkot/geocode
 
-[travis-url]: https://travis-ci.org/furkot/geocode
-[travis-image]: https://img.shields.io/travis/furkot/geocode.svg
+[build-url]: https://github.com/furkot/geocode/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/workflow/status/furkot/geocode/check
 
-[deps-image]: https://img.shields.io/david/furkot/geocode.svg
-[deps-url]: https://david-dm.org/furkot/geocode
+[deps-image]: https://img.shields.io/librariesio/release/npm/@furkot/geocode
+[deps-url]: https://libraries.io/npm/@furkot%2Fgeocode
