@@ -1,141 +1,136 @@
 const should = require('should');
 const furkotGeocode = require('../lib/geocode');
 
-function mockService(queryId, query, result, fn) {
-  fn(undefined, true, queryId, query, {
-    provider: 'success'
-  });
-}
+/* global AbortController */
 
 function timeService(timeout) {
   let timeoutId;
-  let queryInProgress;
-  let callback;
+  const fn = {};
+  const pr = new Promise(resolve => fn.resolve = resolve);
+
   return {
-    geocode(queryId, query, result, fn) {
-      queryInProgress = query;
-      callback = fn;
-      timeoutId = setTimeout(function () {
-        fn(undefined, false, queryId, query);
-      }, timeout);
+    geocode() {
+      timeoutId = setTimeout(() => fn.resolve(), timeout);
+      return pr;
     },
-    abort(queryId) {
+    abort() {
       clearTimeout(timeoutId);
-      callback(undefined, true, queryId, queryInProgress);
+      fn.resolve();
     }
   };
 }
 
-function maxService(queryId, query, result, fn) {
-  fn(undefined, true, queryId, query, {
-    places: new Array(10)
-  });
-}
-
-function placeService(queryId, query, result, fn) {
-  fn(undefined, true, queryId, query, {
+function placeService() {
+  return {
     places: [{
       place: 'a'
     }, {
       street: 'a'
     }]
-  });
-
+  };
 }
 
 describe('furkot-geocode node module', function () {
 
-  it('no input no output', function (done) {
-    furkotGeocode(undefined)(undefined, function (result) {
-      should.not.exist(result);
-      done();
-    });
+  it('no input no output', async function () {
+    const result = await furkotGeocode()();
+    should.not.exist(result);
   });
 
-  it('empty input no output', function (done) {
-    furkotGeocode(undefined)({}, function (result) {
-      should.not.exist(result);
-      done();
-    });
+  it('empty input no output', async function () {
+    const result = await furkotGeocode()({});
+    should.not.exist(result);
   });
 
-  it('no service', function (done) {
-    furkotGeocode({
+  it('no service', async function () {
+    const result = await furkotGeocode({
       forward: [],
       reverse: []
-    })({}, function (result) {
-      should.not.exist(result);
-      done();
-    });
+    })({});
+    should.not.exist(result);
   });
 
-  it('service', function (done) {
-    furkotGeocode({
-      forward: [
-        mockService
-      ],
+  it('service', async function () {
+    function mockService() {
+      return {
+        result: 'success'
+      };
+    }
+    mockService.provider = 'mock';
+    const result = await furkotGeocode({
+      forward: [mockService],
       reverse: []
-    })({}, function (result) {
-      result.should.eql({
-        provider: 'success'
-      });
-      done();
+    })({});
+    should.exist(result);
+    result.should.eql({
+      result: 'success',
+      provider: 'mock',
+      stats: ['mock']
     });
   });
 
   it('only enabled services', function () {
     const options = {
-      opencage_enable() {}
+      opencage_enable() { }
     };
     const geocode = furkotGeocode(options);
     geocode.options.should.have.property('forward').with.length(1);
     geocode.options.should.have.property('reverse').with.length(1);
   });
 
-  it('timeout', function (done) {
-    this.slow(400);
-    const service = timeService(200);
-    furkotGeocode({
+  it('timeout', async function () {
+    this.slow(200);
+    const service = timeService(100);
+    const geocode = furkotGeocode({
       forward: [
         service.geocode
       ],
       reverse: [],
-      abort: [
-        service.abort
-      ],
-      timeout: 100
-    })({}, function (result) {
-      should.not.exists(result);
-      setTimeout(done, 250);
+      timeout: 50
     });
+    geocode({}).should.be.rejectedWith('timeout');
   });
 
-  it('maximum items', function (done) {
-    furkotGeocode({
+
+  it('abort', async function () {
+    this.slow(200);
+    const service = timeService(100);
+    const geocode = furkotGeocode({
       forward: [
-        maxService
+        service.geocode
       ],
       reverse: []
-    })({
-      max: 2
-    }, function (result) {
-      result.should.have.property('places').with.length(2);
-      done();
     });
+    const ac = new AbortController();
+    const p = geocode({}, { signal: ac.signal });
+    ac.abort();
+    p.should.be.rejectedWith('abort');
   });
 
-  it('places', function (done) {
-    furkotGeocode({
+
+  it('maximum items', async function () {
+    const geocode = furkotGeocode({
+      forward: [
+        () => ({ places: new Array(10) })
+      ],
+      reverse: []
+    });
+    const result = await geocode({ max: 2 });
+    should.exist(result);
+    result.should.have.property('places').with.length(2);
+  });
+
+  it('places', async function () {
+    const result = await furkotGeocode({
       forward: [
         placeService
       ],
       reverse: []
     })({
       place: 'a'
-    }, function (result) {
-      result.should.have.property('places').with.length(1);
-      result.places[0].should.have.property('place', 'a');
-      done();
     });
+    should.exist(result);
+    result.should.have.property('places').with.length(1);
+    result.places[0].should.have.property('place', 'a');
   });
 });
