@@ -20,13 +20,13 @@ describe('tilehosting geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(9);
       result.places[0].should.deepEqual({
-        ll: [ -46.8365592, -23.5372062 ],
+        ll: [-46.8365592, -23.5372062],
         type: 'street',
         place: 'Rua Cafelândia',
         address: 'Carapicuíba, Região Metropolitana de São Paulo, São Paulo'
       });
       result.places[1].should.deepEqual({
-        ll: [ -46.8900124, -23.4851747 ],
+        ll: [-46.8900124, -23.4851747],
         type: 'street',
         place: 'Rua Cafelândia',
         address: 'Barueri, Região Metropolitana de São Paulo, São Paulo'
@@ -48,7 +48,7 @@ describe('tilehosting geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(17);
       result.places[0].should.deepEqual({
-        ll: [ -122.4773342, 37.8096796 ],
+        ll: [-122.4773342, 37.8096796],
         type: 'street',
         place: 'Golden Gate Bridge',
         address: 'San Francisco, San Francisco City and County, California'
@@ -62,7 +62,7 @@ describe('tilehosting geocoding', function () {
   it('reverse', function (done) {
 
     const query = {
-      ll: [ 14.5272, -22.6792 ]
+      ll: [14.5272, -22.6792]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -70,7 +70,7 @@ describe('tilehosting geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(3);
       result.places[0].should.deepEqual({
-        ll: [ 14.526695, -22.6793015 ],
+        ll: [14.526695, -22.6793015],
         type: 'street',
         place: 'Woermann St',
         address: 'Erongo Region'

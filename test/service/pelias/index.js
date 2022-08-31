@@ -23,7 +23,7 @@ describe('pelias geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ -46.836557, -23.5372 ],
+        ll: [-46.836557, -23.5372],
         type: 'street',
         address: 'Rua Cafelândia, Carapicuíba, Sao Paulo, Brazil',
         street: 'Rua Cafelândia',
@@ -50,7 +50,7 @@ describe('pelias geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(2);
       result.places[0].should.deepEqual({
-        ll: [ 18.658675, 54.351453 ],
+        ll: [18.658675, 54.351453],
         place: 'SS Sołdek',
         type: 'venue',
         address: 'Gdańsk, pomorskie, Polska',
@@ -77,7 +77,7 @@ describe('pelias geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(4);
       result.places[0].should.deepEqual({
-        ll:  [ -109.608784, 38.612304 ],
+        ll: [-109.608784, 38.612304],
         place: 'Arches National Park',
         type: 'venue',
         county: 'Grand County',
@@ -86,7 +86,7 @@ describe('pelias geocoding', function () {
         address: 'Grand County, UT, USA'
       });
       result.places[1].should.deepEqual({
-        ll:  [ -109.61995, 38.616497 ],
+        ll: [-109.61995, 38.616497],
         place: 'Arches National Park Visitor Center',
         type: 'venue',
         county: 'Grand County',
@@ -95,7 +95,7 @@ describe('pelias geocoding', function () {
         address: 'Grand County, UT, USA'
       });
       result.places[2].should.deepEqual({
-        ll:  [ 125.23645, 6.815029 ],
+        ll: [125.23645, 6.815029],
         place: 'Pedro A. Arches National High School',
         type: 'venue',
         county: 'Bansalan',
@@ -104,7 +104,7 @@ describe('pelias geocoding', function () {
         address: 'Bansalan, Davao del Sur, Philippines'
       });
       result.places[3].should.deepEqual({
-        ll:  [ -109.548641, 38.561166 ],
+        ll: [-109.548641, 38.561166],
         place: 'Quality Suites Moab Near Arches National Park',
         type: 'venue',
         street: '800 South Main Street',
@@ -123,7 +123,7 @@ describe('pelias geocoding', function () {
   it('reverse', function (done) {
 
     const query = {
-      ll: [ 14.5272, -22.6792 ]
+      ll: [14.5272, -22.6792]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -131,7 +131,7 @@ describe('pelias geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(10);
       result.places[0].should.deepEqual({
-        ll: [ 14.526802, -22.679183 ],
+        ll: [14.526802, -22.679183],
         place: 'Beryl\'s Restaurant',
         type: 'venue',
         address: 'Swakopmund, Erongo, Namibia',
@@ -148,7 +148,7 @@ describe('pelias geocoding', function () {
   it('address', function (done) {
 
     const query = {
-      ll: [ -118.983976, 37.63619 ]
+      ll: [-118.983976, 37.63619]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -156,7 +156,7 @@ describe('pelias geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(6);
       result.places[0].should.deepEqual({
-        ll: [ -118.983976, 37.63619 ],
+        ll: [-118.983976, 37.63619],
         type: 'venue',
         address: '3253 Meridian, Mammoth Lakes, CA, USA',
         place: 'The Summit',
@@ -167,7 +167,7 @@ describe('pelias geocoding', function () {
         country: 'USA'
       });
       result.places[1].should.deepEqual({
-        ll: [ -118.983976, 37.63619 ],
+        ll: [-118.983976, 37.63619],
         type: 'address',
         address: '3253 Meridian, Mammoth Lakes, CA, USA',
         street: '3253 Meridian',

@@ -9,7 +9,7 @@ describe('synchronous geocoding', function () {
       response(query) {
         if (query.place === 'Sołdek') {
           return [{
-            ll: [ 18.658663, 54.351444 ],
+            ll: [18.658663, 54.351444],
             place: 'SS Sołdek'
           }];
         }
@@ -28,7 +28,7 @@ describe('synchronous geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ 18.658663, 54.351444 ],
+        ll: [18.658663, 54.351444],
         place: 'SS Sołdek'
       });
       result.should.have.property('provider', 'local');

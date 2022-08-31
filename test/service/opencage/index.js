@@ -20,7 +20,7 @@ describe('opencage geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(2);
       result.places[0].should.deepEqual({
-        ll: [ -46.8359735, -23.5370962 ],
+        ll: [-46.8359735, -23.5370962],
         type: 'road',
         place: 'Rua Cafelândia',
         address: 'Rua Cafelândia, Parque José Alexandre, Carapicuíba - SP, 06321-665, Brazil',
@@ -31,7 +31,7 @@ describe('opencage geocoding', function () {
         country: 'Brazil'
       });
       result.places[1].should.deepEqual({
-        ll: [ -46.835, -23.52272 ],
+        ll: [-46.835, -23.52272],
         type: 'city',
         address: 'Carapicuíba, Brazil',
         town: 'Carapicuíba',
@@ -57,7 +57,7 @@ describe('opencage geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ 18.6586312, 54.351451 ],
+        ll: [18.6586312, 54.351451],
         place: 'SS Sołdek',
         type: 'museum',
         address: 'Długie Pobrzeże, 80-838 Gdańsk, Polska',
@@ -76,7 +76,7 @@ describe('opencage geocoding', function () {
   it('reverse', function (done) {
 
     const query = {
-      ll: [ 14.5272, -22.6792 ]
+      ll: [14.5272, -22.6792]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -84,7 +84,7 @@ describe('opencage geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ 14.5268016, -22.6791826 ],
+        ll: [14.5268016, -22.6791826],
         place: 'Beryl\'s Restaurant',
         type: 'restaurant',
         address: 'Woermann St, Swakopmund 22001, Namibia',

@@ -1,4 +1,3 @@
-
 /* global mapboxgl */
 
 mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
@@ -21,16 +20,18 @@ function onMapInit() {
     zoom: 4
   });
 
-  map.on('click', function(event) {
+  map.on('click', function (event) {
     ll.value = event.ll[0].toFixed(6) + ', ' + event.ll[1].toFixed(6);
-    window.dispatchEvent(new CustomEvent('ll', { detail: {
-      ll: event.ll,
-      max: searchFormEl.max.value,
-      type: searchFormEl.place.value
-    }}));
+    window.dispatchEvent(new CustomEvent('ll', {
+      detail: {
+        ll: event.ll,
+        max: searchFormEl.max.value,
+        type: searchFormEl.place.value
+      }
+    }));
   });
 
-  searchFormEl.addEventListener('submit', function(event) {
+  searchFormEl.addEventListener('submit', function (event) {
     event.preventDefault();
     const placeOrAddress = searchFormEl.place.value;
     if (placeOrAddress) {
@@ -47,15 +48,16 @@ function onMapInit() {
         detail.partial = true;
       }
       window.dispatchEvent(new CustomEvent('place', { detail }));
-    }
-    else if (searchFormEl.ll.value) {
+    } else if (searchFormEl.ll.value) {
       const ll = searchFormEl.ll.value.split(',').map(function (l) {
         return parseFloat(l.trim());
       });
-      window.dispatchEvent(new CustomEvent('ll', { detail: {
-        ll,
-        max: searchFormEl.max.value
-      }}));
+      window.dispatchEvent(new CustomEvent('ll', {
+        detail: {
+          ll,
+          max: searchFormEl.max.value
+        }
+      }));
     }
   });
 }
@@ -65,7 +67,7 @@ function onMapInit() {
 if (process.env.GEOCODIO_KEY) {
   service('geocodio', {
     order: ['geocodio'],
-    geocodio_parameters: { interval : 1000 },
+    geocodio_parameters: { interval: 1000 },
     geocodio_enable() { return true; },
     geocodio_key: process.env.GEOCODIO_KEY
   });
@@ -73,7 +75,7 @@ if (process.env.GEOCODIO_KEY) {
 if (process.env.GRAPHHOPPER_KEY) {
   service('graphhopper', {
     order: ['graphhopper'],
-    graphhopper_parameters: { interval : 1000 },
+    graphhopper_parameters: { interval: 1000 },
     graphhopper_enable() { return true; },
     graphhopper_key: process.env.GRAPHHOPPER_KEY
   });
@@ -99,7 +101,7 @@ if (process.env.HOGFISH_KEY) {
 if (process.env.LOCATIONIQ_KEY) {
   service('locationiq', {
     order: ['locationiq'],
-    locationiq_parameters: { interval : 1000 },
+    locationiq_parameters: { interval: 1000 },
     locationiq_enable() { return true; },
     locationiq_key: process.env.LOCATIONIQ_KEY
   });
@@ -107,7 +109,7 @@ if (process.env.LOCATIONIQ_KEY) {
 if (process.env.OPENCAGE_KEY) {
   service('opencage', {
     order: ['opencage'],
-    opencage_parameters: { interval : 1000 },
+    opencage_parameters: { interval: 1000 },
     opencage_enable() { return true; },
     opencage_key: process.env.OPENCAGE_KEY
   });
@@ -115,7 +117,7 @@ if (process.env.OPENCAGE_KEY) {
 if (process.env.OPENROUTE_KEY) {
   service('openroute', {
     order: ['pelias'],
-    pelias_parameters: { interval : 1000 },
+    pelias_parameters: { interval: 1000 },
     pelias_enable() { return true; },
     pelias_key: process.env.OPENROUTE_KEY
   });
@@ -123,14 +125,15 @@ if (process.env.OPENROUTE_KEY) {
 if (process.env.POSITIONSTACK_KEY) {
   service('positionstack', {
     order: ['positionstack'],
-    positionstack_parameters: { interval : 1000 },
+    positionstack_parameters: { interval: 1000 },
     positionstack_enable() { return true; },
     positionstack_key: process.env.POSITIONSTACK_KEY
   });
-}if (process.env.TILEHOSTING_KEY) {
+}
+if (process.env.TILEHOSTING_KEY) {
   service('tilehosting', {
     order: ['tilehosting'],
-    tilehosting_parameters: { interval : 1000 },
+    tilehosting_parameters: { interval: 1000 },
     tilehosting_enable() { return true; },
     tilehosting_key: process.env.TILEHOSTING_KEY
   });
@@ -153,7 +156,7 @@ function service(name, options) {
   function onResults(res) {
     resultEl.classList.remove('in-progress');
     if (res && res.places) {
-      resultEl.value = res.places.map(function(place) {
+      resultEl.value = res.places.map(function (place) {
         return JSON.stringify(place, formatter, 2).replace('"[', '[').replace(']"', ']');
       }).join(', ');
     } else {
@@ -176,7 +179,7 @@ function service(name, options) {
 
 function formatter(key, value) {
   if (key === 'll') {
-    return '[ '+ value.join(', ') + ' ]';
+    return '[ ' + value.join(', ') + ' ]';
   }
   return value;
 }

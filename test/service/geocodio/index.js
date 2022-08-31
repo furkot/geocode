@@ -20,7 +20,7 @@ describe('geocodio geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(2);
       result.places[0].should.deepEqual({
-        ll: [ -87.12502, 39.52365 ],
+        ll: [-87.12502, 39.52365],
         address: 'Brazil, IN 47834',
         town: 'Brazil',
         county: 'Clay County',
@@ -50,7 +50,7 @@ describe('geocodio geocoding', function () {
   it('reverse', function (done) {
 
     const query = {
-      ll: [ -111.401389, 45.283333 ]
+      ll: [-111.401389, 45.283333]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -58,7 +58,7 @@ describe('geocodio geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(8);
       result.places[0].should.deepEqual({
-        ll: [ -111.400596, 45.284265 ],
+        ll: [-111.400596, 45.284265],
         address: '50 Big Sky Resort Rd, Big Sky, MT 59716',
         housenumber: '50',
         street: 'Big Sky Resort',

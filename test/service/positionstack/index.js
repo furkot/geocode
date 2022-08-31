@@ -20,7 +20,7 @@ describe('positionstack geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ -46.830942, -23.532918 ],
+        ll: [-46.830942, -23.532918],
         type: 'locality',
         town: 'Carapicuíba',
         province: 'SP',
@@ -45,7 +45,7 @@ describe('positionstack geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(10);
       result.places[0].should.deepEqual({
-        ll: [ -122.478861, 37.822118 ],
+        ll: [-122.478861, 37.822118],
         type: 'venue',
         town: 'San Francisco',
         province: 'CA',
@@ -70,7 +70,7 @@ describe('positionstack geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(10);
       result.places[0].should.deepEqual({
-        ll: [ -49.542449, -11.928923 ],
+        ll: [-49.542449, -11.928923],
         type: 'country',
         country: 'Brazil',
         place: 'Brazil',
@@ -85,7 +85,7 @@ describe('positionstack geocoding', function () {
   it('reverse', function (done) {
 
     const query = {
-      ll: [ 14.5272, -22.6792 ]
+      ll: [14.5272, -22.6792]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -93,7 +93,7 @@ describe('positionstack geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(10);
       result.places[0].should.deepEqual({
-        ll: [ 14.526802, -22.679183 ],
+        ll: [14.526802, -22.679183],
         type: 'venue',
         province: 'ER',
         country: 'Namibia',

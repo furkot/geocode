@@ -17,8 +17,8 @@ describe('geocoding service', function () {
       finished.should.eql(false);
       outQueryId.should.eql(queryId);
       outQuery.should.eql(query);
-      outQuery.should.have.property('stats', [ 'test' ]);
-      result.should.have.property('stats', [ 'test' ]);
+      outQuery.should.have.property('stats', ['test']);
+      result.should.have.property('stats', ['test']);
       result.should.have.property('provider', 'test');
       done();
     });
@@ -38,8 +38,8 @@ describe('geocoding service', function () {
       finished.should.eql(false);
       outQueryId.should.eql(queryId);
       outQuery.should.eql(query);
-      outQuery.should.have.property('stats', [ 'test' ]);
-      result.should.have.property('stats', [ 'test' ]);
+      outQuery.should.have.property('stats', ['test']);
+      result.should.have.property('stats', ['test']);
       result.should.have.property('provider', 'test');
 
       queryId = 'after failure';
@@ -66,11 +66,10 @@ describe('geocoding service', function () {
         finished.should.eql(false);
         outQueryId.should.eql(queryId);
         outQuery.should.eql(query);
-        outQuery.should.have.property('stats', [ 'test' ]);
-        result.should.have.property('stats', [ 'test' ]);
+        outQuery.should.have.property('stats', ['test']);
+        result.should.have.property('stats', ['test']);
         result.should.have.property('provider', 'test');
-      }
-      else {
+      } else {
         should.not.exist(err);
         finished.should.eql(false);
         outQueryId.should.eql(queryId);
@@ -86,7 +85,7 @@ describe('geocoding service', function () {
     setTimeout(() => s.abort(queryId), 500);
   }
 
-  it('abort', function(done) {
+  it('abort', function (done) {
     this.timeout(2500);
     const s = service({
       name: 'test',
