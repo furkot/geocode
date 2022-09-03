@@ -1,4 +1,14 @@
 
+2.0.3 / 2022-09-03
+==================
+
+ * modernize and format code
+ * fix hogfish tests
+ * fix tests for node 18
+ * upgrade mocha to ~10
+ * replace Travis CI with github actions
+ * rename to @furkot/geocode
+
 2.0.2 / 2022-05-12
 ==================
 
