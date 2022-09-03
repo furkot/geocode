@@ -1,4 +1,10 @@
 
+3.0.0 / 2022-09-03
+==================
+
+ * rewrite to work as promised based API
+ * bump compatibility to ES2020
+
 2.0.3 / 2022-09-03
 ==================
 
