@@ -13,5 +13,5 @@
   "unused": true,
   "browserify": true,
   "browser": true,
-  "esversion": 6
+  "esversion": 11
 }

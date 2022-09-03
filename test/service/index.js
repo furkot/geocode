@@ -3,95 +3,50 @@ const service = require('../../lib/service');
 
 describe('geocoding service', function () {
 
-  it('empty', done => {
-    const s = service({
+  it('empty', async function () {
+    const { geocode } = service({
       name: 'test',
       prepareRequest: () => ({}),
       request: (url, req, fn) => fn(),
       status: () => undefined
     });
-    const queryId = 'empty';
-    const query = {};
-    s.geocode('forward', queryId, query, undefined, function (err, finished, outQueryId, outQuery, result) {
-      should.not.exist(err);
-      finished.should.eql(false);
-      outQueryId.should.eql(queryId);
-      outQuery.should.eql(query);
-      outQuery.should.have.property('stats', ['test']);
-      result.should.have.property('stats', ['test']);
-      result.should.have.property('provider', 'test');
-      done();
-    });
+    const result = await geocode('forward', 'empty', {});
+    should.not.exist(result);
   });
 
-  it('failure', done => {
-    const s = service({
+  it('failure', async function () {
+    const { geocode } = service({
       name: 'test',
       prepareRequest: () => ({}),
       request: (url, req, fn) => fn(),
       status: () => 'failure'
     });
-    let queryId = 'failure';
-    let query = {};
-    s.geocode('forward', queryId, query, undefined, function (err, finished, outQueryId, outQuery, result) {
-      should.not.exist(err);
-      finished.should.eql(false);
-      outQueryId.should.eql(queryId);
-      outQuery.should.eql(query);
-      outQuery.should.have.property('stats', ['test']);
-      result.should.have.property('stats', ['test']);
-      result.should.have.property('provider', 'test');
+    let result = await geocode('forward', 'failure', {});
+    should.not.exist(result);
 
-      queryId = 'after failure';
-      query = {};
-      s.geocode('forward', queryId, query, undefined, function (err, finished, outQueryId, outQuery, result) {
-        should.not.exist(err);
-        finished.should.eql(false);
-        outQueryId.should.eql(queryId);
-        outQuery.should.eql(query);
-        outQuery.should.not.have.property('stats');
-        result.should.have.property('stats', undefined);
-        result.should.have.property('provider', 'test');
-        done();
-      });
-    });
+    result = await geocode('forward', 'after failure', {});
+    should.not.exist(result);
   });
+});
 
-  function testAbort(s, i, fn) {
-    const queryId = 'abort';
-    const query = {};
-    s.geocode('forward', queryId, query, undefined, function (err, finished, outQueryId, outQuery, result) {
-      if (i) {
-        err.should.eql('input error');
-        finished.should.eql(false);
-        outQueryId.should.eql(queryId);
-        outQuery.should.eql(query);
-        outQuery.should.have.property('stats', ['test']);
-        result.should.have.property('stats', ['test']);
-        result.should.have.property('provider', 'test');
-      } else {
-        should.not.exist(err);
-        finished.should.eql(false);
-        outQueryId.should.eql(queryId);
-        outQuery.should.eql(query);
-        outQuery.should.not.have.property('stats');
-        result.should.have.property('stats', undefined);
-        result.should.have.property('provider', 'test');
-        return fn();
-      }
-      i -= 1;
-      testAbort(s, i, fn);
-    });
-    setTimeout(() => s.abort(queryId), 500);
+it('abort', async function () {
+  this.slow(200);
+  const { abort, geocode } = service({
+    name: 'test',
+    prepareRequest: () => ({}),
+    request: () => ({ abort: () => undefined })
+  });
+  const query = {};
+  for (let queryId = 0; queryId < 3; queryId++) {
+    abortAfter(queryId);
+    let err = await geocode('forward', queryId, query).should.be.rejected();
+    err.should.eql('input error');
   }
 
-  it('abort', function (done) {
-    this.timeout(2500);
-    const s = service({
-      name: 'test',
-      prepareRequest: () => ({}),
-      request: () => ({ abort: () => undefined })
-    });
-    testAbort(s, 3, done);
-  });
+  let result = await geocode('forward', 'after 3 aborts', query);
+  should.not.exist(result);
+
+  function abortAfter(queryId) {
+    return setTimeout(() => abort(queryId), 40);
+  }
 });
