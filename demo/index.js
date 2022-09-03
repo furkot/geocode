@@ -33,31 +33,23 @@ function onMapInit() {
 
   searchFormEl.addEventListener('submit', function (event) {
     event.preventDefault();
-    const placeOrAddress = searchFormEl.place.value;
-    if (placeOrAddress) {
+    const { place, ll, type, max, partial } = searchFormEl;
+    if (place) {
       const detail = {
         bounds: map.bounds(),
-        max: searchFormEl.max.value
+        max: max.value,
+        [type.value === 'address' ? 'address' : 'place']: place.value
       };
-      if (searchFormEl.type.value === 'address') {
-        detail.address = placeOrAddress;
-      } else {
-        detail.place = placeOrAddress;
-      }
-      if (searchFormEl.partial.checked) {
+      if (partial.checked) {
         detail.partial = true;
       }
       window.dispatchEvent(new CustomEvent('place', { detail }));
-    } else if (searchFormEl.ll.value) {
-      const ll = searchFormEl.ll.value.split(',').map(function (l) {
-        return parseFloat(l.trim());
-      });
-      window.dispatchEvent(new CustomEvent('ll', {
-        detail: {
-          ll,
-          max: searchFormEl.max.value
-        }
-      }));
+    } else if (ll.value) {
+      const detail = {
+        ll: ll.value.split(',').map(l => parseFloat(l.trim())),
+        max: max.value
+      };
+      window.dispatchEvent(new CustomEvent('ll', { detail }));
     }
   });
 }
@@ -142,25 +134,27 @@ if (process.env.TILEHOSTING_KEY) {
 function service(name, options) {
   const resultEl = appendTo(geocodersEl, template);
   const geocode = furkotGeocode(options);
+  window.addEventListener('ll', onSearch);
+  window.addEventListener('place', onSearch);
 
-  function onLocationChange(event) {
+  async function onSearch({ detail }) {
     resultEl.classList.add('in-progress');
-    geocode(event.detail, onResults);
-  }
-
-  function onSearch(event) {
-    resultEl.classList.add('in-progress');
-    geocode(event.detail, onResults);
-  }
-
-  function onResults(res) {
-    resultEl.classList.remove('in-progress');
-    if (res && res.places) {
-      resultEl.value = res.places.map(function (place) {
-        return JSON.stringify(place, formatter, 2).replace('"[', '[').replace(']"', ']');
-      }).join(', ');
-    } else {
+    try {
+      const { places } = await geocode(detail);
+      resultEl.value = places
+        .map(
+          place => JSON
+            .stringify(place, formatter, 2)
+            .replace('"[', '[')
+            .replace(']"', ']')
+        )
+        .join(', ');
+    }
+    catch (e) {
       resultEl.value = '';
+    }
+    finally {
+      resultEl.classList.remove('in-progress');
     }
   }
 
@@ -172,9 +166,6 @@ function service(name, options) {
     geocodersEl.appendChild(resultbox);
     return resultEl;
   }
-
-  window.addEventListener('ll', onLocationChange);
-  window.addEventListener('place', onSearch);
 }
 
 function formatter(key, value) {
