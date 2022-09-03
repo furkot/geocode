@@ -1,5 +1,5 @@
 {
-  "name": "furkot-geocode",
+  "name": "@furkot/geocode",
   "version": "2.0.2",
   "description": "Geocoding service for Furkot",
   "author": {
@@ -24,7 +24,7 @@
     "@pirxpilot/replay": "^2.2.1",
     "isomorphic-fetch": "^3.0.0",
     "jshint": "~2",
-    "mocha": "~6",
+    "mocha": "~10",
     "should": "~13"
   },
   "scripts": {

@@ -24,7 +24,7 @@ describe('hogfish geocoding', function () {
     const query = {
       place: 'Murphy',
       type: 'fillingstation',
-      ll: [ -104.86063, 39.59278 ]
+      ll: [-104.86063, 39.59278]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -32,7 +32,7 @@ describe('hogfish geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ -104.86063, 39.59278 ],
+        ll: [-104.86063, 39.59278],
         place: 'Murphy Express',
         url: 'https://www.pure-gas.org/station?station_id=40499',
         street: '11005 E Briarwood Ave',
@@ -62,7 +62,7 @@ describe('hogfish geocoding', function () {
     const query = {
       place: 'Hyatt House Denver - Tech Center',
       type: 'hotel',
-      ll: [ -104.879164, 39.591416 ]
+      ll: [-104.879164, 39.591416]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -70,7 +70,7 @@ describe('hogfish geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ -104.879164, 39.591416 ],
+        ll: [-104.879164, 39.591416],
         place: 'Hyatt House Denver Tech Center',
         url: undefined,
         street: '9280 E Costilla Ave',

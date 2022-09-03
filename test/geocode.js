@@ -35,12 +35,12 @@ function maxService(queryId, query, result, fn) {
 function placeService(queryId, query, result, fn) {
   fn(undefined, true, queryId, query, {
     places: [{
-      place:'a'
+      place: 'a'
     }, {
       street: 'a'
     }]
   });
-  
+
 }
 
 describe('furkot-geocode node module', function () {
@@ -85,7 +85,7 @@ describe('furkot-geocode node module', function () {
 
   it('only enabled services', function () {
     const options = {
-        opencage_enable() {}
+      opencage_enable() {}
     };
     const geocode = furkotGeocode(options);
     geocode.options.should.have.property('forward').with.length(1);

@@ -20,7 +20,7 @@ describe('locationiq geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [  -46.8359735, -23.5370962 ],
+        ll: [-46.8359735, -23.5370962],
         type: 'road',
         address: 'Rua Cafelândia, Carapicuíba, São Paulo, Brazil',
         street: 'Rua Cafelândia',
@@ -46,7 +46,7 @@ describe('locationiq geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ 18.658631239705393, 54.35145095 ],
+        ll: [18.658631239705393, 54.35145095],
         place: 'SS Sołdek',
         type: 'museum',
         address: 'Długie Pobrzeże, Gdańsk, województwo pomorskie, Polska',
@@ -65,7 +65,10 @@ describe('locationiq geocoding', function () {
 
     const query = {
       address: '30 West 26th Street, New York',
-      bounds: [[-136.85324796095287,29.833181774137493],[-58.630591710944685,59.76129059655832]],
+      bounds: [
+        [-136.85324796095287, 29.833181774137493],
+        [-58.630591710944685, 59.76129059655832]
+      ],
       partial: true
     };
     geocode('forward', 10, query, {}, function (err, value, id, query, result) {
@@ -76,7 +79,7 @@ describe('locationiq geocoding', function () {
       result.places[0].should.deepEqual({
         place: 'Hill Country Barbecue Market',
         type: 'restaurant',
-        ll: [ -73.9904326, 40.7442736 ],
+        ll: [-73.9904326, 40.7442736],
         address: '30 West 26th Street, New York, NY, USA',
         street: '30 West 26th Street',
         town: 'New York',
@@ -86,7 +89,7 @@ describe('locationiq geocoding', function () {
       result.places[1].should.deepEqual({
         place: 'Mapzen',
         type: 'disused',
-        ll: [ -73.9903515, 40.7442363 ],
+        ll: [-73.9903515, 40.7442363],
         address: '30 West 26th Street, New York, NY, USA',
         street: '30 West 26th Street',
         town: 'New York',
@@ -96,7 +99,7 @@ describe('locationiq geocoding', function () {
       result.places[2].should.deepEqual({
         place: 'Samsung Accelerator',
         type: 'company',
-        ll: [ -73.9903727, 40.7442104 ],
+        ll: [-73.9903727, 40.7442104],
         address: '30 West 26th Street, New York, NY, USA',
         street: '30 West 26th Street',
         town: 'New York',
@@ -112,7 +115,7 @@ describe('locationiq geocoding', function () {
   it('reverse', function (done) {
 
     const query = {
-      ll: [ 14.5272, -22.6792 ]
+      ll: [14.5272, -22.6792]
     };
     geocode('reverse', 1, query, {}, function (err, value, id, query, result) {
       should.not.exist(err);
@@ -120,7 +123,7 @@ describe('locationiq geocoding', function () {
       should.exist(result);
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
-        ll: [ 14.5268016, -22.6791826 ],
+        ll: [14.5268016, -22.6791826],
         place: 'Beryl\'s Restaurant',
         type: 'restaurant',
         address: 'Woermann St, Swakopmund, Erongo Region, Namibia',
@@ -139,7 +142,10 @@ describe('locationiq geocoding', function () {
 
     const query = {
       address: '2200 S. Jason St, Denver, CO 80223',
-      bounds: [[-106.24023437500165,41.84270596422118],[-93.75976562500192,38.10619124884522]],
+      bounds: [
+        [-106.24023437500165, 41.84270596422118],
+        [-93.75976562500192, 38.10619124884522]
+      ],
       partial: true
     };
     geocode('forward', 10, query, {}, function (err, value, id, query, result) {
@@ -149,7 +155,7 @@ describe('locationiq geocoding', function () {
       result.should.have.property('places').with.length(1);
       result.places[0].should.deepEqual({
         type: 'house_number',
-        ll: [ -104.999354, 39.676536 ],
+        ll: [-104.999354, 39.676536],
         address: '2200 South Jason Street, Denver, CO, USA',
         street: '2200 South Jason Street',
         town: 'Denver',
