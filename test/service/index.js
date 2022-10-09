@@ -39,8 +39,7 @@ it('abort', async function () {
   const query = {};
   for (let queryId = 0; queryId < 3; queryId++) {
     abortAfter(queryId);
-    let err = await geocode('forward', queryId, query).should.be.rejected();
-    err.should.eql('input error');
+    await geocode('forward', queryId, query).should.be.fulfilledWith(undefined);
   }
 
   let result = await geocode('forward', 'after 3 aborts', query);
