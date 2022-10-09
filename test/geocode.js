@@ -88,7 +88,7 @@ describe('furkot-geocode node module', function () {
       reverse: [],
       timeout: 50
     });
-    geocode({}).should.be.rejectedWith('timeout');
+    return geocode({}).should.be.rejectedWith({ cause: Symbol.for('timeout') });
   });
 
 
@@ -104,7 +104,7 @@ describe('furkot-geocode node module', function () {
     const ac = new AbortController();
     const p = geocode({}, { signal: ac.signal });
     ac.abort();
-    p.should.be.rejectedWith('abort');
+    return p.should.be.rejectedWith({ name: 'AbortError' });
   });
 
 
