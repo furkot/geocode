@@ -44,6 +44,7 @@ describe('pelias geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [18.658675, 54.351453],
       place: 'SS Sołdek',
+      url: 'https://www.openstreetmap.org/way/125199669',
       type: 'venue',
       address: 'Gdańsk, pomorskie, Polska',
       county: 'Gdańsk',
@@ -65,6 +66,7 @@ describe('pelias geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [-109.608784, 38.612304],
       place: 'Arches National Park',
+      url: 'https://www.openstreetmap.org/relation/5868384',
       type: 'venue',
       county: 'Grand County',
       province: 'UT',
@@ -74,6 +76,7 @@ describe('pelias geocoding', function () {
     result.places[1].should.deepEqual({
       ll: [-109.61995, 38.616497],
       place: 'Arches National Park Visitor Center',
+      url: 'https://www.openstreetmap.org/way/130058023',
       type: 'venue',
       county: 'Grand County',
       province: 'UT',
@@ -83,6 +86,7 @@ describe('pelias geocoding', function () {
     result.places[2].should.deepEqual({
       ll: [125.23645, 6.815029],
       place: 'Pedro A. Arches National High School',
+      url: 'https://www.openstreetmap.org/way/961674317',
       type: 'venue',
       county: 'Bansalan',
       province: 'Davao del Sur',
@@ -92,6 +96,7 @@ describe('pelias geocoding', function () {
     result.places[3].should.deepEqual({
       ll: [-109.548641, 38.561166],
       place: 'Quality Suites Moab Near Arches National Park',
+      url: 'https://www.openstreetmap.org/way/130513576',
       type: 'venue',
       street: '800 South Main Street',
       town: 'Moab',
@@ -113,6 +118,7 @@ describe('pelias geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [14.526802, -22.679183],
       place: 'Beryl\'s Restaurant',
+      url: 'https://www.openstreetmap.org/node/4488973891',
       type: 'venue',
       address: 'Swakopmund, Erongo, Namibia',
       county: 'Swakopmund',
@@ -133,6 +139,7 @@ describe('pelias geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [-111.968051, 33.319324],
       place: 'Z\'Tejas',
+      url: 'https://www.openstreetmap.org/node/10238187804',
       type: 'restaurant',
       address: '7221 West Ray Road, Chandler, AZ, USA',
       street: '7221 West Ray Road',
@@ -163,6 +170,22 @@ describe('pelias geocoding', function () {
     });
   });
 
+  it('reverse whosonfirst', async function () {
+
+    const query = {
+      ll: [-123.530400, 31.892108]
+    };
+    const result = await geocode('reverse', 1, query);
+    should.exist(result);
+    result.should.have.property('places').with.length(1);
+    result.places[0].should.deepEqual({
+      ll: [-40.308722, 23.992882],
+      place: 'North Pacific Ocean',
+      url: 'https://spelunker.whosonfirst.org/id/404528711/',
+      type: 'venue'
+    });
+  });
+
   it('address', async function () {
 
     const query = {
@@ -176,6 +199,7 @@ describe('pelias geocoding', function () {
       type: 'venue',
       address: '3253 Meridian, Mammoth Lakes, CA, USA',
       place: 'The Summit',
+      url: 'https://www.openstreetmap.org/way/42188373',
       street: '3253 Meridian',
       town: 'Mammoth Lakes',
       county: 'Mono County',

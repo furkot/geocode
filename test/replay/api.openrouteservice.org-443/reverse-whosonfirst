@@ -1,0 +1,24 @@
+GET /geocode/reverse?point.lon=-123.5304&point.lat=31.892108&api_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+server: nginx/1.23.1
+date: Tue, 27 Jun 2023 15:23:10 GMT
+content-type: application/json; charset=utf-8
+content-length: 985
+connection: close
+access-control-allow-headers: X-Requested-With,content-type, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Authorization, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+access-control-allow-methods: GET, OPTIONS, OPTIONS,GET,POST
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"3d9-ua6ujO1mMyBEeyQpacS7NfdCcO0"
+x-powered-by: pelias
+x-ratelimit-limit: 100000
+x-ratelimit-remaining: 99159
+x-ratelimit-reset: 1687961491
+x-robots-tag: none
+access-control-expose-headers: x-ratelimit-remaining, x-ratelimit-reset, x-ratelimit-limit
+
+{"geocoding":{"version":"0.2","attribution":"https://openrouteservice.org/terms-of-service/#attribution-geocode","query":{"size":10,"private":false,"point.lat":31.892108,"point.lon":-123.5304,"boundary.circle.lat":31.892108,"boundary.circle.lon":-123.5304,"lang":{"name":"English","iso6391":"en","iso6393":"eng","via":"default","defaulted":true},"querySize":20},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1687879390674},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-40.308722,23.992882]},"properties":{"id":"404528711","gid":"whosonfirst:ocean:404528711","layer":"venue","source":"whosonfirst","source_id":"404528711","name":"North Pacific Ocean","confidence":0.5,"distance":8032.678,"accuracy":"centroid","ocean":"North Pacific Ocean","ocean_gid":"whosonfirst:ocean:404528711","label":"North Pacific Ocean"},"bbox":[-180,-0.057619,179.999897,58.238539]}],"bbox":[-180,-0.057619,179.999897,58.238539]}
