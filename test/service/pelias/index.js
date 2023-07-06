@@ -121,6 +121,48 @@ describe('pelias geocoding', function () {
     });
   });
 
+  it('reverse place', async function () {
+
+    const query = {
+      ll: [-111.96805357933044, 33.31932240303048],
+      type: 'restaurant'
+    };
+    const result = await geocode('reverse', 1, query);
+    should.exist(result);
+    result.should.have.property('places').with.length(10);
+    result.places[0].should.deepEqual({
+      ll: [-111.968051, 33.319324],
+      place: 'Z\'Tejas',
+      type: 'restaurant',
+      address: '7221 West Ray Road, Chandler, AZ, USA',
+      street: '7221 West Ray Road',
+      town: 'Chandler',
+      county: 'Maricopa County',
+      province: 'AZ',
+      country: 'USA'
+    });
+  });
+
+  it('reverse address', async function () {
+
+    const query = {
+      ll: [-111.96762442588806, 33.31971239067134]
+    };
+    const result = await geocode('reverse', 1, query);
+    should.exist(result);
+    result.should.have.property('places').with.length(10);
+    result.places[0].should.deepEqual({
+      ll: [-111.967228, 33.31982],
+      type: 'street',
+      address: 'West Ray Road, Chandler, AZ, USA',
+      street: 'West Ray Road',
+      town: 'Chandler',
+      county: 'Maricopa County',
+      province: 'AZ',
+      country: 'USA'
+    });
+  });
+
   it('address', async function () {
 
     const query = {
