@@ -1,4 +1,10 @@
 
+3.1.0 / 2023-07-08
+==================
+
+ * return place source URL from Pelias
+ * favor venues over addresses when querying for places
+
 3.0.1 / 2022-10-09
 ==================
 
