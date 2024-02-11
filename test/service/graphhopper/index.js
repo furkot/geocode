@@ -76,13 +76,13 @@ describe('graphhopper geocoding', function () {
     result.places[2].should.deepEqual({
       ll: [-71.086670478147, 42.36274665],
       type: 'construction',
-      housenumber: '325',
+      house: '325',
       street: 'Main Street',
       town: 'Cambridge',
       province: 'MA',
       country: 'USA',
       place: '325 Main Street',
-      address: 'Main Street, Cambridge, MA, USA'
+      address: '325 Main Street, Cambridge, MA, USA'
     });
     result.places[3].should.deepEqual({
       ll: [-71.6192199, 42.5524712],
@@ -141,13 +141,13 @@ describe('graphhopper geocoding', function () {
     result.places[1].should.deepEqual({
       ll: [-111.4011158, 45.2839783],
       type: 'sports_centre',
-      housenumber: '50',
+      house: '50',
       street: 'Big Sky Resort Road',
       town: 'Big Sky',
       province: 'MT',
       country: 'USA',
       place: 'Big Sky Resort',
-      address: 'Big Sky Resort Road, Big Sky, MT, USA'
+      address: '50 Big Sky Resort Road, Big Sky, MT, USA'
     });
     result.places[2].should.deepEqual({
       ll: [-111.40110501870444, 45.284622],

@@ -45,7 +45,7 @@ describe('geocodio geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [-111.400596, 45.284265],
       address: '50 Big Sky Resort Rd, Big Sky, MT 59716',
-      housenumber: '50',
+      house: '50',
       street: 'Big Sky Resort',
       county: 'Madison County',
       province: 'MT',

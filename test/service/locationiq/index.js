@@ -67,7 +67,8 @@ describe('locationiq geocoding', function () {
       type: 'restaurant',
       ll: [-73.9904326, 40.7442736],
       address: '30 West 26th Street, New York, NY, USA',
-      street: '30 West 26th Street',
+      house: '30',
+      street: 'West 26th Street',
       town: 'New York',
       province: 'NY',
       country: 'USA'
@@ -77,7 +78,8 @@ describe('locationiq geocoding', function () {
       type: 'disused',
       ll: [-73.9903515, 40.7442363],
       address: '30 West 26th Street, New York, NY, USA',
-      street: '30 West 26th Street',
+      house: '30',
+      street: 'West 26th Street',
       town: 'New York',
       province: 'NY',
       country: 'USA'
@@ -87,7 +89,8 @@ describe('locationiq geocoding', function () {
       type: 'company',
       ll: [-73.9903727, 40.7442104],
       address: '30 West 26th Street, New York, NY, USA',
-      street: '30 West 26th Street',
+      house: '30',
+      street: 'West 26th Street',
       town: 'New York',
       province: 'NY',
       country: 'USA'
@@ -131,7 +134,8 @@ describe('locationiq geocoding', function () {
       type: 'house_number',
       ll: [-104.999354, 39.676536],
       address: '2200 South Jason Street, Denver, CO, USA',
-      street: '2200 South Jason Street',
+      house: '2200',
+      street: 'South Jason Street',
       town: 'Denver',
       province: 'CO',
       country: 'USA'
