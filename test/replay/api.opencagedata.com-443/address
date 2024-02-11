@@ -1,0 +1,19 @@
+GET /geocode/v1/json?q=2200+S.+Jason+St%2C+Denver%2C+CO+80223&no_annotations=1&key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+date: Sun, 11 Feb 2024 21:21:23 GMT
+server: Apache
+access-control-allow-origin: *
+x-ratelimit-limit: 2500
+x-ratelimit-remaining: 2365
+x-ratelimit-reset: 1707696000
+vary: Accept-Encoding
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+content-type: application/json; charset=utf-8
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+connection: close
+
+{"documentation":"https://opencagedata.com/api","licenses":[{"name":"see attribution guide","url":"https://opencagedata.com/credits"}],"rate":{"limit":2500,"remaining":2365,"reset":1707696000},"results":[{"bounds":{"northeast":{"lat":39.676586,"lng":-104.999304},"southwest":{"lat":39.676486,"lng":-104.999404}},"components":{"ISO_3166-1_alpha-2":"US","ISO_3166-1_alpha-3":"USA","ISO_3166-2":["US-CO"],"_category":"building","_normalized_city":"Denver","_type":"building","city":"Denver","continent":"North America","country":"United States","country_code":"us","house_number":"2200","postcode":"80223","road":"South Jason Street","state":"Colorado","state_code":"CO"},"confidence":10,"formatted":"2200 South Jason Street, Denver, CO 80223, United States of America","geometry":{"lat":39.676536,"lng":-104.999354}},{"components":{"ISO_3166-1_alpha-2":"US","ISO_3166-1_alpha-3":"USA","ISO_3166-2":["US-CO"],"_category":"building","_normalized_city":"Denver","_type":"building","continent":"North America","country":"United States of America","country_code":"us","house_number":"2200","road":"S Jason St","state":"Colorado","state_code":"CO","town":"Denver"},"confidence":10,"formatted":"2200 S Jason St, Denver, CO, United States of America","geometry":{"lat":39.676659,"lng":-104.999461}},{"bounds":{"northeast":{"lat":39.725665,"lng":-104.98745},"southwest":{"lat":39.660455,"lng":-105.018673}},"components":{"ISO_3166-1_alpha-2":"US","ISO_3166-1_alpha-3":"USA","ISO_3166-2":["US-CO"],"_category":"postcode","_type":"postcode","continent":"North America","country":"United States of America","country_code":"us","county":"Denver County","postcode":"80223","state":"Colorado","state_code":"CO"},"confidence":7,"formatted":"Denver County, CO 80223, United States of America","geometry":{"lat":39.7002,"lng":-105.0028}}],"status":{"code":200,"message":"OK"},"stay_informed":{"blog":"https://blog.opencagedata.com","mastodon":"https://en.osm.town/@opencage"},"thanks":"For using an OpenCage API","timestamp":{"created_http":"Sun, 11 Feb 2024 21:21:23 GMT","created_unix":1707686483},"total_results":3}

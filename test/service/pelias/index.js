@@ -24,6 +24,7 @@ describe('pelias geocoding', function () {
       ll: [-46.836557, -23.5372],
       type: 'street',
       address: 'Rua Cafelândia, Carapicuíba, Sao Paulo, Brazil',
+      normal: 'Rua Cafelândia,Carapicuíba,Sao Paulo,BR',
       street: 'Rua Cafelândia',
       town: 'Carapicuíba',
       county: 'Carapicuiba',
@@ -46,11 +47,12 @@ describe('pelias geocoding', function () {
       place: 'SS Sołdek',
       url: 'https://www.openstreetmap.org/way/125199669',
       type: 'venue',
-      address: 'Gdańsk, pomorskie, Polska',
+      address: 'Gdańsk, pomorskie, Poland',
+      normal: 'Gdańsk,pomorskie,PL',
       county: 'Gdańsk',
       province: 'pomorskie',
       town: 'Gdańsk',
-      country: 'Polska'
+      country: 'Poland'
     });
   });
 
@@ -71,7 +73,8 @@ describe('pelias geocoding', function () {
       county: 'Grand County',
       province: 'UT',
       country: 'USA',
-      address: 'Grand County, UT, USA'
+      address: 'Grand County, UT, USA',
+      normal: 'UT,US'
     });
     result.places[1].should.deepEqual({
       ll: [-109.61995, 38.616497],
@@ -81,7 +84,8 @@ describe('pelias geocoding', function () {
       county: 'Grand County',
       province: 'UT',
       country: 'USA',
-      address: 'Grand County, UT, USA'
+      address: 'Grand County, UT, USA',
+      normal: 'UT,US'
     });
     result.places[2].should.deepEqual({
       ll: [125.23645, 6.815029],
@@ -91,7 +95,8 @@ describe('pelias geocoding', function () {
       county: 'Bansalan',
       province: 'Davao del Sur',
       country: 'Philippines',
-      address: 'Bansalan, Davao del Sur, Philippines'
+      address: 'Bansalan, Davao del Sur, Philippines',
+      normal: 'Davao del Sur,PH'
     });
     result.places[3].should.deepEqual({
       ll: [-109.548641, 38.561166],
@@ -104,7 +109,8 @@ describe('pelias geocoding', function () {
       county: 'Grand County',
       province: 'UT',
       country: 'USA',
-      address: '800 South Main Street, Moab, UT, USA'
+      address: '800 South Main Street, Moab, UT, USA',
+      normal: '800 South Main Street,Moab,UT,US'
     });
   });
 
@@ -122,6 +128,7 @@ describe('pelias geocoding', function () {
       url: 'https://www.openstreetmap.org/node/4488973891',
       type: 'venue',
       address: 'Swakopmund, Erongo, Namibia',
+      normal: 'Erongo,NA',
       county: 'Swakopmund',
       province: 'Erongo',
       country: 'Namibia'
@@ -143,6 +150,7 @@ describe('pelias geocoding', function () {
       url: 'https://www.openstreetmap.org/node/10238187804',
       type: 'restaurant',
       address: '7221 West Ray Road, Chandler, AZ, USA',
+      normal: '7221 West Ray Road,Chandler,AZ,US',
       house: '7221',
       street: 'West Ray Road',
       town: 'Chandler',
@@ -164,6 +172,7 @@ describe('pelias geocoding', function () {
       ll: [-111.967228, 33.31982],
       type: 'street',
       address: 'West Ray Road, Chandler, AZ, USA',
+      normal: 'West Ray Road,Chandler,AZ,US',
       street: 'West Ray Road',
       town: 'Chandler',
       county: 'Maricopa County',
@@ -184,7 +193,8 @@ describe('pelias geocoding', function () {
       ll: [-40.308722, 23.992882],
       place: 'North Pacific Ocean',
       url: 'https://spelunker.whosonfirst.org/id/404528711/',
-      type: 'venue'
+      type: 'venue',
+      normal: ''
     });
   });
 
@@ -200,6 +210,7 @@ describe('pelias geocoding', function () {
       ll: [-118.983976, 37.63619],
       type: 'venue',
       address: '3253 Meridian, Mammoth Lakes, CA, USA',
+      normal: '3253 Meridian,Mammoth Lakes,CA,US',
       place: 'The Summit',
       url: 'https://www.openstreetmap.org/way/42188373',
       house: '3253',
@@ -213,6 +224,7 @@ describe('pelias geocoding', function () {
       ll: [-118.983976, 37.63619],
       type: 'address',
       address: '3253 Meridian, Mammoth Lakes, CA, USA',
+      normal: '3253 Meridian,Mammoth Lakes,CA,US',
       house: '3253',
       street: 'Meridian',
       town: 'Mammoth Lakes',

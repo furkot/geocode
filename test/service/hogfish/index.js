@@ -47,7 +47,8 @@ describe('hogfish geocoding', function () {
         },
         osm: { id: '0000000041fc198163200000' }
       },
-      address: '11005 E Briarwood Ave, Centennial, CO'
+      address: '11005 E Briarwood Ave, Centennial, CO',
+      normal: '11005 E Briarwood Ave,Centennial,CO,US'
     });
   });
 
@@ -86,7 +87,8 @@ describe('hogfish geocoding', function () {
           url: 'https://www.booking.com/hotel/us/hyatt-house-denver-tech-center.html'
         }
       },
-      address: '9280 E Costilla Ave, Englewood, CO, United States'
+      address: '9280 E Costilla Ave, Englewood, CO, United States',
+      normal: '9280 E Costilla Ave,Englewood,CO,US'
     });
   });
 });

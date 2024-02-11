@@ -21,10 +21,11 @@ describe('positionstack geocoding', function () {
       ll: [-46.830942, -23.532918],
       type: 'locality',
       town: 'Carapicuíba',
-      province: 'SP',
+      province: 'Sao Paulo',
       country: 'Brazil',
       place: 'Carapicuíba',
-      address: 'Carapicuíba, SP, Brazil'
+      address: 'Carapicuíba, Sao Paulo, Brazil',
+      normal: 'Carapicuíba,Sao Paulo,BR'
     });
   });
 
@@ -43,7 +44,8 @@ describe('positionstack geocoding', function () {
       province: 'CA',
       country: 'USA',
       place: 'Golden Gate Bridge',
-      address: 'San Francisco, CA, USA'
+      address: 'San Francisco, CA, USA',
+      normal: 'San Francisco,CA,US'
     });
   });
 
@@ -60,7 +62,8 @@ describe('positionstack geocoding', function () {
       type: 'country',
       country: 'Brazil',
       place: 'Brazil',
-      address: 'Brazil'
+      address: 'Brazil',
+      normal: 'BR'
     });
   });
 
@@ -75,10 +78,11 @@ describe('positionstack geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [14.526802, -22.679183],
       type: 'venue',
-      province: 'ER',
+      province: 'Erongo',
       country: 'Namibia',
       place: 'Beryl\'s Restaurant',
-      address: 'ER, Namibia'
+      address: 'Erongo, Namibia',
+      normal: 'Erongo,NA'
     });
   });
 });

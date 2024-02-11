@@ -61,6 +61,7 @@ If successful, geocoding service will return object with field `places` - an arr
 - `place` - place name (may be absent if address doesn't correspond to a named place)
 - `type` - place type
 - `address` - formated address
+- `normal` - normalized address: `house street,town,province,country_code`
 - `house` - building number
 - `street` - street name
 - `community` - neighborhood or village

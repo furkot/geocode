@@ -22,19 +22,21 @@ describe('opencage geocoding', function () {
       type: 'road',
       place: 'Rua Cafelândia',
       address: 'Rua Cafelândia, Parque José Alexandre, Carapicuíba - SP, 06321-665, Brazil',
+      normal: 'Rua Cafelândia,Carapicuíba,São Paulo,BR',
       street: 'Rua Cafelândia',
       town: 'Carapicuíba',
       county: 'Região Metropolitana de São Paulo',
-      province: 'SP',
+      province: 'São Paulo',
       country: 'Brazil'
     });
     result.places[1].should.deepEqual({
       ll: [-46.835, -23.52272],
       type: 'city',
       address: 'Carapicuíba, Brazil',
+      normal: 'Carapicuíba,São Paulo,BR',
       town: 'Carapicuíba',
       county: 'Carapicuíba',
-      province: 'SP',
+      province: 'São Paulo',
       country: 'Brazil'
     });
   });
@@ -53,11 +55,12 @@ describe('opencage geocoding', function () {
       place: 'SS Sołdek',
       type: 'museum',
       address: 'Długie Pobrzeże, 80-838 Gdańsk, Polska',
+      normal: 'Długie Pobrzeże,Gdańsk,województwo pomorskie,PL',
       street: 'Długie Pobrzeże',
       community: 'Wyspa Spichrzów',
       town: 'Gdańsk',
-      province: '22',
-      country: 'Polska'
+      province: 'województwo pomorskie',
+      country: 'Poland'
     });
   });
 
@@ -74,9 +77,32 @@ describe('opencage geocoding', function () {
       place: 'Beryl\'s Restaurant',
       type: 'restaurant',
       address: 'Woermann St, Swakopmund 22001, Namibia',
+      normal: 'Woermann St,Swakopmund,,NA',
       street: 'Woermann St',
       town: 'Swakopmund',
       country: 'Namibia'
+    });
+  });
+
+  it('address', async function () {
+
+    const query = {
+      address: '2200 S. Jason St, Denver, CO 80223',
+      partial: true
+    };
+    const result = await geocode('forward', 10, query);
+    should.exist(result);
+    result.should.have.property('places').with.length(3);
+    result.places[0].should.deepEqual({
+      type: 'building',
+      ll: [-104.999354, 39.676536],
+      address: '2200 South Jason Street, Denver, CO 80223, USA',
+      normal: '2200 South Jason Street,Denver,CO,US',
+      house: '2200',
+      street: 'South Jason Street',
+      town: 'Denver',
+      province: 'CO',
+      country: 'USA'
     });
   });
 });

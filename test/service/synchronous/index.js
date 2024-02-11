@@ -27,7 +27,8 @@ describe('synchronous geocoding', function () {
     result.should.have.property('places').with.length(1);
     result.places[0].should.deepEqual({
       ll: [18.658663, 54.351444],
-      place: 'SS Sołdek'
+      place: 'SS Sołdek',
+      normal: ''
     });
   });
 
