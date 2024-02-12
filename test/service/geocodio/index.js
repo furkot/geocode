@@ -17,7 +17,7 @@ describe('geocodio geocoding', function () {
     result.should.have.property('places').with.length(2);
     result.places[0].should.deepEqual({
       ll: [-87.12502, 39.52365],
-      address: 'Brazil, IN 47834',
+      address: 'Brazil, IN',
       normal: 'Brazil,IN,US',
       town: 'Brazil',
       county: 'Clay County',
@@ -45,7 +45,7 @@ describe('geocodio geocoding', function () {
     result.should.have.property('places').with.length(8);
     result.places[0].should.deepEqual({
       ll: [-111.400596, 45.284265],
-      address: '50 Big Sky Resort Rd, Big Sky, MT 59716',
+      address: '50 Big Sky Resort Rd, Big Sky, MT',
       normal: '50 Big Sky Resort Rd,Big Sky,MT,US',
       house: '50',
       street: 'Big Sky Resort Rd',

@@ -87,7 +87,7 @@ describe('hogfish geocoding', function () {
           url: 'https://www.booking.com/hotel/us/hyatt-house-denver-tech-center.html'
         }
       },
-      address: '9280 E Costilla Ave, Englewood, CO, United States',
+      address: '9280 E Costilla Ave, Englewood, CO',
       normal: '9280 E Costilla Ave,Englewood,CO,US'
     });
   });

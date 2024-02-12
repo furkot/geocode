@@ -66,7 +66,7 @@ describe('graphhopper geocoding', function () {
       type: 'peak',
       country: 'USA',
       place: 'Main Street Cemetery',
-      address: 'USA',
+      address: 'United States',
       normal: 'US'
     });
     result.places[1].should.deepEqual({
@@ -74,7 +74,7 @@ describe('graphhopper geocoding', function () {
       type: 'dam',
       country: 'USA',
       place: 'Main Street Dam',
-      address: 'USA',
+      address: 'United States',
       normal: 'US'
     });
     result.places[2].should.deepEqual({
@@ -86,7 +86,7 @@ describe('graphhopper geocoding', function () {
       province: 'MA',
       country: 'USA',
       place: '325 Main Street',
-      address: '325 Main Street, Cambridge, MA, USA',
+      address: '325 Main Street, Cambridge, MA',
       normal: '325 Main Street,Cambridge,MA,US'
     });
     result.places[3].should.deepEqual({
@@ -94,7 +94,7 @@ describe('graphhopper geocoding', function () {
       type: 'dam',
       country: 'USA',
       place: 'West Main Street Dam',
-      address: 'USA',
+      address: 'United States',
       normal: 'US'
     });
     result.places[4].should.deepEqual({
@@ -144,7 +144,7 @@ describe('graphhopper geocoding', function () {
       province: 'MT',
       country: 'USA',
       place: 'Mountain Mall',
-      address: 'Black Eagle, MT, USA',
+      address: 'Black Eagle, MT',
       normal: 'Black Eagle,,MT,US'
     });
     result.places[1].should.deepEqual({
@@ -156,7 +156,7 @@ describe('graphhopper geocoding', function () {
       province: 'MT',
       country: 'USA',
       place: 'Big Sky Resort',
-      address: '50 Big Sky Resort Road, Big Sky, MT, USA',
+      address: '50 Big Sky Resort Road, Big Sky, MT',
       normal: '50 Big Sky Resort Road,Big Sky,MT,US'
     });
     result.places[2].should.deepEqual({
@@ -166,7 +166,7 @@ describe('graphhopper geocoding', function () {
       province: 'MT',
       country: 'USA',
       place: 'Basecamp',
-      address: 'Black Eagle, MT, USA',
+      address: 'Black Eagle, MT',
       normal: 'Black Eagle,,MT,US'
     });
     result.places[3].should.deepEqual({
@@ -177,7 +177,7 @@ describe('graphhopper geocoding', function () {
       province: 'MT',
       country: 'USA',
       place: 'Different Spokes',
-      address: 'Mountain to Meadow, Big Sky, MT, USA',
+      address: 'Mountain to Meadow, Big Sky, MT',
       normal: 'Mountain to Meadow,Big Sky,MT,US'
     });
     result.places[4].should.deepEqual({
@@ -188,7 +188,7 @@ describe('graphhopper geocoding', function () {
       province: 'MT',
       country: 'USA',
       place: 'Snowcrest Lodge',
-      address: 'Mountain to Meadow, Big Sky, MT, USA',
+      address: 'Mountain to Meadow, Big Sky, MT',
       normal: 'Mountain to Meadow,Big Sky,MT,US'
     });
   });

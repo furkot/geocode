@@ -73,7 +73,7 @@ describe('pelias geocoding', function () {
       county: 'Grand County',
       province: 'UT',
       country: 'USA',
-      address: 'Grand County, UT, USA',
+      address: 'Utah, USA',
       normal: 'UT,US'
     });
     result.places[1].should.deepEqual({
@@ -84,7 +84,7 @@ describe('pelias geocoding', function () {
       county: 'Grand County',
       province: 'UT',
       country: 'USA',
-      address: 'Grand County, UT, USA',
+      address: 'Utah, USA',
       normal: 'UT,US'
     });
     result.places[2].should.deepEqual({
@@ -95,7 +95,7 @@ describe('pelias geocoding', function () {
       county: 'Bansalan',
       province: 'Davao del Sur',
       country: 'Philippines',
-      address: 'Bansalan, Davao del Sur, Philippines',
+      address: 'Davao del Sur, Philippines',
       normal: 'Davao del Sur,PH'
     });
     result.places[3].should.deepEqual({
@@ -109,7 +109,7 @@ describe('pelias geocoding', function () {
       county: 'Grand County',
       province: 'UT',
       country: 'USA',
-      address: '800 South Main Street, Moab, UT, USA',
+      address: '800 South Main Street, Moab, UT',
       normal: '800 South Main Street,Moab,UT,US'
     });
   });
@@ -127,7 +127,7 @@ describe('pelias geocoding', function () {
       place: 'Beryl\'s Restaurant',
       url: 'https://www.openstreetmap.org/node/4488973891',
       type: 'venue',
-      address: 'Swakopmund, Erongo, Namibia',
+      address: 'Erongo, Namibia',
       normal: 'Erongo,NA',
       county: 'Swakopmund',
       province: 'Erongo',
@@ -149,7 +149,7 @@ describe('pelias geocoding', function () {
       place: 'Z\'Tejas',
       url: 'https://www.openstreetmap.org/node/10238187804',
       type: 'restaurant',
-      address: '7221 West Ray Road, Chandler, AZ, USA',
+      address: '7221 West Ray Road, Chandler, AZ',
       normal: '7221 West Ray Road,Chandler,AZ,US',
       house: '7221',
       street: 'West Ray Road',
@@ -171,7 +171,7 @@ describe('pelias geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [-111.967228, 33.31982],
       type: 'street',
-      address: 'West Ray Road, Chandler, AZ, USA',
+      address: 'West Ray Road, Chandler, AZ',
       normal: 'West Ray Road,Chandler,AZ,US',
       street: 'West Ray Road',
       town: 'Chandler',
@@ -194,6 +194,7 @@ describe('pelias geocoding', function () {
       place: 'North Pacific Ocean',
       url: 'https://spelunker.whosonfirst.org/id/404528711/',
       type: 'venue',
+      address: '',
       normal: ''
     });
   });
@@ -209,7 +210,7 @@ describe('pelias geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [-118.983976, 37.63619],
       type: 'venue',
-      address: '3253 Meridian, Mammoth Lakes, CA, USA',
+      address: '3253 Meridian, Mammoth Lakes, CA',
       normal: '3253 Meridian,Mammoth Lakes,CA,US',
       place: 'The Summit',
       url: 'https://www.openstreetmap.org/way/42188373',
@@ -223,7 +224,7 @@ describe('pelias geocoding', function () {
     result.places[1].should.deepEqual({
       ll: [-118.983976, 37.63619],
       type: 'address',
-      address: '3253 Meridian, Mammoth Lakes, CA, USA',
+      address: '3253 Meridian, Mammoth Lakes, CA',
       normal: '3253 Meridian,Mammoth Lakes,CA,US',
       house: '3253',
       street: 'Meridian',

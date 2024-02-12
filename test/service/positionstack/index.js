@@ -44,7 +44,7 @@ describe('positionstack geocoding', function () {
       province: 'CA',
       country: 'USA',
       place: 'Golden Gate Bridge',
-      address: 'San Francisco, CA, USA',
+      address: 'San Francisco, CA',
       normal: 'San Francisco,CA,US'
     });
   });
