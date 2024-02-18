@@ -1,4 +1,13 @@
 
+3.1.1 / 2024-02-18
+==================
+
+ * return uniformly formatted address field
+ * return normalized address in addition to human-readable one
+ * separate house and street
+ * use @furkot/address to produce uniform addresses
+ * @furkot/address 0.0.3
+
 3.1.0 / 2023-07-08
 ==================
 
