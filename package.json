@@ -15,7 +15,7 @@
     "geocoding"
   ],
   "dependencies": {
-    "@furkot/address": "^0.0.3",
+    "@furkot/address": "^0.0.4",
     "debug": "~2 || ~3 || ~4",
     "fetchagent": "~2",
     "limiter-component": "~1"
