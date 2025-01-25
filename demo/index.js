@@ -127,12 +127,12 @@ if (process.env.POSITIONSTACK_KEY) {
     positionstack_key: process.env.POSITIONSTACK_KEY
   });
 }
-if (process.env.TILEHOSTING_KEY) {
-  service('tilehosting', {
-    order: ['tilehosting'],
-    tilehosting_parameters: { interval: 1000 },
-    tilehosting_enable() { return true; },
-    tilehosting_key: process.env.TILEHOSTING_KEY
+if (process.env.MAPTILER_KEY) {
+  service('maptiler', {
+    order: ['maptiler'],
+    maptiler_parameters: { interval: 1000 },
+    maptiler_enable() { return true; },
+    maptiler_key: process.env.MAPTILER_KEY
   });
 }
 
