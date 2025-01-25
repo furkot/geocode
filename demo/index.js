@@ -34,7 +34,15 @@ function onMapInit() {
   searchFormEl.addEventListener('submit', function (event) {
     event.preventDefault();
     const { place, ll, type, max, partial } = searchFormEl;
-    if (place) {
+    if (ll.value) {
+      const detail = {
+        ll: ll.value.split(',').map(l => parseFloat(l.trim())),
+        max: max.value,
+        type: place.value
+      };
+      window.dispatchEvent(new CustomEvent('ll', { detail }));
+    }
+    else if (place.value) {
       const detail = {
         bounds: map.bounds(),
         max: max.value,
@@ -44,12 +52,6 @@ function onMapInit() {
         detail.partial = true;
       }
       window.dispatchEvent(new CustomEvent('place', { detail }));
-    } else if (ll.value) {
-      const detail = {
-        ll: ll.value.split(',').map(l => parseFloat(l.trim())),
-        max: max.value
-      };
-      window.dispatchEvent(new CustomEvent('ll', { detail }));
     }
   });
 }
@@ -83,6 +85,9 @@ if (process.env.HOGFISH_KEY) {
         ],
         fillingstation: [
           'provider=fuel'
+        ],
+        place: [
+          'provider=universal'
         ]
       }
     },
