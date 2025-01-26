@@ -1,4 +1,10 @@
 
+3.2.0 / 2025-01-26
+==================
+
+ * update tilehosting service to maptiler
+ * add support for hogfish forward geocoder
+
 3.1.3 / 2024-03-08
 ==================
 
