@@ -1,5 +1,5 @@
 const { describe, it } = require('node:test');
-const should = require('should');
+const should = require('chai').should();
 const furkotGeocode = require('../lib/geocode');
 
 /* global AbortController */
@@ -88,7 +88,9 @@ describe('furkot-geocode node module', function () {
       reverse: [],
       timeout: 50
     });
-    return geocode({}).should.be.rejectedWith({ cause: Symbol.for('timeout') });
+    return geocode({})
+      .then(() => should.fail('exception expected'))
+      .catch(err => err.should.have.property('cause', Symbol.for('timeout')));
   });
 
 
@@ -103,7 +105,9 @@ describe('furkot-geocode node module', function () {
     const ac = new AbortController();
     const p = geocode({}, { signal: ac.signal });
     ac.abort();
-    return p.should.be.rejectedWith({ name: 'AbortError' });
+    return p
+      .then(() => should.fail('exception expected'))
+      .catch(err => err.should.have.property('name', 'AbortError'));
   });
 
 

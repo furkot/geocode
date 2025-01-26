@@ -1,5 +1,5 @@
 const { describe, it } = require('node:test');
-const should = require('should');
+const should = require('chai').should();
 const opencage = require('../../../lib/service/opencage');
 
 describe('opencage geocoding', function () {
@@ -18,7 +18,7 @@ describe('opencage geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(2);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-46.8359735, -23.5370962],
       type: 'road',
       place: 'Rua Cafelândia',
@@ -30,7 +30,7 @@ describe('opencage geocoding', function () {
       province: 'São Paulo',
       country: 'Brazil'
     });
-    result.places[1].should.deepEqual({
+    result.places[1].should.deep.equal({
       ll: [-46.835, -23.52272],
       type: 'city',
       address: 'Carapicuíba, São Paulo, Brazil',
@@ -51,7 +51,7 @@ describe('opencage geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [18.6586312, 54.351451],
       place: 'SS Sołdek',
       type: 'museum',
@@ -73,7 +73,7 @@ describe('opencage geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [14.5268016, -22.6791826],
       place: 'Beryl\'s Restaurant',
       type: 'restaurant',
@@ -94,7 +94,7 @@ describe('opencage geocoding', function () {
     const result = await geocode('forward', 10, query);
     should.exist(result);
     result.should.have.property('places').with.length(3);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       type: 'building',
       ll: [-104.999354, 39.676536],
       address: '2200 South Jason Street, Denver, CO',

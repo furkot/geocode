@@ -1,3 +1,5 @@
+require('chai').should();
+
 const legacyFetch = require('node-fetch');
 
 globalThis.fetch = legacyFetch;
