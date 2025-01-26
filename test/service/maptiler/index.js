@@ -1,4 +1,5 @@
-const should = require('should');
+const { describe, it } = require('node:test');
+const should = require('chai').should();
 const maptiler = require('../../../lib/service/maptiler');
 
 describe('maptiler geocoding', function () {
@@ -17,7 +18,7 @@ describe('maptiler geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(5);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-46.83655746281147, -23.537200177660463],
       type: 'street',
       place: 'Rua Cafelândia',
@@ -25,7 +26,7 @@ describe('maptiler geocoding', function () {
       address: 'Brazil',
       normal: 'BR'
     });
-    result.places[1].should.deepEqual({
+    result.places[1].should.deep.equal({
       ll: [-46.895270850509405, -23.61090479385711],
       type: 'street',
       place: 'Rua Cafelândia',
@@ -43,7 +44,7 @@ describe('maptiler geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(5);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-122.28275321424007, 37.84177777704476],
       type: 'place',
       place: 'Golden Gate',
@@ -61,7 +62,7 @@ describe('maptiler geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(5);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [14.526541957636255, -22.679326596603442],
       type: 'street',
       place: 'Woermann Street',

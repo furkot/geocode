@@ -1,4 +1,5 @@
-const should = require('should');
+const { describe, it } = require('node:test');
+const should = require('chai').should();
 const pelias = require('../../../lib/service/pelias');
 
 describe('pelias geocoding', function () {
@@ -20,7 +21,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-46.836557, -23.5372],
       type: 'street',
       address: 'Rua Cafelândia, Carapicuíba, Sao Paulo, Brazil',
@@ -42,7 +43,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(2);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [18.658675, 54.351453],
       place: 'SS Sołdek',
       url: 'https://www.openstreetmap.org/way/125199669',
@@ -65,7 +66,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(4);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-109.608784, 38.612304],
       place: 'Arches National Park',
       url: 'https://www.openstreetmap.org/relation/5868384',
@@ -76,7 +77,7 @@ describe('pelias geocoding', function () {
       address: 'Utah, USA',
       normal: 'UT,US'
     });
-    result.places[1].should.deepEqual({
+    result.places[1].should.deep.equal({
       ll: [-109.61995, 38.616497],
       place: 'Arches National Park Visitor Center',
       url: 'https://www.openstreetmap.org/way/130058023',
@@ -87,7 +88,7 @@ describe('pelias geocoding', function () {
       address: 'Utah, USA',
       normal: 'UT,US'
     });
-    result.places[2].should.deepEqual({
+    result.places[2].should.deep.equal({
       ll: [125.23645, 6.815029],
       place: 'Pedro A. Arches National High School',
       url: 'https://www.openstreetmap.org/way/961674317',
@@ -98,7 +99,7 @@ describe('pelias geocoding', function () {
       address: 'Davao del Sur, Philippines',
       normal: 'Davao del Sur,PH'
     });
-    result.places[3].should.deepEqual({
+    result.places[3].should.deep.equal({
       ll: [-109.548641, 38.561166],
       place: 'Quality Suites Moab Near Arches National Park',
       url: 'https://www.openstreetmap.org/way/130513576',
@@ -122,7 +123,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(10);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [14.526802, -22.679183],
       place: 'Beryl\'s Restaurant',
       url: 'https://www.openstreetmap.org/node/4488973891',
@@ -144,7 +145,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(10);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-111.968051, 33.319324],
       place: 'Z\'Tejas',
       url: 'https://www.openstreetmap.org/node/10238187804',
@@ -168,7 +169,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(10);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-111.967228, 33.31982],
       type: 'street',
       address: 'West Ray Road, Chandler, AZ',
@@ -189,7 +190,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-40.308722, 23.992882],
       place: 'North Pacific Ocean',
       url: 'https://spelunker.whosonfirst.org/id/404528711/',
@@ -207,7 +208,7 @@ describe('pelias geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(6);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-118.983976, 37.63619],
       type: 'venue',
       address: '3253 Meridian, Mammoth Lakes, CA',
@@ -221,7 +222,7 @@ describe('pelias geocoding', function () {
       province: 'CA',
       country: 'USA'
     });
-    result.places[1].should.deepEqual({
+    result.places[1].should.deep.equal({
       ll: [-118.983976, 37.63619],
       type: 'address',
       address: '3253 Meridian, Mammoth Lakes, CA',

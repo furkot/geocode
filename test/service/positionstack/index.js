@@ -1,4 +1,5 @@
-const should = require('should');
+const { describe, it } = require('node:test');
+const should = require('chai').should();
 const positionstack = require('../../../lib/service/positionstack');
 
 describe('positionstack geocoding', function () {
@@ -17,7 +18,7 @@ describe('positionstack geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-46.830942, -23.532918],
       type: 'locality',
       town: 'Carapicuíba',
@@ -37,7 +38,7 @@ describe('positionstack geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(10);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-122.478861, 37.822118],
       type: 'venue',
       town: 'San Francisco',
@@ -57,7 +58,7 @@ describe('positionstack geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(10);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-49.542449, -11.928923],
       type: 'country',
       country: 'Brazil',
@@ -75,7 +76,7 @@ describe('positionstack geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(10);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [14.526802, -22.679183],
       type: 'venue',
       province: 'Erongo',

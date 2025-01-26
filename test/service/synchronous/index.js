@@ -1,4 +1,5 @@
-const should = require('should');
+const { describe, it } = require('node:test');
+const should = require('chai').should();
 const synchronous = require('../../../lib/service/synchronous');
 
 describe('synchronous geocoding', function () {
@@ -25,7 +26,7 @@ describe('synchronous geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [18.658663, 54.351444],
       place: 'SS Sołdek',
       address: '',

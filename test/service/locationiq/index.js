@@ -1,4 +1,5 @@
-const should = require('should');
+const { describe, it } = require('node:test');
+const should = require('chai').should();
 const locationiq = require('../../../lib/service/locationiq');
 
 describe('locationiq geocoding', function () {
@@ -17,7 +18,7 @@ describe('locationiq geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-46.8359735, -23.5370962],
       type: 'road',
       address: 'Rua Cafelândia, Carapicuíba, São Paulo, Brazil',
@@ -38,7 +39,7 @@ describe('locationiq geocoding', function () {
     const result = await geocode('forward', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [18.658631239705393, 54.35145095],
       place: 'SS Sołdek',
       type: 'museum',
@@ -64,7 +65,7 @@ describe('locationiq geocoding', function () {
     const result = await geocode('forward', 10, query);
     should.exist(result);
     result.should.have.property('places').with.length(8);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       place: 'Hill Country Barbecue Market',
       type: 'restaurant',
       ll: [-73.9904326, 40.7442736],
@@ -76,7 +77,7 @@ describe('locationiq geocoding', function () {
       province: 'NY',
       country: 'USA'
     });
-    result.places[1].should.deepEqual({
+    result.places[1].should.deep.equal({
       place: 'Mapzen',
       type: 'disused',
       ll: [-73.9903515, 40.7442363],
@@ -88,7 +89,7 @@ describe('locationiq geocoding', function () {
       province: 'NY',
       country: 'USA'
     });
-    result.places[2].should.deepEqual({
+    result.places[2].should.deep.equal({
       place: 'Samsung Accelerator',
       type: 'company',
       ll: [-73.9903727, 40.7442104],
@@ -110,7 +111,7 @@ describe('locationiq geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [14.5268016, -22.6791826],
       place: 'Beryl\'s Restaurant',
       type: 'restaurant',
@@ -136,7 +137,7 @@ describe('locationiq geocoding', function () {
     const result = await geocode('forward', 10, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       type: 'house_number',
       ll: [-104.999354, 39.676536],
       address: '2200 South Jason Street, Denver, CO',

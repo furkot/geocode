@@ -1,4 +1,5 @@
-const should = require('should');
+const { describe, it } = require('node:test');
+const should = require('chai').should();
 const service = require('../../lib/service');
 
 describe('geocoding service', function () {
@@ -29,8 +30,7 @@ describe('geocoding service', function () {
   });
 });
 
-it('abort', async function () {
-  this.slow(200);
+it('abort', { timeout: 200 }, async function () {
   const { abort, geocode } = service({
     name: 'test',
     prepareRequest: () => ({}),
@@ -39,10 +39,11 @@ it('abort', async function () {
   const query = {};
   for (let queryId = 0; queryId < 3; queryId++) {
     abortAfter(queryId);
-    await geocode('forward', queryId, query).should.be.fulfilledWith(undefined);
+    const r = await geocode('forward', queryId, query);
+    should.not.exist(r);
   }
 
-  let result = await geocode('forward', 'after 3 aborts', query);
+  const result = await geocode('forward', 'after 3 aborts', query);
   should.not.exist(result);
 
   function abortAfter(queryId) {

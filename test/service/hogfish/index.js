@@ -1,4 +1,5 @@
-const should = require('should');
+const { describe, it } = require('node:test');
+const should = require('chai').should();
 const hogfish = require('../../../lib/service/hogfish');
 
 describe('hogfish geocoding', function () {
@@ -29,7 +30,7 @@ describe('hogfish geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-104.86063, 39.59278],
       place: 'Murphy Express',
       url: 'https://www.pure-gas.org/station?station_id=40499',
@@ -61,7 +62,7 @@ describe('hogfish geocoding', function () {
     const result = await geocode('reverse', 1, query);
     should.exist(result);
     result.should.have.property('places').with.length(1);
-    result.places[0].should.deepEqual({
+    result.places[0].should.deep.equal({
       ll: [-104.879164, 39.591416],
       place: 'Hyatt House Denver Tech Center',
       street: '9280 E Costilla Ave',
