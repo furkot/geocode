@@ -1,4 +1,11 @@
 
+3.2.1 / 2025-01-26
+==================
+
+ * add test-cov target
+ * replace `should` with `chai`
+ * replace mocha with `node:test`
+
 3.2.0 / 2025-01-26
 ==================
 
