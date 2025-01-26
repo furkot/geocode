@@ -5,6 +5,11 @@ lint:
 
 test:
 	node --test \
+		$(TEST_OPTS) \
 		--require ./test/replay/index.js
 
-.PHONY: check lint test
+test-cov: TEST_OPTS := --experimental-test-coverage
+test-cov: test
+
+.PHONY: check lint test test-cov
+
