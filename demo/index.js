@@ -34,7 +34,15 @@ function onMapInit() {
   searchFormEl.addEventListener('submit', function (event) {
     event.preventDefault();
     const { place, ll, type, max, partial } = searchFormEl;
-    if (place) {
+    if (ll.value) {
+      const detail = {
+        ll: ll.value.split(',').map(l => parseFloat(l.trim())),
+        max: max.value,
+        type: place.value
+      };
+      window.dispatchEvent(new CustomEvent('ll', { detail }));
+    }
+    else if (place.value) {
       const detail = {
         bounds: map.bounds(),
         max: max.value,
@@ -44,12 +52,6 @@ function onMapInit() {
         detail.partial = true;
       }
       window.dispatchEvent(new CustomEvent('place', { detail }));
-    } else if (ll.value) {
-      const detail = {
-        ll: ll.value.split(',').map(l => parseFloat(l.trim())),
-        max: max.value
-      };
-      window.dispatchEvent(new CustomEvent('ll', { detail }));
     }
   });
 }
@@ -83,6 +85,9 @@ if (process.env.HOGFISH_KEY) {
         ],
         fillingstation: [
           'provider=fuel'
+        ],
+        place: [
+          'provider=universal'
         ]
       }
     },
@@ -122,12 +127,12 @@ if (process.env.POSITIONSTACK_KEY) {
     positionstack_key: process.env.POSITIONSTACK_KEY
   });
 }
-if (process.env.TILEHOSTING_KEY) {
-  service('tilehosting', {
-    order: ['tilehosting'],
-    tilehosting_parameters: { interval: 1000 },
-    tilehosting_enable() { return true; },
-    tilehosting_key: process.env.TILEHOSTING_KEY
+if (process.env.MAPTILER_KEY) {
+  service('maptiler', {
+    order: ['maptiler'],
+    maptiler_parameters: { interval: 1000 },
+    maptiler_enable() { return true; },
+    maptiler_key: process.env.MAPTILER_KEY
   });
 }
 

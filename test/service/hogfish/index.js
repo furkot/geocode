@@ -36,7 +36,6 @@ describe('hogfish geocoding', function () {
       street: '11005 E Briarwood Ave',
       town: 'Centennial',
       province: 'CO',
-      country: undefined,
       type: 'fillingstation',
       service: {
         pure_gas: {
@@ -65,7 +64,6 @@ describe('hogfish geocoding', function () {
     result.places[0].should.deepEqual({
       ll: [-104.879164, 39.591416],
       place: 'Hyatt House Denver Tech Center',
-      url: undefined,
       street: '9280 E Costilla Ave',
       town: 'Englewood',
       province: 'CO',
