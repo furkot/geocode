@@ -4,11 +4,8 @@ lint:
 	./node_modules/.bin/jshint *.js lib test
 
 test:
-	./node_modules/.bin/mocha \
-		--recursive \
-		--node-option no-experimental-fetch \
+	node --test \
 		--require should \
-		--require test/replay \
-		--require isomorphic-fetch
+		--require ./test/replay/index.js
 
 .PHONY: check lint test

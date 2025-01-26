@@ -1,3 +1,4 @@
+const { describe, it } = require('node:test');
 const should = require('should');
 const furkotGeocode = require('../lib/geocode');
 
@@ -78,8 +79,7 @@ describe('furkot-geocode node module', function () {
     geocode.options.should.have.property('reverse').with.length(1);
   });
 
-  it('timeout', async function () {
-    this.slow(200);
+  it('timeout', { timeout: 200 }, async function () {
     const service = timeService(100);
     const geocode = furkotGeocode({
       forward: [
@@ -92,8 +92,7 @@ describe('furkot-geocode node module', function () {
   });
 
 
-  it('abort', async function () {
-    this.slow(200);
+  it('abort', { timeout: 200 }, async function () {
     const service = timeService(100);
     const geocode = furkotGeocode({
       forward: [

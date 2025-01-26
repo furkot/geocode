@@ -1,3 +1,4 @@
+const { describe, it } = require('node:test');
 const should = require('should');
 const service = require('../../lib/service');
 
@@ -29,8 +30,7 @@ describe('geocoding service', function () {
   });
 });
 
-it('abort', async function () {
-  this.slow(200);
+it('abort', { timeout: 200 }, async function () {
   const { abort, geocode } = service({
     name: 'test',
     prepareRequest: () => ({}),

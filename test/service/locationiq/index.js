@@ -1,3 +1,4 @@
+const { describe, it } = require('node:test');
 const should = require('should');
 const locationiq = require('../../../lib/service/locationiq');
 

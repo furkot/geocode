@@ -21,10 +21,9 @@
     "limiter-component": "~1"
   },
   "devDependencies": {
+    "@pirxpilot/jshint": "^3.1.0",
     "@pirxpilot/replay": "^2.2.1",
-    "isomorphic-fetch": "^3.0.0",
-    "jshint": "~2",
-    "mocha": "~10",
+    "node-fetch": "~2",
     "should": "~13"
   },
   "scripts": {

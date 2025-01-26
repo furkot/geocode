@@ -1,3 +1,10 @@
+const legacyFetch = require('node-fetch');
+
+globalThis.fetch = legacyFetch;
+globalThis.Response = legacyFetch.Response;
+globalThis.Headers = legacyFetch.Headers;
+globalThis.Request = legacyFetch.Request;
+
 const Replay = require('@pirxpilot/replay');
 Replay.fixtures = __dirname;
 

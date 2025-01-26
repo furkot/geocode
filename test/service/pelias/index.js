@@ -1,3 +1,4 @@
+const { describe, it } = require('node:test');
 const should = require('should');
 const pelias = require('../../../lib/service/pelias');
 
