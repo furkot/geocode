@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "@furkot/address": "^0.0.5",
-    "debug": "~2 || ~3 || ~4",
+    "debug": "~4",
     "fetchagent": "~2",
     "limiter-component": "~1"
   },
