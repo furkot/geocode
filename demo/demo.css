@@ -23,7 +23,7 @@
 }
 
 label input {
-  margin: 0 .5em;
+  margin: 0 0.5em;
 }
 
 #map {
@@ -52,4 +52,3 @@ label input {
   min-width: 320px;
   display: inline-block;
 }
-

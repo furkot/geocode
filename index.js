@@ -1,1 +1,1 @@
-module.exports = require('./lib/geocode');
+module.exports = require('./lib/geocode.js');

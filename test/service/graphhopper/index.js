@@ -1,17 +1,15 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const graphhopper = require('../../../lib/service/graphhopper');
+const graphhopper = require('../../../lib/service/graphhopper/index.js');
 
-describe('graphhopper geocoding', function () {
-
+describe('graphhopper geocoding', () => {
   const { geocode } = graphhopper({
     interval: 1,
     name: 'graphhopper',
     graphhopper_key: process.env.GRAPHHOPPER_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
@@ -30,8 +28,7 @@ describe('graphhopper geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Sołdek',
       lang: 'pl'
@@ -52,8 +49,7 @@ describe('graphhopper geocoding', function () {
     });
   });
 
-  it('partial', async function () {
-
+  it('partial', async () => {
     const query = {
       place: 'main street',
       lang: 'en',
@@ -109,8 +105,7 @@ describe('graphhopper geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };
@@ -119,19 +114,18 @@ describe('graphhopper geocoding', function () {
     result.should.have.property('places').with.length(5);
     result.places[0].should.deep.equal({
       ll: [14.5268016, -22.6791826],
-      place: 'Beryl\'s Restaurant',
+      place: "Beryl's Restaurant",
       type: 'restaurant',
       address: 'Woermann St, Swakopmund, Erongo Region, Namibia',
       normal: 'Woermann St,Swakopmund,Erongo Region,NA',
       street: 'Woermann St',
       province: 'Erongo Region',
-      town: "Swakopmund",
+      town: 'Swakopmund',
       country: 'Namibia'
     });
   });
 
-  it('reverse usa', async function () {
-
+  it('reverse usa', async () => {
     const query = {
       ll: [-111.400596, 45.284265]
     };

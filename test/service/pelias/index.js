@@ -1,9 +1,8 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const pelias = require('../../../lib/service/pelias');
+const pelias = require('../../../lib/service/pelias/index.js');
 
-describe('pelias geocoding', function () {
-
+describe('pelias geocoding', () => {
   const { geocode } = pelias({
     interval: 1,
     name: 'pelias',
@@ -13,8 +12,7 @@ describe('pelias geocoding', function () {
     pelias_key: process.env.PELIAS_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
@@ -34,8 +32,7 @@ describe('pelias geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Sołdek',
       lang: 'pl'
@@ -57,8 +54,7 @@ describe('pelias geocoding', function () {
     });
   });
 
-  it('partial', async function () {
-
+  it('partial', async () => {
     const query = {
       place: 'arches national',
       partial: true
@@ -115,8 +111,7 @@ describe('pelias geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };
@@ -125,7 +120,7 @@ describe('pelias geocoding', function () {
     result.should.have.property('places').with.length(10);
     result.places[0].should.deep.equal({
       ll: [14.526802, -22.679183],
-      place: 'Beryl\'s Restaurant',
+      place: "Beryl's Restaurant",
       url: 'https://www.openstreetmap.org/node/4488973891',
       type: 'venue',
       address: 'Erongo, Namibia',
@@ -136,8 +131,7 @@ describe('pelias geocoding', function () {
     });
   });
 
-  it('reverse place', async function () {
-
+  it('reverse place', async () => {
     const query = {
       ll: [-111.96805357933044, 33.31932240303048],
       type: 'restaurant'
@@ -147,7 +141,7 @@ describe('pelias geocoding', function () {
     result.should.have.property('places').with.length(10);
     result.places[0].should.deep.equal({
       ll: [-111.968051, 33.319324],
-      place: 'Z\'Tejas',
+      place: "Z'Tejas",
       url: 'https://www.openstreetmap.org/node/10238187804',
       type: 'restaurant',
       address: '7221 West Ray Road, Chandler, AZ',
@@ -161,8 +155,7 @@ describe('pelias geocoding', function () {
     });
   });
 
-  it('reverse address', async function () {
-
+  it('reverse address', async () => {
     const query = {
       ll: [-111.96762442588806, 33.31971239067134]
     };
@@ -182,10 +175,9 @@ describe('pelias geocoding', function () {
     });
   });
 
-  it('reverse whosonfirst', async function () {
-
+  it('reverse whosonfirst', async () => {
     const query = {
-      ll: [-123.530400, 31.892108]
+      ll: [-123.5304, 31.892108]
     };
     const result = await geocode('reverse', 1, query);
     should.exist(result);
@@ -200,8 +192,7 @@ describe('pelias geocoding', function () {
     });
   });
 
-  it('address', async function () {
-
+  it('address', async () => {
     const query = {
       ll: [-118.983976, 37.63619]
     };

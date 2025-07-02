@@ -1,25 +1,24 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const service = require('../../lib/service');
+const service = require('../../lib/service/index.js');
 
-describe('geocoding service', function () {
-
-  it('empty', async function () {
+describe('geocoding service', () => {
+  it('empty', async () => {
     const { geocode } = service({
       name: 'test',
       prepareRequest: () => ({}),
-      request: (url, req, fn) => fn(),
+      request: (_url, _req, fn) => fn(),
       status: () => undefined
     });
     const result = await geocode('forward', 'empty', {});
     should.not.exist(result);
   });
 
-  it('failure', async function () {
+  it('failure', async () => {
     const { geocode } = service({
       name: 'test',
       prepareRequest: () => ({}),
-      request: (url, req, fn) => fn(),
+      request: (_url, _req, fn) => fn(),
       status: () => 'failure'
     });
     let result = await geocode('forward', 'failure', {});
@@ -30,7 +29,7 @@ describe('geocoding service', function () {
   });
 });
 
-it('abort', { timeout: 200 }, async function () {
+it('abort', { timeout: 200 }, async () => {
   const { abort, geocode } = service({
     name: 'test',
     prepareRequest: () => ({}),

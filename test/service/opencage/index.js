@@ -1,17 +1,15 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const opencage = require('../../../lib/service/opencage');
+const opencage = require('../../../lib/service/opencage/index.js');
 
-describe('opencage geocoding', function () {
-
+describe('opencage geocoding', () => {
   const { geocode } = opencage({
     interval: 1,
     name: 'opencage',
     opencage_key: process.env.OPENCAGE_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
@@ -42,8 +40,7 @@ describe('opencage geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Sołdek',
       lang: 'pl'
@@ -65,8 +62,7 @@ describe('opencage geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };
@@ -75,7 +71,7 @@ describe('opencage geocoding', function () {
     result.should.have.property('places').with.length(1);
     result.places[0].should.deep.equal({
       ll: [14.5268016, -22.6791826],
-      place: 'Beryl\'s Restaurant',
+      place: "Beryl's Restaurant",
       type: 'restaurant',
       address: 'Woermann St, Swakopmund, Namibia',
       normal: 'Woermann St,Swakopmund,,NA',
@@ -85,8 +81,7 @@ describe('opencage geocoding', function () {
     });
   });
 
-  it('address', async function () {
-
+  it('address', async () => {
     const query = {
       address: '2200 S. Jason St, Denver, CO 80223',
       partial: true

@@ -1,17 +1,15 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const positionstack = require('../../../lib/service/positionstack');
+const positionstack = require('../../../lib/service/positionstack/index.js');
 
-describe('positionstack geocoding', function () {
-
+describe('positionstack geocoding', () => {
   const { geocode } = positionstack({
     interval: 1,
     name: 'positionstack',
     positionstack_key: process.env.POSITIONSTACK_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
@@ -30,8 +28,7 @@ describe('positionstack geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Golden Gate Bridge'
     };
@@ -50,8 +47,7 @@ describe('positionstack geocoding', function () {
     });
   });
 
-  it('partial', async function () {
-
+  it('partial', async () => {
     const query = {
       place: 'Golden Gate Br'
     };
@@ -68,8 +64,7 @@ describe('positionstack geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };
@@ -81,7 +76,7 @@ describe('positionstack geocoding', function () {
       type: 'venue',
       province: 'Erongo',
       country: 'Namibia',
-      place: 'Beryl\'s Restaurant',
+      place: "Beryl's Restaurant",
       address: 'Erongo, Namibia',
       normal: 'Erongo,NA'
     });

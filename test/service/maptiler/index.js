@@ -1,17 +1,15 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const maptiler = require('../../../lib/service/maptiler');
+const maptiler = require('../../../lib/service/maptiler/index.js');
 
-describe('maptiler geocoding', function () {
-
+describe('maptiler geocoding', () => {
   const { geocode } = maptiler({
     interval: 1,
     name: 'maptiler',
     maptiler_key: process.env.MAPTILER_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
@@ -36,8 +34,7 @@ describe('maptiler geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Golden Gate Bridge'
     };
@@ -54,8 +51,7 @@ describe('maptiler geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };

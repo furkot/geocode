@@ -7,7 +7,10 @@
     "email": "melitele@furkot.com",
     "url": "https://melitele.me"
   },
-  "repository": "furkot/geocode",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkot/geocode.git"
+  },
   "license": "MIT",
   "keywords": [
     "furkot-geocode",
@@ -21,7 +24,7 @@
     "limiter-component": "~1"
   },
   "devDependencies": {
-    "@pirxpilot/jshint": "^3.1.0",
+    "@biomejs/biome": "2.3.13",
     "@pirxpilot/replay": "^2.2.1",
     "chai": "~4",
     "node-fetch": "~2"

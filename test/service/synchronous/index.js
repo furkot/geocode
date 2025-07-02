@@ -1,24 +1,25 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const synchronous = require('../../../lib/service/synchronous');
+const synchronous = require('../../../lib/service/synchronous/index.js');
 
-describe('synchronous geocoding', function () {
-
+describe('synchronous geocoding', () => {
   const geocode = synchronous({
     name: 'local',
     synchronous_parameters: {
       response(query) {
         if (query.place === 'Sołdek') {
-          return [{
-            ll: [18.658663, 54.351444],
-            place: 'SS Sołdek'
-          }];
+          return [
+            {
+              ll: [18.658663, 54.351444],
+              place: 'SS Sołdek'
+            }
+          ];
         }
       }
     }
   }).geocode;
 
-  it('place', async function () {
+  it('place', async () => {
     const query = {
       place: 'Sołdek',
       lang: 'pl'
@@ -33,5 +34,4 @@ describe('synchronous geocoding', function () {
       normal: ''
     });
   });
-
 });

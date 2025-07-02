@@ -1,17 +1,15 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const locationiq = require('../../../lib/service/locationiq');
+const locationiq = require('../../../lib/service/locationiq/index.js');
 
-describe('locationiq geocoding', function () {
-
+describe('locationiq geocoding', () => {
   const { geocode } = locationiq({
     interval: 1,
     name: 'locationiq',
     locationiq_key: process.env.LOCATIONIQ_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
@@ -30,8 +28,7 @@ describe('locationiq geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Sołdek',
       lang: 'pl'
@@ -52,8 +49,7 @@ describe('locationiq geocoding', function () {
     });
   });
 
-  it('partial', async function () {
-
+  it('partial', async () => {
     const query = {
       address: '30 West 26th Street, New York',
       bounds: [
@@ -103,8 +99,7 @@ describe('locationiq geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };
@@ -113,19 +108,18 @@ describe('locationiq geocoding', function () {
     result.should.have.property('places').with.length(1);
     result.places[0].should.deep.equal({
       ll: [14.5268016, -22.6791826],
-      place: 'Beryl\'s Restaurant',
+      place: "Beryl's Restaurant",
       type: 'restaurant',
       address: 'Woermann St, Swakopmund, Erongo Region, Namibia',
       normal: 'Woermann St,Swakopmund,Erongo Region,NA',
       street: 'Woermann St',
       province: 'Erongo Region',
-      town: "Swakopmund",
+      town: 'Swakopmund',
       country: 'Namibia'
     });
   });
 
-  it('address', async function () {
-
+  it('address', async () => {
     const query = {
       address: '2200 S. Jason St, Denver, CO 80223',
       bounds: [

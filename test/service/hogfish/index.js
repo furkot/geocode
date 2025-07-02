@@ -1,27 +1,21 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const hogfish = require('../../../lib/service/hogfish');
+const hogfish = require('../../../lib/service/hogfish/index.js');
 
-describe('hogfish geocoding', function () {
-
+describe('hogfish geocoding', () => {
   const { geocode } = hogfish({
     hogfish_url: process.env.HOGFISH_URL || 'https://HOGFISH/api/poi',
     hogfish_parameters: {
       types: {
-        hotel: [
-          'provider=hotels'
-        ],
-        fillingstation: [
-          'provider=fuel'
-        ]
+        hotel: ['provider=hotels'],
+        fillingstation: ['provider=fuel']
       }
     },
     interval: 1,
     name: 'hogfish'
   });
 
-  it('fuel stations', async function () {
-
+  it('fuel stations', async () => {
     const query = {
       place: 'Murphy',
       type: 'fillingstation',
@@ -52,8 +46,7 @@ describe('hogfish geocoding', function () {
     });
   });
 
-  it('hotels', async function () {
-
+  it('hotels', async () => {
     const query = {
       place: 'Hyatt House Denver - Tech Center',
       type: 'hotel',

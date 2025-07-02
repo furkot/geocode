@@ -1,15 +1,15 @@
 const { describe, it } = require('node:test');
 const should = require('chai').should();
-const geocodio = require('../../../lib/service/geocodio');
+const geocodio = require('../../../lib/service/geocodio/index.js');
 
-describe('geocodio geocoding', function () {
+describe('geocodio geocoding', () => {
   const { geocode } = geocodio({
     interval: 1,
     name: 'geocodio',
     geocodio_key: process.env.GEOCODIO_KEY || 'furkot'
   });
 
-  it('forward', async function () {
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
@@ -27,8 +27,7 @@ describe('geocodio geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Sołdek',
       lang: 'pl'
@@ -37,7 +36,7 @@ describe('geocodio geocoding', function () {
     should.not.exist(result);
   });
 
-  it('reverse', async function () {
+  it('reverse', async () => {
     const query = {
       ll: [-111.401389, 45.283333]
     };
@@ -52,7 +51,7 @@ describe('geocodio geocoding', function () {
       street: 'Big Sky Resort Rd',
       county: 'Madison County',
       province: 'MT',
-      town: "Big Sky",
+      town: 'Big Sky',
       country: 'USA'
     });
   });
