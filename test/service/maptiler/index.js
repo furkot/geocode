@@ -1,8 +1,5 @@
+import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-
-import { should as loadShould } from 'chai';
-
-const should = loadShould();
 
 import maptiler from '../../../lib/service/maptiler/index.js';
 
@@ -18,9 +15,9 @@ describe('maptiler geocoding', () => {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     const result = await geocode('forward', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(5);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 5);
+    assert.deepEqual(result.places[0], {
       ll: [-46.83655746281147, -23.537200177660463],
       type: 'street',
       place: 'Rua Cafelândia',
@@ -28,7 +25,7 @@ describe('maptiler geocoding', () => {
       address: 'Brazil',
       normal: 'BR'
     });
-    result.places[1].should.deep.equal({
+    assert.deepEqual(result.places[1], {
       ll: [-46.895270850509405, -23.61090479385711],
       type: 'street',
       place: 'Rua Cafelândia',
@@ -43,9 +40,9 @@ describe('maptiler geocoding', () => {
       place: 'Golden Gate Bridge'
     };
     const result = await geocode('forward', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(5);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 5);
+    assert.deepEqual(result.places[0], {
       ll: [-122.28275321424007, 37.84177777704476],
       type: 'place',
       place: 'Golden Gate',
@@ -60,9 +57,9 @@ describe('maptiler geocoding', () => {
       ll: [14.5272, -22.6792]
     };
     const result = await geocode('reverse', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(5);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 5);
+    assert.deepEqual(result.places[0], {
       ll: [14.526541957636255, -22.679326596603442],
       type: 'street',
       place: 'Woermann Street',

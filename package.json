@@ -28,7 +28,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.13",
     "@pirxpilot/replay": "^2.2.1",
-    "chai": "~4.5.0",
     "node-fetch": "~2"
   },
   "scripts": {

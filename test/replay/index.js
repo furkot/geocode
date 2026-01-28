@@ -1,7 +1,3 @@
-import { should as loadShould } from 'chai';
-
-loadShould();
-
 import legacyFetch from 'node-fetch';
 
 globalThis.fetch = legacyFetch;

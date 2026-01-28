@@ -1,8 +1,5 @@
+import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-
-import { should as loadShould } from 'chai';
-
-const should = loadShould();
 
 import hogfish from '../../../lib/service/hogfish/index.js';
 
@@ -26,9 +23,9 @@ describe('hogfish geocoding', () => {
       ll: [-104.86063, 39.59278]
     };
     const result = await geocode('reverse', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(1);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 1);
+    assert.deepEqual(result.places[0], {
       ll: [-104.86063, 39.59278],
       place: 'Murphy Express',
       url: 'https://www.pure-gas.org/station?station_id=40499',
@@ -57,9 +54,9 @@ describe('hogfish geocoding', () => {
       ll: [-104.879164, 39.591416]
     };
     const result = await geocode('reverse', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(1);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 1);
+    assert.deepEqual(result.places[0], {
       ll: [-104.879164, 39.591416],
       place: 'Hyatt House Denver Tech Center',
       street: '9280 E Costilla Ave',
