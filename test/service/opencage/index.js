@@ -1,6 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const opencage = require('../../../lib/service/opencage/index.js');
+import { describe, it } from 'node:test';
+
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import opencage from '../../../lib/service/opencage/index.js';
 
 describe('opencage geocoding', () => {
   const { geocode } = opencage({

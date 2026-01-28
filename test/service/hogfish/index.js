@@ -1,6 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const hogfish = require('../../../lib/service/hogfish/index.js');
+import { describe, it } from 'node:test';
+
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import hogfish from '../../../lib/service/hogfish/index.js';
 
 describe('hogfish geocoding', () => {
   const { geocode } = hogfish({

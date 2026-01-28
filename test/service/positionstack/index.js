@@ -1,6 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const positionstack = require('../../../lib/service/positionstack/index.js');
+import { describe, it } from 'node:test';
+
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import positionstack from '../../../lib/service/positionstack/index.js';
 
 describe('positionstack geocoding', () => {
   const { geocode } = positionstack({

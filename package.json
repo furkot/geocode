@@ -2,6 +2,8 @@
   "name": "@furkot/geocode",
   "version": "3.2.1",
   "description": "Geocoding service for Furkot",
+  "type": "module",
+  "exports": "./lib/geocode.js",
   "author": {
     "name": "Natalia Kowalczyk",
     "email": "melitele@furkot.com",
@@ -18,7 +20,7 @@
     "geocoding"
   ],
   "dependencies": {
-    "@furkot/address": "^0.0.5",
+    "@furkot/address": "^1.0.1",
     "debug": "~4",
     "fetchagent": "~2",
     "limiter-component": "~1"
@@ -26,14 +28,13 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.13",
     "@pirxpilot/replay": "^2.2.1",
-    "chai": "~4",
+    "chai": "~4.5.0",
     "node-fetch": "~2"
   },
   "scripts": {
     "test": "make check"
   },
   "files": [
-    "index.js",
     "lib"
   ]
 }

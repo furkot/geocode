@@ -1,6 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const pelias = require('../../../lib/service/pelias/index.js');
+import { describe, it } from 'node:test';
+
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import pelias from '../../../lib/service/pelias/index.js';
 
 describe('pelias geocoding', () => {
   const { geocode } = pelias({

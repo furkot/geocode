@@ -1,6 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const synchronous = require('../../../lib/service/synchronous/index.js');
+import { describe, it } from 'node:test';
+
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import synchronous from '../../../lib/service/synchronous/index.js';
 
 describe('synchronous geocoding', () => {
   const geocode = synchronous({

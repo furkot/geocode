@@ -1,6 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const graphhopper = require('../../../lib/service/graphhopper/index.js');
+import { describe, it } from 'node:test';
+
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import graphhopper from '../../../lib/service/graphhopper/index.js';
 
 describe('graphhopper geocoding', () => {
   const { geocode } = graphhopper({

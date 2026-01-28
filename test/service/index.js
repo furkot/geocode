@@ -1,6 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const service = require('../../lib/service/index.js');
+import { describe, it } from 'node:test';
+
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import service from '../../lib/service/index.js';
 
 describe('geocoding service', () => {
   it('empty', async () => {

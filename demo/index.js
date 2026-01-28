@@ -1,9 +1,11 @@
 /* global mapboxgl */
 
+import mapsFacade from 'maps-facade';
+import furkotGeocode from '..';
+
 mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
 
-const furkotGeocode = require('..');
-const maps = require('maps-facade').init({ service: 'mapbox' }, onMapInit);
+const maps = mapsFacade.init({ service: 'mapbox' }, onMapInit);
 
 const ll = document.getElementById('ll');
 const template = document.querySelector('#service');

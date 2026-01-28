@@ -1,6 +1,9 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const geocodio = require('../../../lib/service/geocodio/index.js');
+import { describe, it } from 'node:test';
+import { should as loadShould } from 'chai';
+
+const should = loadShould();
+
+import geocodio from '../../../lib/service/geocodio/index.js';
 
 describe('geocodio geocoding', () => {
   const { geocode } = geocodio({

@@ -1,8 +1,8 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const furkotGeocode = require('../lib/geocode.js');
+import { describe, it } from 'node:test';
+import { should as loadShould } from 'chai';
+import furkotGeocode from '../lib/geocode.js';
 
-/* global AbortController */
+const should = loadShould();
 
 function timeService(timeout) {
   let timeoutId;
