@@ -1,36 +1,31 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const hogfish = require('../../../lib/service/hogfish');
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 
-describe('hogfish geocoding', function () {
+import hogfish from '../../../lib/service/hogfish/index.js';
 
+describe('hogfish geocoding', () => {
   const { geocode } = hogfish({
     hogfish_url: process.env.HOGFISH_URL || 'https://HOGFISH/api/poi',
     hogfish_parameters: {
       types: {
-        hotel: [
-          'provider=hotels'
-        ],
-        fillingstation: [
-          'provider=fuel'
-        ]
+        hotel: ['provider=hotels'],
+        fillingstation: ['provider=fuel']
       }
     },
     interval: 1,
     name: 'hogfish'
   });
 
-  it('fuel stations', async function () {
-
+  it('fuel stations', async () => {
     const query = {
       place: 'Murphy',
       type: 'fillingstation',
       ll: [-104.86063, 39.59278]
     };
     const result = await geocode('reverse', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(1);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 1);
+    assert.deepEqual(result.places[0], {
       ll: [-104.86063, 39.59278],
       place: 'Murphy Express',
       url: 'https://www.pure-gas.org/station?station_id=40499',
@@ -52,17 +47,16 @@ describe('hogfish geocoding', function () {
     });
   });
 
-  it('hotels', async function () {
-
+  it('hotels', async () => {
     const query = {
       place: 'Hyatt House Denver - Tech Center',
       type: 'hotel',
       ll: [-104.879164, 39.591416]
     };
     const result = await geocode('reverse', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(1);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 1);
+    assert.deepEqual(result.places[0], {
       ll: [-104.879164, 39.591416],
       place: 'Hyatt House Denver Tech Center',
       street: '9280 E Costilla Ave',

@@ -1,24 +1,22 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const positionstack = require('../../../lib/service/positionstack');
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+import positionstack from '../../../lib/service/positionstack/index.js';
 
-describe('positionstack geocoding', function () {
-
+describe('positionstack geocoding', () => {
   const { geocode } = positionstack({
     interval: 1,
     name: 'positionstack',
     positionstack_key: process.env.POSITIONSTACK_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     const result = await geocode('forward', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(1);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 1);
+    assert.deepEqual(result.places[0], {
       ll: [-46.830942, -23.532918],
       type: 'locality',
       town: 'Carapicuíba',
@@ -30,15 +28,14 @@ describe('positionstack geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Golden Gate Bridge'
     };
     const result = await geocode('forward', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(10);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 10);
+    assert.deepEqual(result.places[0], {
       ll: [-122.478861, 37.822118],
       type: 'venue',
       town: 'San Francisco',
@@ -50,15 +47,14 @@ describe('positionstack geocoding', function () {
     });
   });
 
-  it('partial', async function () {
-
+  it('partial', async () => {
     const query = {
       place: 'Golden Gate Br'
     };
     const result = await geocode('forward', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(10);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 10);
+    assert.deepEqual(result.places[0], {
       ll: [-49.542449, -11.928923],
       type: 'country',
       country: 'Brazil',
@@ -68,20 +64,19 @@ describe('positionstack geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };
     const result = await geocode('reverse', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(10);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 10);
+    assert.deepEqual(result.places[0], {
       ll: [14.526802, -22.679183],
       type: 'venue',
       province: 'Erongo',
       country: 'Namibia',
-      place: 'Beryl\'s Restaurant',
+      place: "Beryl's Restaurant",
       address: 'Erongo, Namibia',
       normal: 'Erongo,NA'
     });

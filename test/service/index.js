@@ -1,36 +1,36 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const service = require('../../lib/service');
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 
-describe('geocoding service', function () {
+import service from '../../lib/service/index.js';
 
-  it('empty', async function () {
+describe('geocoding service', () => {
+  it('empty', async () => {
     const { geocode } = service({
       name: 'test',
       prepareRequest: () => ({}),
-      request: (url, req, fn) => fn(),
+      request: (_url, _req, fn) => fn(),
       status: () => undefined
     });
     const result = await geocode('forward', 'empty', {});
-    should.not.exist(result);
+    assert.equal(result, undefined, 'should not exist');
   });
 
-  it('failure', async function () {
+  it('failure', async () => {
     const { geocode } = service({
       name: 'test',
       prepareRequest: () => ({}),
-      request: (url, req, fn) => fn(),
+      request: (_url, _req, fn) => fn(),
       status: () => 'failure'
     });
     let result = await geocode('forward', 'failure', {});
-    should.not.exist(result);
+    assert.equal(result, undefined, 'should not exist');
 
     result = await geocode('forward', 'after failure', {});
-    should.not.exist(result);
+    assert.equal(result, undefined, 'should not exist');
   });
 });
 
-it('abort', { timeout: 200 }, async function () {
+it('abort', { timeout: 200 }, async () => {
   const { abort, geocode } = service({
     name: 'test',
     prepareRequest: () => ({}),
@@ -40,11 +40,11 @@ it('abort', { timeout: 200 }, async function () {
   for (let queryId = 0; queryId < 3; queryId++) {
     abortAfter(queryId);
     const r = await geocode('forward', queryId, query);
-    should.not.exist(r);
+    assert.equal(r, undefined, 'should not exist');
   }
 
   const result = await geocode('forward', 'after 3 aborts', query);
-  should.not.exist(result);
+  assert.equal(result, undefined, 'should not exist');
 
   function abortAfter(queryId) {
     return setTimeout(() => abort(queryId), 40);

@@ -1,24 +1,23 @@
-const { describe, it } = require('node:test');
-const should = require('chai').should();
-const maptiler = require('../../../lib/service/maptiler');
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 
-describe('maptiler geocoding', function () {
+import maptiler from '../../../lib/service/maptiler/index.js';
 
+describe('maptiler geocoding', () => {
   const { geocode } = maptiler({
     interval: 1,
     name: 'maptiler',
     maptiler_key: process.env.MAPTILER_KEY || 'furkot'
   });
 
-  it('forward', async function () {
-
+  it('forward', async () => {
     const query = {
       address: 'Rua Cafelândia, Carapicuíba, Brasil'
     };
     const result = await geocode('forward', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(5);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 5);
+    assert.deepEqual(result.places[0], {
       ll: [-46.83655746281147, -23.537200177660463],
       type: 'street',
       place: 'Rua Cafelândia',
@@ -26,7 +25,7 @@ describe('maptiler geocoding', function () {
       address: 'Brazil',
       normal: 'BR'
     });
-    result.places[1].should.deep.equal({
+    assert.deepEqual(result.places[1], {
       ll: [-46.895270850509405, -23.61090479385711],
       type: 'street',
       place: 'Rua Cafelândia',
@@ -36,15 +35,14 @@ describe('maptiler geocoding', function () {
     });
   });
 
-  it('place', async function () {
-
+  it('place', async () => {
     const query = {
       place: 'Golden Gate Bridge'
     };
     const result = await geocode('forward', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(5);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 5);
+    assert.deepEqual(result.places[0], {
       ll: [-122.28275321424007, 37.84177777704476],
       type: 'place',
       place: 'Golden Gate',
@@ -54,15 +52,14 @@ describe('maptiler geocoding', function () {
     });
   });
 
-  it('reverse', async function () {
-
+  it('reverse', async () => {
     const query = {
       ll: [14.5272, -22.6792]
     };
     const result = await geocode('reverse', 1, query);
-    should.exist(result);
-    result.should.have.property('places').with.length(5);
-    result.places[0].should.deep.equal({
+    assert.ok(result != null, 'should exist');
+    assert.equal(result.places?.length, 5);
+    assert.deepEqual(result.places[0], {
       ll: [14.526541957636255, -22.679326596603442],
       type: 'street',
       place: 'Woermann Street',

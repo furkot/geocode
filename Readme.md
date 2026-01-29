@@ -15,7 +15,8 @@ $ npm install --save @furkot/geocode
 ## Usage
 
 ````js
-const furkotGeocode = require('@furkot/geocode');
+import furkotGeocode from '@furkot/geocode';
+
 const options = {}; // options activating geocoding services
 
 const geocode = furkotGeocode(options);
@@ -78,7 +79,7 @@ MIT © [Natalia Kowalczyk](https://melitele.me)
 [npm-url]: https://npmjs.org/package/@furkot/geocode
 
 [build-url]: https://github.com/furkot/geocode/actions/workflows/check.yaml
-[build-image]: https://img.shields.io/github/workflow/status/furkot/geocode/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/furkot/geocode/check.yaml?branch=main
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/@furkot/geocode
 [deps-url]: https://libraries.io/npm/@furkot%2Fgeocode
