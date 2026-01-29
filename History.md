@@ -1,4 +1,12 @@
 
+4.0.0 / 2026-01-29
+==================
+
+ * upgrade `limiter-component` to ~2
+ * upgrade `fetchagent` to ~3
+ * transition to ESM format
+ * use `biome` as a linter and formatter
+
 3.2.1 / 2025-01-26
 ==================
 
