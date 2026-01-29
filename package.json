@@ -23,7 +23,7 @@
     "@furkot/address": "^1.0.1",
     "debug": "~4",
     "fetchagent": "~3",
-    "limiter-component": "~1"
+    "limiter-component": "~2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.13",
