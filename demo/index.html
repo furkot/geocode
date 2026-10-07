@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Furkot Geocode Demo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -22,13 +22,14 @@
           <label><input type="radio" name="type" value="address" >Address</label>
         </div>
         <input placeholder="max results", name="max" type="number">
-        <button>Search</button>
+        <button type="submit">Search</button>
       </form>
     </div>
     <div id="geocoders"></div>
   </body>
   <template id="service">
     <div class="resultbox">
+      <!-- biome-ignore lint/a11y/noLabelWithoutControl: template only -->
       <label></label>
       <textarea rows="10"></textarea>
     </div>
