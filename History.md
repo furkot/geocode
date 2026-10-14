@@ -1,4 +1,10 @@
 
+4.0.2 / 2026-10-13
+==================
+
+ * update pelias client to handle StadiaMaps geocoding API
+ * support multiple providers of the same service
+
 4.0.1 / 2026-10-07
 ==================
 
