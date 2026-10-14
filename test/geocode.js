@@ -79,6 +79,24 @@ describe('furkot-geocode node module', () => {
     assert.equal(geocode.options.reverse?.length, 1);
   });
 
+  it('multiple providers of the same service', () => {
+    const options = {
+      order: ['stadiamaps', 'openroute'],
+      stadiamaps: 'pelias',
+      stadiamaps_enable() {},
+      stadiamaps_url: 'https://api.stadiamaps.com/geocoding/v2',
+      openroute: 'pelias',
+      openroute_enable() {}
+    };
+    const geocode = furkotGeocode(options);
+    assert.equal(geocode.options.forward?.length, 2);
+    assert.equal(geocode.options.forward[0].provider, 'stadiamaps');
+    assert.equal(geocode.options.forward[1].provider, 'openroute');
+    assert.equal(geocode.options.reverse?.length, 2);
+    assert.equal(geocode.options.reverse[0].provider, 'stadiamaps');
+    assert.equal(geocode.options.reverse[1].provider, 'openroute');
+  });
+
   it('timeout', { timeout: 200 }, async () => {
     const service = timeService(100);
     const geocode = furkotGeocode({

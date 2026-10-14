@@ -1,0 +1,21 @@
+GET /geocoding/v2/autocomplete?text=North%20Nellis&api_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+content-type: application/json
+date: Tue, 13 Oct 2026 07:25:21 GMT
+transfer-encoding: chunked
+vary: Accept-Encoding
+stadia-entrypoint: dfw-pop-g4-e45a0a
+alt-svc: h3=":443";ma=86400
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+access-control-allow-origin: *
+access-control-allow-headers: Stadia-Auth,Content-Type
+access-control-allow-methods: GET,POST,OPTIONS
+access-control-max-age: 86400
+stadia-a-fp: 1
+stadia-property: 2335
+x-robots-tag: noindex
+
+{"features":[{"type":"Feature","geometry":null,"properties":{"coarse_location":"Sunrise Manor, NV, USA","gid":"openstreetmap:venue:node/13124284320","layer":"poi","name":"Southbound Nellis at 3909 N. Nellis","precision":"point"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Las Vegas, NV, USA","gid":"openstreetmap:venue:node/13124284335","layer":"poi","name":"Southbound Nellis at 401 North Nellis","precision":"point"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Sunrise Manor, NV, USA","gid":"openstreetmap:street:polyline:33696302","layer":"street","name":"North Nellis Boulevard","precision":"centroid"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Sunrise Manor, NV, USA","gid":"openstreetmap:street:polyline:33696455","layer":"street","name":"North Nellis Boulevard","precision":"centroid"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"North Las Vegas, NV, USA","gid":"openstreetmap:street:polyline:18181753","layer":"street","name":"North Nellis Boulevard","precision":"centroid"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Las Vegas, NV, USA","gid":"foursquare:venue:5d1e96a7e2dcb40023186f4e","layer":"poi","name":"No. 1 Boba Tea Nellis","precision":"point"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Nelliston, OH, USA","gid":"openstreetmap:venue:way/881530143","layer":"poi","name":"Sandusky County Court No. 1","precision":"centroid"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Nellis AFB, NV, USA","gid":"openstreetmap:venue:node/6750720522","layer":"poi","name":"North American F-86E Sabre","precision":"point"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Nellis AFB, NV, USA","gid":"openstreetmap:venue:node/6750720519","layer":"poi","name":"North American F-100D Super Sabre","precision":"point"}},{"type":"Feature","geometry":null,"properties":{"coarse_location":"Nellis AFB, NV, USA","gid":"foursquare:venue:4e36db8ad4c06343483c5dd9","layer":"poi","name":"CAOC-N","precision":"point"}}],"geocoding":{"attribution":"https://stadiamaps.com/attribution/","query":{"text":"North Nellis"}},"type":"FeatureCollection"}

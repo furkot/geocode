@@ -1,0 +1,21 @@
+GET /geocoding/v1/place?ids=openstreetmap:street:polyline:33696302&api_key=furkot
+accept: application/json
+accept-encoding: gzip,deflate
+
+HTTP/1.1 200 OK
+content-type: application/json
+date: Tue, 13 Oct 2026 08:28:06 GMT
+transfer-encoding: chunked
+vary: Accept-Encoding
+stadia-entrypoint: dfw-pop-g4-d9a698
+alt-svc: h3=":443";ma=86400
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+access-control-allow-origin: *
+access-control-allow-headers: Stadia-Auth,Content-Type
+access-control-allow-methods: GET,POST,OPTIONS
+access-control-max-age: 86400
+stadia-a-fp: 1
+stadia-property: 2335
+x-robots-tag: noindex
+
+{"bbox":[-115.062405,36.15902,-115.06218,36.236009],"features":[{"type":"Feature","bbox":[-115.062405,36.15902,-115.06218,36.236009],"geometry":{"type":"Point","coordinates":[-115.062249,36.197513]},"properties":{"accuracy":"centroid","street":"North Nellis Boulevard","gid":"openstreetmap:street:polyline:33696302","id":"polyline:33696302","label":"North Nellis Boulevard, Sunrise Manor, NV, USA","layer":"street","name":"North Nellis Boulevard","country":"United States","country_a":"USA","country_code":"US","country_gid":"whosonfirst:country:85633793","county":"Clark County","county_a":"CL","county_gid":"whosonfirst:county:102081553","locality":"Sunrise Manor","locality_gid":"whosonfirst:locality:85975045","neighbourhood":"Sunrise Manor","neighbourhood_gid":"whosonfirst:neighbourhood:85864299","region":"Nevada","region_a":"NV","region_gid":"whosonfirst:region:85688531","source":"openstreetmap","source_id":"polyline:33696302"}}],"geocoding":{"attribution":"https://stadiamaps.com/attribution/","query":{"ids":"openstreetmap:street:polyline:33696302"}},"type":"FeatureCollection"}
